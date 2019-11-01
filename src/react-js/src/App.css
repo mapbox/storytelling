@@ -1,0 +1,80 @@
+body {
+  margin:0; 
+  padding:0; 
+  font-family: sans-serif;
+}
+a, a:hover, a:visited {
+  color: #0071bc;
+}
+.mapboxgl-map {
+  top:0; 
+  height: 100vh;
+  width:100vw;
+  position: fixed;
+  z-index: -5;
+}
+#header {
+  margin: 3vh auto;
+  width: 90vw;
+  padding: 2vh;
+  text-align: center;
+}
+#footer {
+  width: 100%;
+  min-height: 5vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  text-align: center;
+  line-height: 25px;
+  font-size: 13px;
+}
+#features {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  z-index: 100;
+}
+.centered {
+  width: 50vw;
+  margin: 0 auto;
+}
+.lefty {
+  width: 33vw;
+  margin-left: 5vw;
+}
+.righty {
+  width: 33vw;
+  margin-left: 62vw;
+}
+.light {
+  color: #444;
+  background-color: #fafafa;
+}
+.dark {
+  color: #fafafa;
+  background-color: #444;
+}
+.step {
+  padding-bottom: 50vh;
+  /* margin-bottom: 10vh; */
+  opacity: 0.25;
+}
+.step.active {
+  opacity: 0.9;
+}
+
+.step div {
+  padding:  25px 50px;
+  line-height: 25px;
+  font-size: 13px;
+}
+
+.step img {
+  width: 100%;
+}
+
+@media (max-width: 750px) {
+  #features {
+      width: 90vw;
+      margin: 0 auto;
+  }
+}
