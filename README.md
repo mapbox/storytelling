@@ -1,4 +1,4 @@
-- [Scrollytelling Template For Journalists](#scrollytelling-template-for-journalists)
+- [Interactive Storytelling](#scrollytelling-template-for-journalists)
   * [Prerequisites](#prerequisites)
   * [Getting Started](#getting-started)
     + [Vanilla JS](#vanilla-js)
@@ -17,7 +17,7 @@
   * [Acknowledgments](#acknowledgments)
 
 
-# Scrollytelling Template For Journalists
+# Interactive Storytelling
 Some stories are best told with a map. Data journalists covering changing conditions in a population's demographics, the environment, an international conflict, or telling a simple travel story frequently provide geographic context in their graphics.
 
 This template is designed to accelerate building out a "scrollytelling" map story. The primary input is a story broken into sections (`chapters`), each hooked to a particular view of a map.
@@ -128,7 +128,7 @@ Here is a sample configuration:
 ```
 var config = {
     style: 'mapbox://styles/branigan/cjz37rcb003ib1cr3s8rnkt2d',
-    accessToken: 'pk.eyJ1IjoiYnJhbmlnYW4iLCJhIjoiY2p4NHVmenFrMDBnMDRibGJveXU2NjM3NiJ9.dXHy99Lrq0GNhNBvgjdWBw',
+    accessToken: 'pk.eyJ1IjoibWJ4c29sdXRpb25zIiwiYSI6ImNrMm01aG9hdTBlZGwzbXQ1ZXVrNHNmejAifQ.QHQA0N6XPWddCXtvoODHZg',
     showMarkers: false,
     theme: 'light',
     alignment: 'center',
