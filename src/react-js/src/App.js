@@ -70,10 +70,10 @@ class App extends Component {
 
         const setState = this.setState.bind(this);
 
-        map.on('load', function () {
+        // instantiate the scrollama
+        const scroller = scrollama();
 
-            // instantiate the scrollama
-            const scroller = scrollama();
+        map.on('load', function () {
 
             // setup the instance, pass callback functions
             scroller
@@ -100,6 +100,8 @@ class App extends Component {
                 }
             });
         });
+
+        window.addEventListener('resize', scroller.resize);
     }
 
     render() {
@@ -149,7 +151,7 @@ function Chapter({id, theme, title, image, description, currentChapterID}) {
                     <h3 className="title">{title}</h3>
                 }
                 { image &&
-                    <img src={image}></img>
+                    <img src={image} alt={title}></img>
                 }
                 { description &&
                     <p>{description}</p>
