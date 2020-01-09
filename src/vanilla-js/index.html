@@ -122,7 +122,6 @@ function setLayerOpacity(layer) {
     paintProps.forEach(function(prop) {
         var options = {};
         if (layer.duration) {
-            var transitionProp = prop + "-transition";
             options[prop + "-transition"] = { "duration": layer.duration };
         }
         map.setPaintProperty(layer.layer, prop, layer.opacity, options);
