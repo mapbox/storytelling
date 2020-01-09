@@ -23,7 +23,8 @@ var config = {
             onChapterEnter: [
                 // {
                 //     layer: 'layer-name',
-                //     opacity: 1
+                //     opacity: 1,
+                //     duration: 5000
                 // }
             ],
             onChapterExit: [
