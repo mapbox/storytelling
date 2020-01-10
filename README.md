@@ -165,7 +165,8 @@ var config = {
               },
               {
                   layer: 'glaciernp-boundary',
-                  opacity: 0
+                  opacity: 0,
+                  duration: 5000
               }
             ]
         },
@@ -223,6 +224,7 @@ Note: items in bold are **required**.
 - `onChapterEnter`: Layers to be displayed/hidden/muted when the section becomes active. _Array of objects_
     - `layer`: Layer name as assigned in Mapbox Studio.
     - `opacity`: The opacity to display the layer. `0` is fully transparent, `1` is fully opaque.
+    - `duration`: The length of the opacity transition, numeric, in milliseconds. Default is 300. This is an optional parameter and can be omitted.
 - `onChapterExit`: Same as `onChapterEnter` except it is triggered when the section becomes inactive. _Array of objects_
 
 
