@@ -2,6 +2,7 @@ var config = {
     style: 'mapbox://styles/mapbox/streets-v11',
     accessToken: 'YOUR_ACCESS_TOKEN',
     showMarkers: true,
+    markerColor: '#3FB1CE',
     theme: 'light',
     alignment: 'left',
     title: 'The Title Text of this Story',

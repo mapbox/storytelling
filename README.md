@@ -64,7 +64,7 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
 
 2. **Add a Mapbox access token.** A good practice is to [create a separate](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#creating-and-managing-access-tokens) token per map to be able to track traffic to your different maps.
 
-3. **Choose whether or not to display a marker** at the center of each map location.
+3. **Choose whether or not to display a marker** at the center of each map location. If you are displaying markers, you can set the color using the 'markerColor' property. The default color is light blue.
 
 4. **Choose a theme for the story text**. There are `light` and `dark` options.
 
@@ -75,6 +75,7 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
     style: 'mapbox://styles/mapbox/streets-v11',
     accessToken: 'YOUR_ACCESS_TOKEN',
     showMarkers: true,
+    markerColor: '#3FB1CE',
     alignment: 'left',
     title: 'Story Title Goes Here',
     subtitle: 'A subtitle going into more detail goes here',
@@ -130,6 +131,7 @@ var config = {
     style: 'mapbox://styles/branigan/cjz37rcb003ib1cr3s8rnkt2d',
     accessToken: 'pk.eyJ1IjoibWJ4c29sdXRpb25zIiwiYSI6ImNrMm01aG9hdTBlZGwzbXQ1ZXVrNHNmejAifQ.QHQA0N6XPWddCXtvoODHZg',
     showMarkers: false,
+    markerColor: '#3FB1CE',
     theme: 'light',
     alignment: 'center',
     title: 'Glaciers of Glacier National Park',
@@ -197,6 +199,8 @@ Note: items in bold are **required**.
 **`accessToken`**: Your Mapbox access token.
 
 **`showMarkers`**: This controls whether markers are shown at the centerpoint of each chapter. If `true`, the map will display a default blue, inverted-teardrop icon.
+
+**`markerColor`**: If `showMarkers` is `true`, this property will override the default light blue marker color.
 
 **`theme`**: Two basic themes (light and dark) are available.
 
