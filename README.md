@@ -64,7 +64,7 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
 
 2. **Add a Mapbox access token.** A good practice is to [create a separate](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#creating-and-managing-access-tokens) token per map to be able to track traffic to your different maps.
 
-3. **Choose whether or not to display a marker** at the center of each map location. If you are displaying markers, you can set the color using the 'markerColor' property. The default color is light blue.
+3. **Choose whether or not to display a marker** at the center of each map location. If you are displaying markers, you can set the color using the `markerColor` property. The default color is light blue.
 
 4. **Choose a theme for the story text**. There are `light` and `dark` options.
 
