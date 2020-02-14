@@ -231,8 +231,8 @@ var map = new mapboxgl.Map({
     transformRequest: transformRequest
 });
 
-var marker = new mapboxgl.Marker();
 if (config.showMarkers) {
+    var marker = new mapboxgl.Marker({ color: config.markerColor });
     marker.setLngLat(config.chapters[0].location.center).addTo(map);
 }
 
