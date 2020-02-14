@@ -200,7 +200,7 @@ Note: items in bold are **required**.
 
 **`showMarkers`**: This controls whether markers are shown at the centerpoint of each chapter. If `true`, the map will display a default blue, inverted-teardrop icon.
 
-**`markerColor`**: If `showMarkers` is `true`, this property will override the default light blue marker color.
+**`markerColor`**: Accepts hexadecimal, RGB, and color names [compatible with CSS standards](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value). If `showMarkers` is `true`, this property will override the default light blue marker color.
 
 **`theme`**: Two basic themes (light and dark) are available.
 
