@@ -1,0 +1,211 @@
+body {
+    margin:0; 
+    padding:0; 
+    font-family: 'roboto', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fafafa;
+}
+h4, h3, h1 {
+    font-size: 45px;
+    line-height: 55px;
+    margin-top: 0;
+    font-family: 'Oswald', sans-serif;
+}
+h3 {
+    border-top: 2px solid rgb(217, 217, 217);
+    padding-top: 20px;
+}
+
+a, a:hover, a:visited {
+    color: #0071bc;
+}
+#map {
+    top:0; 
+    height: 100vh;
+    width:100vw;
+    position: fixed;
+    z-index: -5;
+}
+#header {
+    /*margin: 3vh auto;*/
+    /*width: 90vw;*/
+    /*padding: 2vh;*/
+    text-align: center;
+    background: #68787C;
+    height: 100vh;
+    color: black;
+}
+#header-inner{
+    position: relative;
+    top: 50%;
+    left: 50%;
+  
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+#footer {
+    width: 100%;
+    min-height: 5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    text-align: center;
+    line-height: 25px;
+    font-size: 13px;
+}
+#features {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    z-index: 100;
+}
+.lefty {
+    width: 33vw;
+    margin-left: 5vw;
+}
+.step {
+    padding-bottom: 50vh;
+    /* margin-bottom: 10vh; */
+    opacity: 0.25;
+}
+.step.active {
+    opacity: 0.9;
+}
+.step div {
+    padding:  25px 50px;
+    /*line-height: 25px;
+    font-size: 13px;*/
+}
+.image-wrapper {
+    width: 100%;
+}
+
+@media (max-width: 750px) {
+    #features {
+        width: 90vw;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: Metropolis;
+    src: url(./assets/Metropolis-ExtraBold.woff);
+}
+
+
+
+
+
+header{
+    background: linear-gradient(rgba(0,0,0,0.2), transparent);
+    padding: 0 0 0 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    filter: drop-shadow(0 0 3px rgba(242,241,234,0.5));
+    z-index: 10;
+}
+
+footer{
+    background: linear-gradient(transparent, transparent 30%, rgba(0,0,0,0.15));
+    padding: 0 0 0 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.arocha{
+   font-family: Metropolis; 
+   text-decoration: none;
+   font-size: larger;
+   left: 50%;
+   position: absolute;
+   transform: translateX(-50%);
+   top: 20px;
+   color: #000 !important;
+   font-size: 34px;
+}
+
+.button--take-action{
+    float: right;
+    margin: 9px 10px;
+    background: #ef4923;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    padding: 11px 20px;
+    transition: color .3s,background .3s;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.button--take-action:hover{
+    color: #ef4923;
+    background: #fff;
+    text-decoration: none;
+}
+
+#overlay-side{
+    background: linear-gradient(-90deg, transparent, #000 100%);
+    height: 100vh;
+    left: 0;
+    opacity: .66;
+    top: 0;
+    width: 50%;
+    position: fixed;
+}
+#overlay-top{
+    background: linear-gradient(0deg, transparent, #000 100%);
+    height: 100vh;
+    opacity: .42;
+    width: 100%;
+    position: fixed;
+}
+
+footer a {
+    color: #fff !important;
+    float: right;
+    font-size: 10px;
+    margin: 20px 20px 20px 10px;
+    transition: color .5s;
+}
+
+
+.li-hover{
+    cursor: pointer;
+    margin: 0 0 17px 0;
+    font-size: 1.5em;
+}
+.li-hover:hover{
+    font-weight: bold;
+    font-size: 1.7em;
+}
+#ul-depth{
+    width: fit-content;
+}
