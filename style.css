@@ -29,7 +29,7 @@ a, a:hover, a:visited {
 }
 #header {
     /*margin: 3vh auto;*/
-    /*width: 90vw;*/
+    width: 100vw;
     /*padding: 2vh;*/
     text-align: center;
     background: #68787C;
@@ -60,7 +60,7 @@ a, a:hover, a:visited {
     z-index: 100;
 }
 .lefty {
-    width: 33vw;
+    width: 45vw;
     margin-left: 5vw;
 }
 .step {
@@ -144,7 +144,7 @@ footer{
    position: absolute;
    transform: translateX(-50%);
    top: 20px;
-   color: #000 !important;
+   color: #fff !important;
    font-size: 34px;
 }
 
@@ -186,6 +186,7 @@ footer{
     opacity: .42;
     width: 100%;
     position: fixed;
+    pointer-events: none;
 }
 
 footer a {
@@ -195,7 +196,10 @@ footer a {
     margin: 20px 20px 20px 10px;
     transition: color .5s;
 }
-
+#story{
+    position: absolute;
+    width: 50vw;
+}
 
 .li-hover{
     cursor: pointer;
@@ -203,6 +207,10 @@ footer a {
     font-size: 1.5em;
 }
 .li-hover:hover{
+    font-weight: bold;
+    font-size: 1.7em;
+}
+.li-hover-hover{
     font-weight: bold;
     font-size: 1.7em;
 }

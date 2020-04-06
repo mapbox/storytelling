@@ -68,7 +68,15 @@ map.on("load", function() {
     .onStepEnter(response => {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.add('active');
-        map.flyTo(chapter.location);
+        
+        if ('bbox' in chapter){
+            map.fitBounds(chapter.bbox, {
+                padding: {top: 0, bottom:0, left: document.documentElement.clientWidth*0.5, right: 0}
+            });
+        } else{
+            map.flyTo(chapter.location);
+        }
+        
         
         if (chapter.onChapterEnter.length > 0) {
             chapter.onChapterEnter.forEach(setLayerOpacity);
@@ -114,25 +122,55 @@ document.querySelectorAll('.ul-legend').forEach(item => {
     item.addEventListener("mouseover", function( e ) {   
         [ ...item.children ].forEach(function(li){
             setLayerOpacity({
-                layer:  li.id,
+                layer:  li.getAttribute('value'),
                 opacity: 0.3
             })
         })
         setLayerOpacity({
-            layer: e.target.id,
+            layer: e.target.getAttribute('value'),
             opacity: 1
         })
     }, false)
-
+    
     item.addEventListener("mouseout", function( e ) {   
         [ ...item.children ].forEach(function(li){
             setLayerOpacity({
-                layer:  li.id,
-                opacity: 1
+                layer:  li.getAttribute('value'),
+                opacity: 0.8
             })
         })
     }, false);
     
-  })
+})
 
-
+let layers = ['coral','intertidal-seagrass','subtidal-seagrass']
+layers.forEach(function(l){
+    map.on('mousemove', l, function(e) {
+        map.getCanvas().style.cursor = 'pointer';
+        document.querySelectorAll('li[value='+l+']').forEach(function(i){
+            i.classList.add('li-hover-hover')
+        })
+        layers.forEach(function(li){
+            setLayerOpacity({
+                layer:  li,
+                opacity: 0.3
+            })
+        })
+        setLayerOpacity({
+            layer: l,
+            opacity: 1
+        })
+    });
+    map.on('mouseleave', l, function(e) {
+        document.querySelectorAll('li[value='+l+']').forEach(function(i){
+            i.classList.remove('li-hover-hover')
+        })
+        layers.forEach(function(li){
+            setLayerOpacity({
+                layer:  li,
+                opacity: 0.8
+            })
+        })
+        map.getCanvas().style.cursor = '';
+    });
+})
