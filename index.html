@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8' />
-    <title>The Story of Seagrass</title>
-    <link rel="shortcut icon" type="image/png" href="./assets/favicon.ico"/>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-    <script src="https://unpkg.com/scrollama"></script>
-    <link href='./style.css' rel='stylesheet' />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/f15ed359e8.js" crossorigin="anonymous"></script>
+  <meta charset='utf-8' />
+  <title>The Story of Seagrass</title>
+  <link rel="shortcut icon" type="image/png" href="./assets/favicon.ico"/>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f15ed359e8.js" crossorigin="anonymous"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.1.1/dist/lazyload.min.js"></script>
+  <link href='./style.css' rel='stylesheet' />
 </head>
 <body>
-<header>
+  <header>
     <a href="" class="arocha">
       <!--<img src="assets/logo_black.png">-->
       A ROCHA
     </a>
     <a href="/take-action/" class="button--take-action">
-        <div>TAKE ACTION</div>
+      <div>TAKE ACTION</div>
     </a>
-</header> 
-<div id="overlay-top"></div>
-<div id="overlay-side"></div>
-<div id="map"></div>
-<div id="story">
-  <div id="header">
-    <div id="header-inner">
-      <h1>A STORY OF SEAGRASS</h1>
-      <h2>Seagrass has long been overlooked in marine ecology.</h2> 
-      <h2>But it’s an essential element of the marine world. </h2>
-      <h2>Let’s dive in to Coast of Kenya to take a closer look!</h2>
-      <p>By A Rocha Kenya</p>
+  </header> 
+  <div id="overlay-top"></div>
+  <div id="overlay-side"></div>
+  <div id="map"></div>
+  <div id="story">
+    <div id="header">
+      <video id="background-video" autoplay="" loop="" muted="" playsinline="">
+        <source src="https://raphaelnussbaumer.com/storytelling/assets/intro/web-medium-opt.webm"/>
+      </video>
+      <div id="header-inner">
+        <h1>THE SECRETS OF SEAGRASS</h1>
+        <h1>Seagrass has long been overlooked in marine ecology.</h1> 
+        <h1>But it’s an essential element of the marine world. </h1>
+        <h1>Let’s dive in to the coast of Kenya to take a closer look!</h1>
+        <p>By A Rocha Kenya</p>
+      </div>
     </div>
-</div>
-</div>
-<footer>
+  </div>
+  <footer>
     <a href="https://www.facebook.com/arochakenya/" class="link--image link--facebook" target="_blank">
-        <i class="fab fa-facebook-square fa-2x"></i>
-      </a>
-      <a href="https://www.instagram.com/patagonia/" class="link--image link--instagram" target="_blank">
-        <i class="fab fa-instagram fa-2x"></i>
-      </a>
-      <a href="https://twitter.com/patagonia" class="link--image link--twitter" target="_blank">
-        <i class="fab fa-twitter fa-2x"></i>
-      </a>
-</footer>
-
-
-
-<script src="./config.js"></script>
-<script src="./script.js"></script>
-
+      <i class="fab fa-facebook-square fa-2x"></i>
+    </a>
+    <a href="https://www.instagram.com/patagonia/" class="link--image link--instagram" target="_blank">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+    <a href="https://twitter.com/patagonia" class="link--image link--twitter" target="_blank">
+      <i class="fab fa-twitter fa-2x"></i>
+    </a>
+  </footer>
+  
+  
+  
+  <script src="./config.js"></script>
+  <script src="./script.js"></script>
+  
 </body>
 </html>

@@ -1,3 +1,17 @@
+//window.onload = function(){
+    /*var source = document.createElement("source");  
+    if (window.innerWidth < 480) {
+        source.setAttribute('src','https://raphaelnussbaumer.com/storytelling/assets/intro/web-small.mp4')
+    } else if (window.innerWidth < 1200) {
+        source.setAttribute('src','https://raphaelnussbaumer.com/storytelling/assets/intro/web-medium-opt.webm')
+    } else {
+        source.setAttribute('src','https://raphaelnussbaumer.com/storytelling/assets/intro/web-large.mp4')
+    }
+    source.setAttribute('src','https://raphaelnussbaumer.com/storytelling/assets/intro/web-medium-opt.webm')
+    document.getElementById('background-video').appendChild(source);*/
+//}
+
+
 var layerTypes = {
     'fill': ['fill-opacity'],
     'line': ['line-opacity'],
@@ -54,8 +68,11 @@ var map = new mapboxgl.Map({
     scrollZoom: false,
 });
 
+map.addControl(new mapboxgl.NavigationControl());
+
 // instantiate the scrollama
 var scroller = scrollama();
+var chapter
 
 map.on("load", function() {
     // setup the instance, pass callback functions
@@ -66,7 +83,7 @@ map.on("load", function() {
         progress: true
     })
     .onStepEnter(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
+        chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.add('active');
         
         if ('bbox' in chapter){
@@ -95,7 +112,10 @@ map.on("load", function() {
 window.addEventListener('resize', scroller.resize);
 
 
-
+var lazyLoadInstance = new LazyLoad({
+    container: document.getElementById("story")
+    // ... more custom settings?
+});
 
 
 
@@ -146,31 +166,40 @@ document.querySelectorAll('.ul-legend').forEach(item => {
 let layers = ['coral','intertidal-seagrass','subtidal-seagrass']
 layers.forEach(function(l){
     map.on('mousemove', l, function(e) {
-        map.getCanvas().style.cursor = 'pointer';
-        document.querySelectorAll('li[value='+l+']').forEach(function(i){
-            i.classList.add('li-hover-hover')
-        })
-        layers.forEach(function(li){
-            setLayerOpacity({
-                layer:  li,
-                opacity: 0.3
+        if (chapter.onChapterEnter.filter( li => li.layer == l).length>0){
+            map.getCanvas().style.cursor = 'pointer';
+            document.querySelectorAll('li[value='+l+']').forEach(function(i){
+                i.classList.add('li-hover-hover')
             })
-        })
-        setLayerOpacity({
-            layer: l,
-            opacity: 1
-        })
+            chapter.onChapterEnter.forEach(function(t){
+                li = t.layer
+                if (li==l){
+                    setLayerOpacity({
+                        layer: l,
+                        opacity: 1
+                    })
+                } else {
+                    setLayerOpacity({
+                        layer:  li,
+                        opacity: 0.3
+                    })
+                }
+            })
+        }
     });
     map.on('mouseleave', l, function(e) {
-        document.querySelectorAll('li[value='+l+']').forEach(function(i){
-            i.classList.remove('li-hover-hover')
-        })
-        layers.forEach(function(li){
-            setLayerOpacity({
-                layer:  li,
-                opacity: 0.8
+        if (chapter.onChapterEnter.filter( li => li.layer == l).length>0){
+            document.querySelectorAll('li[value='+l+']').forEach(function(i){
+                i.classList.remove('li-hover-hover')
             })
-        })
-        map.getCanvas().style.cursor = '';
+            chapter.onChapterEnter.forEach(function(t){
+                li = t.layer
+                setLayerOpacity({
+                    layer:  li,
+                    opacity: t.opacity
+                })
+            })
+            map.getCanvas().style.cursor = '';
+        }
     });
 })

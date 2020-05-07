@@ -5,6 +5,7 @@ body {
     font-size: 16px;
     line-height: 24px;
     color: #fafafa;
+    overflow-x: hidden
 }
 h4, h3, h1 {
     font-size: 45px;
@@ -35,6 +36,8 @@ a, a:hover, a:visited {
     background: #68787C;
     height: 100vh;
     color: black;
+    overflow: hidden;
+    position: relative;
 }
 #header-inner{
     position: relative;
@@ -64,7 +67,7 @@ a, a:hover, a:visited {
     margin-left: 5vw;
 }
 .step {
-    padding-bottom: 50vh;
+    padding: 50vh 0;
     /* margin-bottom: 10vh; */
     opacity: 0.25;
 }
@@ -79,6 +82,18 @@ a, a:hover, a:visited {
 .image-wrapper {
     width: 100%;
 }
+#background-video{
+    position: absolute;
+    /* max-height: 100vh; */
+    width: 100vw;
+    /* background-size: cover; */
+    left: 50vw;
+    min-height: 100vh;
+    min-width: 100vw;
+    top: 50vh;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+}
 
 @media (max-width: 750px) {
     #features {
@@ -87,7 +102,10 @@ a, a:hover, a:visited {
     }
 }
 
-
+.mapboxgl-ctrl-top-right {
+    top: 55px;
+    right: 24px;
+}
 
 
 
@@ -216,4 +234,14 @@ footer a {
 }
 #ul-depth{
     width: fit-content;
+}
+.caption{
+    color: rgb(180, 180, 180);
+    font-size: small;
+    margin-top: -5px;
+    padding-left: 5px;
+}
+.svg-txt{
+    vertical-align: middle;
+    height: 25px;
 }
