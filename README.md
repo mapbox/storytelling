@@ -300,4 +300,4 @@ BSD 3-Clause License
 * Chris Toomey for ushering this work through and keeping things on track
 * Journalists with stories that help us make sense of what goes around us
 
-[mapbox.com/solutions](https://www.mapbox.com/solutions)
+[mapbox.com/resources#solutions](https://www.mapbox.com/resources#solutions)
