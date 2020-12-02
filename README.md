@@ -206,6 +206,8 @@ Note: items in bold are **required**.
 
 **`alignment`**: This defines where the story text should appear over the map. Options are `center`, `left`, and `right`. When the browser window is less than 750 pixels wide, the story will be `center` aligned.
 
+**`mapAnimation`**: Defines the [animation type](https://docs.mapbox.com/mapbox-gl-js/api/#map#jumpto) for transitioning between locations. This property supports 'flyTo', 'easeTo', and 'jumpTo' animations.
+
 `title`: The title of the overall story. (Optional)
 
 `subtitle`: A subtitle for the story. (Optional)

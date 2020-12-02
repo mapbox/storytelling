@@ -5,6 +5,7 @@ var config = {
     markerColor: '#3FB1CE',
     theme: 'light',
     alignment: 'left',
+    mapAnimation: 'flyTo',
     title: 'The Title Text of this Story',
     subtitle: 'A descriptive and interesting subtitle to draw in the reader',
     byline: 'By a Digital Storyteller',
