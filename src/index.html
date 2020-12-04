@@ -47,6 +47,9 @@
             padding-bottom: 10vh;
             z-index: 100;
         }
+        .hidden {
+            visibility: hidden;
+        }
         .centered {
             width: 50vw;
             margin: 0 auto;
@@ -117,7 +120,8 @@ var layerTypes = {
     'circle': ['circle-opacity', 'circle-stroke-opacity'],
     'symbol': ['icon-opacity', 'text-opacity'],
     'raster': ['raster-opacity'],
-    'fill-extrusion': ['fill-extrusion-opacity']
+    'fill-extrusion': ['fill-extrusion-opacity'],
+    'heatmap': ['heatmap-opacity']
 }
 
 var alignments = {
@@ -205,7 +209,12 @@ config.chapters.forEach((record, idx) => {
 
     chapter.classList.add(config.theme);
     container.appendChild(chapter);
-    container.classList.add(alignments[record.alignment]);
+    if (record.alignment) {
+        container.classList.add(alignments[record.alignment]);
+    }
+    if (record.hidden) {
+        container.classList.add('hidden');
+    }
     features.appendChild(container);
 });
 
@@ -265,12 +274,15 @@ map.on("load", function() {
     .onStepEnter(response => {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.add('active');
-        map[config.mapAnimation](chapter.location);
+        map[config.mapAnimation || 'flyTo'](chapter.location);
         if (config.showMarkers) {
             marker.setLngLat(chapter.location.center);
         }
         if (chapter.onChapterEnter.length > 0) {
             chapter.onChapterEnter.forEach(setLayerOpacity);
+        }
+        if (chapter.callback) {
+            window[chapter.callback]();
         }
     })
     .onStepExit(response => {
