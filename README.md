@@ -64,7 +64,7 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
 
 2. **Add a Mapbox access token.** A good practice is to [create a separate](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#creating-and-managing-access-tokens) token per map to be able to track traffic to your different maps.
 
-3. **Choose whether or not to display a marker** at the center of each map location.
+3. **Choose whether or not to display a marker** at the center of each map location. If you are displaying markers, you can set the color using the `markerColor` property. The default color is light blue.
 
 4. **Choose a theme for the story text**. There are `light` and `dark` options.
 
@@ -75,6 +75,7 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
     style: 'mapbox://styles/mapbox/streets-v11',
     accessToken: 'YOUR_ACCESS_TOKEN',
     showMarkers: true,
+    markerColor: '#3FB1CE',
     title: 'Story Title Goes Here',
     subtitle: 'A subtitle going into more detail goes here',
     byline: 'By a Digital Storyteller',
@@ -130,6 +131,7 @@ var config = {
     style: 'mapbox://styles/branigan/cjz37rcb003ib1cr3s8rnkt2d',
     accessToken: 'pk.eyJ1IjoibWJ4c29sdXRpb25zIiwiYSI6ImNrMm01aG9hdTBlZGwzbXQ1ZXVrNHNmejAifQ.QHQA0N6XPWddCXtvoODHZg',
     showMarkers: false,
+    markerColor: '#3FB1CE',
     theme: 'light',
     title: 'Glaciers of Glacier National Park',
     subtitle: 'Change in coverage from 1998 to 2015',
@@ -165,7 +167,8 @@ var config = {
               },
               {
                   layer: 'glaciernp-boundary',
-                  opacity: 0
+                  opacity: 0,
+                  duration: 5000
               }
             ]
         },
@@ -198,7 +201,11 @@ Note: items in bold are **required**.
 
 **`showMarkers`**: This controls whether markers are shown at the centerpoint of each chapter. If `true`, the map will display a default blue, inverted-teardrop icon.
 
+**`markerColor`**: Accepts hexadecimal, RGB, and color names [compatible with CSS standards](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value). If `showMarkers` is `true`, this property will override the default light blue marker color.
+
 **`theme`**: Two basic themes (light and dark) are available.
+
+**`mapAnimation`**: Defines the [animation type](https://docs.mapbox.com/mapbox-gl-js/api/#map#jumpto) for transitioning between locations. This property supports 'flyTo', 'easeTo', and 'jumpTo' animations.
 
 `title`: The title of the overall story. (Optional)
 
@@ -223,6 +230,7 @@ Note: items in bold are **required**.
 - `onChapterEnter`: Layers to be displayed/hidden/muted when the section becomes active. _Array of objects_
     - `layer`: Layer name as assigned in Mapbox Studio.
     - `opacity`: The opacity to display the layer. `0` is fully transparent, `1` is fully opaque.
+    - `duration`: The length of the opacity transition, numeric, in milliseconds. Default is 300. This is an optional parameter and can be omitted.
 - `onChapterExit`: Same as `onChapterEnter` except it is triggered when the section becomes inactive. _Array of objects_
 
 
