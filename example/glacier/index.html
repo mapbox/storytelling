@@ -10,15 +10,15 @@
     <script src="https://unpkg.com/scrollama"></script>
     <style>
         body {
-            margin:0; 
-            padding:0; 
+            margin:0;
+            padding:0;
             font-family: sans-serif;
         }
         a, a:hover, a:visited {
             color: #0071bc;
         }
         #map {
-            top:0; 
+            top:0;
             height: 100vh;
             width:100vw;
             position: fixed;
@@ -96,6 +96,13 @@
                 margin: 0 auto;
             }
         }
+
+        /* Fix issue on mobile browser where scroll breaks  */
+        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan, 
+        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
+            touch-action: unset;
+        }
+
         </style>
 </head>
 <body>
@@ -128,7 +135,13 @@ function getLayerPaintType(layer) {
 function setLayerOpacity(layer) {
     var paintProps = getLayerPaintType(layer.layer);
     paintProps.forEach(function(prop) {
-        map.setPaintProperty(layer.layer, prop, layer.opacity);
+        var options = {};
+        if (layer.duration) {
+            var transitionProp = prop + "-transition";
+            options = { "duration": layer.duration };
+            map.setPaintProperty(layer.layer, transitionProp, options);
+        }
+        map.setPaintProperty(layer.layer, prop, layer.opacity, options);
     });
 }
 
@@ -165,19 +178,19 @@ if (header.innerText.length > 0) {
 config.chapters.forEach((record, idx) => {
     var container = document.createElement('div');
     var chapter = document.createElement('div');
-    
+
     if (record.title) {
         var title = document.createElement('h3');
         title.innerText = record.title;
         chapter.appendChild(title);
     }
-    
+
     if (record.image) {
-        var image = new Image();  
-        image.src = record.image;  
+        var image = new Image();
+        image.src = record.image;
         chapter.appendChild(image);
     }
-    
+
     if (record.description) {
         var story = document.createElement('p');
         story.innerHTML = record.description;
@@ -215,11 +228,11 @@ if (footer.innerText.length > 0) {
 mapboxgl.accessToken = config.accessToken;
 
 const transformRequest = (url) => {
-    const hasQuery = url.indexOf("?") !== -1;	  
-    const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";	  
+    const hasQuery = url.indexOf("?") !== -1;
+    const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";
     return {
       url: url + suffix
-    }	  
+    }
 }
 
 var map = new mapboxgl.Map({
@@ -233,8 +246,8 @@ var map = new mapboxgl.Map({
     transformRequest: transformRequest
 });
 
-var marker = new mapboxgl.Marker();
 if (config.showMarkers) {
+    var marker = new mapboxgl.Marker({ color: config.markerColor });
     marker.setLngLat(config.chapters[0].location.center).addTo(map);
 }
 
@@ -252,7 +265,7 @@ map.on("load", function() {
     .onStepEnter(response => {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.add('active');
-        map.flyTo(chapter.location);
+        map[config.mapAnimation || 'flyTo'](chapter.location);
         if (config.showMarkers) {
             marker.setLngLat(chapter.location.center);
         }

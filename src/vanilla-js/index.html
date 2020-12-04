@@ -265,7 +265,7 @@ map.on("load", function() {
     .onStepEnter(response => {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.add('active');
-        map[config.mapAnimation](chapter.location);
+        map[config.mapAnimation || 'flyTo'](chapter.location);
         if (config.showMarkers) {
             marker.setLngLat(chapter.location.center);
         }
