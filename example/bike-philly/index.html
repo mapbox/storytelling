@@ -25,8 +25,8 @@
             z-index: -5;
         }
         #header {
-            margin: 3vh auto;
-            width: 90vw;
+            margin: auto;
+            width: 100vw;
             padding: 2vh;
             text-align: center;
         }
@@ -55,6 +55,10 @@
         .righty {
             width: 33vw;
             margin-left: 62vw;
+        }
+        .fully {
+            width: 100%;
+            margin: auto;
         }
         .light {
             color: #444;
@@ -109,7 +113,8 @@ var layerTypes = {
 var alignments = {
     'left': 'lefty',
     'center': 'centered',
-    'right': 'righty'
+    'right': 'righty',
+    'full': 'fully'
 }
 
 function getLayerPaintType(layer) {
@@ -126,7 +131,6 @@ function setLayerOpacity(layer) {
 
 var story = document.getElementById('story');
 var features = document.createElement('div');
-features.classList.add(alignments[config.alignment]);
 features.setAttribute('id', 'features');
 
 var header = document.createElement('div');
@@ -185,6 +189,7 @@ config.chapters.forEach((record, idx) => {
 
     chapter.classList.add(config.theme);
     container.appendChild(chapter);
+    container.classList.add(alignments[record.alignment]);
     features.appendChild(container);
 });
 
