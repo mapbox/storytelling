@@ -1,20 +1,20 @@
-- [Interactive Storytelling](#scrollytelling-template-for-journalists)
-  * [Prerequisites](#prerequisites)
-  * [Getting Started](#getting-started)
-    + [Vanilla JS](#vanilla-js)
+- [Interactive Storytelling](#interactive-storytelling)
+  - [Prerequisites](#prerequisites)
+  - [Getting Started](#getting-started)
+    - [Vanilla JS](#vanilla-js)
       - [Steps](#steps)
-      - [Generate Map Position Using `Helper.html`](#generate-map-position-using--helperhtml-)
+      - [Generate Map Position Using `Helper.html`](#generate-map-position-using-helperhtml)
       - [Configuration File and Layer Settings](#configuration-file-and-layer-settings)
       - [Configuration Options](#configuration-options)
       - [Mapbox Studio Style Configuration](#mapbox-studio-style-configuration)
-    + [React](#react)
+    - [React](#react)
       - [Installation and dependencies](#installation-and-dependencies)
-    + [Organization](#organization)
-  * [Deployment](#deployment)
-  * [Built With](#built-with)
-  * [Authors](#authors)
-  * [License](#license)
-  * [Acknowledgments](#acknowledgments)
+    - [Organization](#organization)
+  - [Deployment](#deployment)
+  - [Built With](#built-with)
+  - [Authors](#authors)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
 
 
 # Interactive Storytelling
@@ -76,7 +76,6 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
     accessToken: 'YOUR_ACCESS_TOKEN',
     showMarkers: true,
     markerColor: '#3FB1CE',
-    alignment: 'left',
     title: 'Story Title Goes Here',
     subtitle: 'A subtitle going into more detail goes here',
     byline: 'By a Digital Storyteller',
@@ -90,6 +89,7 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
 ```
         {
             id: 'identifier',
+            alignment: 'left',
             title: 'Title',
             image: './path/to/image/source.png',
             description: 'Copy these sections to add to your story.',
@@ -133,7 +133,6 @@ var config = {
     showMarkers: false,
     markerColor: '#3FB1CE',
     theme: 'light',
-    alignment: 'center',
     title: 'Glaciers of Glacier National Park',
     subtitle: 'Change in coverage from 1998 to 2015',
     byline: '',
@@ -141,6 +140,7 @@ var config = {
     chapters: [
         {
             id: 'glacier-np',
+            alignment: 'center',
             title: 'Glacier National Park Glaciers',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/2015-06-19_Glacier_National_Park_%28U.S.%29_8633.jpg/800px-2015-06-19_Glacier_National_Park_%28U.S.%29_8633.jpg',
             description: 'Glacier National Park is dominated by mountains which were carved into their present shapes by the huge glaciers of the last ice age. These glaciers have largely disappeared over the last 12,000 years. Evidence of widespread glacial action is found throughout the park in the form of U-shaped valleys, cirques, arêtes, and large outflow lakes radiating like fingers from the base of the highest peaks.',
@@ -174,6 +174,7 @@ var config = {
         },
         {
             id: 'harrison1998',
+            alignment: 'center',
             title: 'Harrison Glacier, 1998',
             image: '',
             description: 'Harrison Glacier is located in the US state of Montana in Glacier National Park. Situated on a southeast facing ridge immediately south of Mount Jackson, Harrison Glacier is the largest glacier in Glacier National Park.',
@@ -204,8 +205,6 @@ Note: items in bold are **required**.
 
 **`theme`**: Two basic themes (light and dark) are available.
 
-**`alignment`**: This defines where the story text should appear over the map. Options are `center`, `left`, and `right`. When the browser window is less than 750 pixels wide, the story will be `center` aligned.
-
 **`mapAnimation`**: Defines the [animation type](https://docs.mapbox.com/mapbox-gl-js/api/#map#jumpto) for transitioning between locations. This property supports 'flyTo', 'easeTo', and 'jumpTo' animations.
 
 `title`: The title of the overall story. (Optional)
@@ -219,6 +218,7 @@ Note: items in bold are **required**.
 **`chapters`**: This contains all of the story content and map controls for each section of the story. _Array of objects_
 
 - **`id`**: A slug-style ID for the chapter. This is read by the JavaScript driving the app and is assigned as an HTML `id` for the `div` element containing the rest of the story. A best-practice format would be to use kebab case, like `my-story-chapter-1`.
+- **`alignment`**: This defines where the story text should appear over the map. Options are `center`, `left`, `right`, and `full`. When the browser window is less than 750 pixels wide, the story will be `center` aligned.
 - `title`: The title of the section, displayed in an `h3` element.
 - `image`: The path to an image to display in this section.
 - `description`: The main story content for the section. This should be aligned with what the reader is seeing on the map. In the vanilla version, this field will render as HTML. Images, links, and other items can be included as HTML.
@@ -308,4 +308,4 @@ BSD 3-Clause License
 * Chris Toomey for ushering this work through and keeping things on track
 * Journalists with stories that help us make sense of what goes around us
 
-[mapbox.com/solutions](https://www.mapbox.com/solutions)
+[mapbox.com/resources#solutions](https://www.mapbox.com/resources#solutions)

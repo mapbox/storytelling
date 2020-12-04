@@ -25,9 +25,12 @@
             z-index: -5;
         }
         #header {
-            margin: 3vh auto;
-            width: 90vw;
-            padding: 2vh;
+            margin: auto;
+            width: 100vw;
+        }
+        #header h1, #header h2 {
+            margin: 0;
+            padding: 2vh 2vw;
             text-align: center;
         }
         #footer {
@@ -55,6 +58,10 @@
         .righty {
             width: 33vw;
             margin-left: 62vw;
+        }
+        .fully {
+            width: 100%;
+            margin: auto;
         }
         .light {
             color: #444;
@@ -84,11 +91,18 @@
         }
 
         @media (max-width: 750px) {
-            #features {
+            .centered, .lefty, .righty, .fully {
                 width: 90vw;
                 margin: 0 auto;
             }
         }
+
+        /* Fix issue on mobile browser where scroll breaks  */
+        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan, 
+        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
+            touch-action: unset;
+        }
+
         </style>
 </head>
 <body>
@@ -109,7 +123,8 @@ var layerTypes = {
 var alignments = {
     'left': 'lefty',
     'center': 'centered',
-    'right': 'righty'
+    'right': 'righty',
+    'full': 'fully'
 }
 
 function getLayerPaintType(layer) {
@@ -132,7 +147,6 @@ function setLayerOpacity(layer) {
 
 var story = document.getElementById('story');
 var features = document.createElement('div');
-features.classList.add(alignments[config.alignment]);
 features.setAttribute('id', 'features');
 
 var header = document.createElement('div');
@@ -191,6 +205,7 @@ config.chapters.forEach((record, idx) => {
 
     chapter.classList.add(config.theme);
     container.appendChild(chapter);
+    container.classList.add(alignments[record.alignment]);
     features.appendChild(container);
 });
 
