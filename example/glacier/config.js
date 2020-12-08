@@ -3,6 +3,7 @@ var config = {
     accessToken: 'pk.eyJ1IjoibWJ4c29sdXRpb25zIiwiYSI6ImNrMm01aG9hdTBlZGwzbXQ1ZXVrNHNmejAifQ.QHQA0N6XPWddCXtvoODHZg',
     showMarkers: false,
     theme: 'dark',
+    use3dTerrain: true,
     title: 'Glaciers of Glacier National Park',
     subtitle: 'Change in coverage from 1998 to 2015',
     byline: '',
@@ -10,7 +11,7 @@ var config = {
     chapters: [
         {
             id: 'glacier-np',
-            alignment: 'left',
+            alignment: 'full',
             title: 'Glacier National Park Glaciers',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/2015-06-19_Glacier_National_Park_%28U.S.%29_8633.jpg/800px-2015-06-19_Glacier_National_Park_%28U.S.%29_8633.jpg',
             description: 'Glacier National Park is dominated by mountains which were carved into their present shapes by the huge glaciers of the last ice age. These glaciers have largely disappeared over the last 12,000 years. Evidence of widespread glacial action is found throughout the park in the form of U-shaped valleys, cirques, arêtes, and large outflow lakes radiating like fingers from the base of the highest peaks. Since the end of the ice ages, various warming and cooling trends have occurred. The last recent cooling trend was during the Little Ice Age, which took place approximately between 1550 and 1850. During the Little Ice Age, the glaciers in the park expanded and advanced, although to nowhere near as great an extent as they had during the Ice Age.',
@@ -152,7 +153,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'gnpglaciers-2015',
-                    opacity: 0.25
+                    opacity: 0.25,
                 }
             ],
             onChapterExit: [

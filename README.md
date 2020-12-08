@@ -50,11 +50,8 @@ The template does not rely on any particular CSS framework, fonts, or images. Th
 
 - Download this repository as a ZIP file using the button above, and unzip it. If you are using `git`, clone this repository.
 
-- If you are new to coding in JavaScript, follow the instructions for Vanilla JS. If you are already working with React, are comfortable with the command line and build systems, and/or want bundled and minified code, choose React.
 
-### Vanilla JS
-
-In your local copy of this repository (the unzipped file you downloaded), navigate to the `src/vanilla-js/` directory.
+In your local copy of this repository (the unzipped file you downloaded), navigate to the `src/` directory.
 
 Make a copy of `config.js.template` and name it `config.js`. Open the new `config.js` file in your text editor.
 
@@ -68,7 +65,7 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
 
 4. **Choose a theme for the story text**. There are `light` and `dark` options.
 
-5. **Choose where your story should be aligned over the map**. Options are `center`, `left`, `right`.
+5. **Choose where your story should be aligned over the map**. Options are `center`, `left`, `right`, and `full`.
 
 ```
 {
@@ -205,7 +202,7 @@ Note: items in bold are **required**.
 
 **`theme`**: Two basic themes (light and dark) are available.
 
-**`mapAnimation`**: Defines the [animation type](https://docs.mapbox.com/mapbox-gl-js/api/#map#jumpto) for transitioning between locations. This property supports 'flyTo', 'easeTo', and 'jumpTo' animations.
+`use3dTerrain`: Enables 3D terrain. (Optional)
 
 `title`: The title of the overall story. (Optional)
 
@@ -219,6 +216,7 @@ Note: items in bold are **required**.
 
 - **`id`**: A slug-style ID for the chapter. This is read by the JavaScript driving the app and is assigned as an HTML `id` for the `div` element containing the rest of the story. A best-practice format would be to use kebab case, like `my-story-chapter-1`.
 - **`alignment`**: This defines where the story text should appear over the map. Options are `center`, `left`, `right`, and `full`. When the browser window is less than 750 pixels wide, the story will be `center` aligned.
+- `hidden`: Sets the visibility of the chapter to `hidden` when `true`. The chapter will still trigger a map and layer transition.
 - `title`: The title of the section, displayed in an `h3` element.
 - `image`: The path to an image to display in this section.
 - `description`: The main story content for the section. This should be aligned with what the reader is seeing on the map. In the vanilla version, this field will render as HTML. Images, links, and other items can be included as HTML.
@@ -227,6 +225,9 @@ Note: items in bold are **required**.
     - **`zoom`**: Zoom level of the map.
     - **`pitch`**: Angle of the map view. `0` is straight down, and `60` is highly tilted.
     - **`bearing`**: Degrees of rotation clockwise from North (`0`). Negative values represent counter-clockwise rotation.
+- `mapAnimation`: Defines the [animation type](https://docs.mapbox.com/mapbox-gl-js/api/#map#jumpto) for transitioning between locations. This property supports 'flyTo', 'easeTo', and 'jumpTo' animations. If not specified, defaults to `flyTo`.
+- `rotateAnimation`: Starts a slow rotation animation at the end of the map transition when set to `true`. The map will rotate 90 degrees over 24 seconds.
+- `callback`: Accepts the name of a JavaScript function and executes the function. Use this if you have custom code you want to run for a chapter, like turning a legend on or off, adding data from an API request, or displaying an interactive graph.
 - `onChapterEnter`: Layers to be displayed/hidden/muted when the section becomes active. _Array of objects_
     - `layer`: Layer name as assigned in Mapbox Studio.
     - `opacity`: The opacity to display the layer. `0` is fully transparent, `1` is fully opaque.
@@ -234,64 +235,27 @@ Note: items in bold are **required**.
 - `onChapterExit`: Same as `onChapterEnter` except it is triggered when the section becomes inactive. _Array of objects_
 
 
-#### Mapbox Studio Style Configuration
+#### Layer Configuration in your Mapbox Studio Style
 
 Add and style each custom layer in your Studio style. Before the final publish, set any layers's style to be hidden with `0` opacity. **Do not hide the layer**. For example, if you have a `circle` layer, makes sure the `color-opacity` and/or the `stroke-opacity` is set to 0.
 
 This will ensure that the map appears correctly when the story page loads. To adjust the opacity of the layers as the reader scrolls through the story, use the `onChapterEnter` or `onChapterExit` configuration options to set your desired opacity for the layer.
 
-### React
-
-The output of the React version of this template is functionally identical to the vanilla version. Use this version if you prefer to use React to build and deploy your story.
-
-#### Installation and dependencies
-
-This application was built and tested using
-
-- Node version 10.16.3
-- NPM version 6.9.0
-
-In your local copy of this repository, navigate to the `src/react-js/` directory.
-
-Install dependencies listed in the `package.json` file:
-
-```
-yarn install
-```
-
-Run the development server:
-
-```
-yarn start
-```
-
-Follow the instructions above for setting up your configuration file and building out your story. Once the application is ready for deployment, run:
-
-```
-yarn build
-```
-
-This command will generate a `build` directory that contains everything you will need to deploy your story. As with the vanilla JavaScript version, you will only need a deployment location capable of hosting static files.
-
 ### Organization
 
-- `src`: Source code directory
-    - `react-js`: Code for the React version of the template
-    - `vanilla-js`: Code for the vanilla version of the template
+- `src`: Code for the vanilla version of the template
 - `example`: Example stories
     - `glacier`: Glaciers of Glacier National Park example
-    - `glacier-react`: React version of the above
     - `bike-philly`: Philadelphia bicycle infrastructure example
 
 ## Deployment
 
-For the `Vanilla` version, host the `index.html` and `config.js` files in the same directory in a web-accessible location. For the `React` version, copy the contents of the `build` directory to a web-accessible location.
+Host the `index.html` and `config.js` files in the same directory in a web-accessible location. If you don't know where to start, look into GitHub Pages or Netlify.
 
 ## Built With
 
 - Mapbox GL JS
 - Scrollama.js
-- React
 
 ## Authors
 
