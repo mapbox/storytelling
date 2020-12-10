@@ -22,11 +22,12 @@
             height: 100vh;
             width:100vw;
             position: fixed;
-            z-index: -5;
         }
         #header {
             margin: auto;
-            width: 100vw;
+            width: 100%;
+            position: relative;
+            z-index: 5;
         }
         #header h1, #header h2 {
             margin: 0;
@@ -41,11 +42,12 @@
             text-align: center;
             line-height: 25px;
             font-size: 13px;
+            position: relative;
+            z-index: 5;
         }
         #features {
             padding-top: 10vh;
             padding-bottom: 10vh;
-            z-index: 100;
         }
         .hidden {
             visibility: hidden;
@@ -251,7 +253,7 @@ var map = new mapboxgl.Map({
     zoom: config.chapters[0].location.zoom,
     bearing: config.chapters[0].location.bearing,
     pitch: config.chapters[0].location.pitch,
-    scrollZoom: false,
+    interactive: false,
     transformRequest: transformRequest
 });
 
