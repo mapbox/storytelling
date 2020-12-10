@@ -20,6 +20,7 @@
 
 - Fixed CSS class interfering with touch map events
 - Fixed support for heatmap layer types
+- Fixed z-index blocking attribution clicks
 
 
 ## 0.1 (November 2019)
