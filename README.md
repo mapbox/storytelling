@@ -16,6 +16,10 @@
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
 
+# Updated to Mapbox GL JS V2.0.0
+- Set `use3dTerrain: true` for 3D maps
+
+![3D mountains in Colorado](assets/co14ersstory.gif)
 
 # Interactive Storytelling
 Some stories are best told with a map. Data journalists covering changing conditions in a population's demographics, the environment, an international conflict, or telling a simple travel story frequently provide geographic context in their graphics.
