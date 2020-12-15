@@ -29,7 +29,7 @@
             position: relative;
             z-index: 5;
         }
-        #header h1, #header h2 {
+        #header h1, #header h2, #header p {
             margin: 0;
             padding: 2vh 2vw;
             text-align: center;
@@ -211,9 +211,7 @@ config.chapters.forEach((record, idx) => {
 
     chapter.classList.add(config.theme);
     container.appendChild(chapter);
-    if (record.alignment) {
-        container.classList.add(alignments[record.alignment]);
-    }
+    container.classList.add(alignments[record.alignment] || 'centered');
     if (record.hidden) {
         container.classList.add('hidden');
     }

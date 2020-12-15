@@ -73,37 +73,43 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
     accessToken: 'YOUR_ACCESS_TOKEN',
     showMarkers: true,
     markerColor: '#3FB1CE',
-    title: 'Story Title Goes Here',
-    subtitle: 'A subtitle going into more detail goes here',
+    theme: 'light',
+    use3dTerrain: false,
+    title: 'The Title Text of this Story',
+    subtitle: 'A descriptive and interesting subtitle to draw in the reader',
     byline: 'By a Digital Storyteller',
-    footer: 'Sources and citations, etc. live down at the bottom of the story',
-    chapters: [...]
-  }
+    footer: 'Source: source citations, etc.',
+    chapters: [
+        {
 ```
 
 6. **Add as many `chapters` in your template as needed.** You'll need a `,` between each section, but no comma at the end. Here is what a `chapter` looks like:
 
 ```
-        {
-            id: 'identifier',
+{
+            id: 'slug-style-id',
             alignment: 'left',
-            title: 'Title',
+            hidden: false,
+            title: 'Display Title',
             image: './path/to/image/source.png',
-            description: 'Copy these sections to add to your story.',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             location: {
-                center: [-77.020636, 38.886900],
-                zoom: 13.5,
+                center: [-122.418398, 37.759483],
+                zoom: 8.5,
                 pitch: 60,
-                bearing: -43.2
+                bearing: 0
             },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
             onChapterEnter: [],
             onChapterExit: []
-        }
+        },
 ```
 
 7. **Fill out your sections as needed.**  Give each section a unique name in the section `id` property. This will become the HTML `div` `id`, so avoid spaces in the name. The `title`, `description` properties are optional. The `description` supports HTML tags. If you have an image that goes with that section of the story, add the path to the image in the `image` property.
 
-8. For `location`, you can use the `helper.html` file to help you determine the map's position. This tool prints the location settings of the map on the screen in a format ready for copy/paste into the template.
+8. For `location`, you can use the `helper.html` file to help you determine the map's position. This tool prints the location settings of the map on the screen in a format ready for copy/paste into the template. Optionally, you can change the style in this file to your [custom style](https://docs.mapbox.com/mapbox-gl-js/example/custom-style-id/).
 
 9. Repeat until you have the location entered for each of your sections.
 
@@ -128,19 +134,19 @@ var config = {
     style: 'mapbox://styles/branigan/cjz37rcb003ib1cr3s8rnkt2d',
     accessToken: 'pk.eyJ1IjoibWJ4c29sdXRpb25zIiwiYSI6ImNrMm01aG9hdTBlZGwzbXQ1ZXVrNHNmejAifQ.QHQA0N6XPWddCXtvoODHZg',
     showMarkers: false,
-    markerColor: '#3FB1CE',
-    theme: 'light',
+    theme: 'dark',
+    use3dTerrain: true,
     title: 'Glaciers of Glacier National Park',
     subtitle: 'Change in coverage from 1998 to 2015',
     byline: '',
-    footer: 'Story copy from Wikipedia, map data from USGS',
+    footer: 'Source: Story text from Wikipedia, August 2019. Data from <a href="https://www.usgs.gov/centers/norock/science/retreat-glaciers-glacier-national-park">USGS</a>',
     chapters: [
         {
             id: 'glacier-np',
-            alignment: 'center',
+            alignment: 'full',
             title: 'Glacier National Park Glaciers',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/2015-06-19_Glacier_National_Park_%28U.S.%29_8633.jpg/800px-2015-06-19_Glacier_National_Park_%28U.S.%29_8633.jpg',
-            description: 'Glacier National Park is dominated by mountains which were carved into their present shapes by the huge glaciers of the last ice age. These glaciers have largely disappeared over the last 12,000 years. Evidence of widespread glacial action is found throughout the park in the form of U-shaped valleys, cirques, arêtes, and large outflow lakes radiating like fingers from the base of the highest peaks.',
+            description: 'Glacier National Park is dominated by mountains which were carved into their present shapes by the huge glaciers of the last ice age...',
             location: {
                 center: [-113.91666, 48.66451],
                 zoom: 8,
@@ -158,23 +164,18 @@ var config = {
                 }
             ],
             onChapterExit: [
-              {
-                  layer: 'gnpglaciers-1998',
-                  opacity: 0.25
-              },
-              {
-                  layer: 'glaciernp-boundary',
-                  opacity: 0,
-                  duration: 5000
-              }
+                {
+                    layer: 'glaciernp-boundary',
+                    opacity: 0
+                }
             ]
         },
         {
             id: 'harrison1998',
-            alignment: 'center',
+            alignment: 'left',
             title: 'Harrison Glacier, 1998',
             image: '',
-            description: 'Harrison Glacier is located in the US state of Montana in Glacier National Park. Situated on a southeast facing ridge immediately south of Mount Jackson, Harrison Glacier is the largest glacier in Glacier National Park.',
+            description: 'Harrison Glacier is located in the US state of Montana in Glacier National Park. Situated on a southeast facing ridge immediately south of Mount Jackson, Harrison Glacier is the largest glacier in Glacier National Park...',
             location: {
                 center: [-113.72917, 48.58938],
                 zoom: 12.92,
@@ -182,7 +183,12 @@ var config = {
                 bearing: 36.00
             },
             onChapterEnter: [],
-            onChapterExit: []
+            onChapterExit: [
+                // {
+                //     layer: 'gnpglaciers-2015',
+                //     opacity: 0
+                // }
+            ]
         }
     ]
 }
