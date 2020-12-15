@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Scrollytelling Template</title>
+    <title>Mapbox Storytelling</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
     <style>
@@ -22,13 +22,14 @@
             height: 100vh;
             width:100vw;
             position: fixed;
-            z-index: -5;
         }
         #header {
             margin: auto;
-            width: 100vw;
+            width: 100%;
+            position: relative;
+            z-index: 5;
         }
-        #header h1, #header h2 {
+        #header h1, #header h2, #header p {
             margin: 0;
             padding: 2vh 2vw;
             text-align: center;
@@ -41,11 +42,15 @@
             text-align: center;
             line-height: 25px;
             font-size: 13px;
+            position: relative;
+            z-index: 5;
         }
         #features {
             padding-top: 10vh;
             padding-bottom: 10vh;
-            z-index: 100;
+        }
+        .hidden {
+            visibility: hidden;
         }
         .centered {
             width: 50vw;
@@ -117,7 +122,8 @@ var layerTypes = {
     'circle': ['circle-opacity', 'circle-stroke-opacity'],
     'symbol': ['icon-opacity', 'text-opacity'],
     'raster': ['raster-opacity'],
-    'fill-extrusion': ['fill-extrusion-opacity']
+    'fill-extrusion': ['fill-extrusion-opacity'],
+    'heatmap': ['heatmap-opacity']
 }
 
 var alignments = {
@@ -205,7 +211,10 @@ config.chapters.forEach((record, idx) => {
 
     chapter.classList.add(config.theme);
     container.appendChild(chapter);
-    container.classList.add(alignments[record.alignment]);
+    container.classList.add(alignments[record.alignment] || 'centered');
+    if (record.hidden) {
+        container.classList.add('hidden');
+    }
     features.appendChild(container);
 });
 
@@ -229,7 +238,7 @@ mapboxgl.accessToken = config.accessToken;
 
 const transformRequest = (url) => {
     const hasQuery = url.indexOf("?") !== -1;
-    const suffix = hasQuery ? "&pluginName=journalismScrollytelling" : "?pluginName=journalismScrollytelling";
+    const suffix = hasQuery ? "&pluginName=scrollytellingV2" : "?pluginName=scrollytellingV2";
     return {
       url: url + suffix
     }
@@ -242,7 +251,7 @@ var map = new mapboxgl.Map({
     zoom: config.chapters[0].location.zoom,
     bearing: config.chapters[0].location.bearing,
     pitch: config.chapters[0].location.pitch,
-    scrollZoom: false,
+    interactive: false,
     transformRequest: transformRequest
 });
 
@@ -255,6 +264,28 @@ if (config.showMarkers) {
 var scroller = scrollama();
 
 map.on("load", function() {
+    if (config.use3dTerrain) {
+        map.addSource('mapbox-dem', {
+            'type': 'raster-dem',
+            'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+            'tileSize': 512,
+            'maxzoom': 14
+        });
+        // add the DEM source as a terrain layer with exaggerated height
+        map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+
+        // add a sky layer that will show when the map is highly pitched
+        map.addLayer({
+            'id': 'sky',
+            'type': 'sky',
+            'paint': {
+                'sky-type': 'atmosphere',
+                'sky-atmosphere-sun': [0.0, 0.0],
+                'sky-atmosphere-sun-intensity': 15
+            }
+        });
+    };
+
     // setup the instance, pass callback functions
     scroller
     .setup({
@@ -265,12 +296,26 @@ map.on("load", function() {
     .onStepEnter(response => {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.add('active');
-        map[config.mapAnimation || 'flyTo'](chapter.location);
+        map[chapter.mapAnimation || 'flyTo'](chapter.location);
+
         if (config.showMarkers) {
             marker.setLngLat(chapter.location.center);
         }
         if (chapter.onChapterEnter.length > 0) {
             chapter.onChapterEnter.forEach(setLayerOpacity);
+        }
+        if (chapter.callback) {
+            window[chapter.callback]();
+        }
+        if (chapter.rotateAnimation) {
+            map.once('moveend', function() {
+                const rotateNumber = map.getBearing();
+                map.rotateTo(rotateNumber + 90, {
+                    duration: 24000, easing: function (t) {
+                        return t;
+                    }
+                });
+            });
         }
     })
     .onStepExit(response => {
