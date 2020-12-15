@@ -239,6 +239,7 @@ mapboxgl.accessToken = config.accessToken;
 const transformRequest = (url) => {
     const hasQuery = url.indexOf("?") !== -1;
     const suffix = hasQuery ? "&pluginName=scrollytellingV2" : "?pluginName=scrollytellingV2";
+
     return {
       url: url + suffix
     }
@@ -297,6 +298,7 @@ map.on("load", function() {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.add('active');
         map[chapter.mapAnimation || 'flyTo'](chapter.location);
+
         if (config.showMarkers) {
             marker.setLngLat(chapter.location.center);
         }
