@@ -1,14 +1,11 @@
 - [Interactive Storytelling](#interactive-storytelling)
   - [Prerequisites](#prerequisites)
   - [Getting Started](#getting-started)
-    - [Vanilla JS](#vanilla-js)
-      - [Steps](#steps)
-      - [Generate Map Position Using `Helper.html`](#generate-map-position-using-helperhtml)
-      - [Configuration File and Layer Settings](#configuration-file-and-layer-settings)
-      - [Configuration Options](#configuration-options)
-      - [Mapbox Studio Style Configuration](#mapbox-studio-style-configuration)
-    - [React](#react)
-      - [Installation and dependencies](#installation-and-dependencies)
+    - [Steps](#steps)
+    - [Generate Map Position Using `Helper.html`](#generate-map-position-using-helperhtml)
+    - [Configuration File and Layer Settings](#configuration-file-and-layer-settings)
+    - [Configuration Options](#configuration-options)
+    - [Mapbox Studio Style Configuration](#mapbox-studio-style-configuration)
     - [Organization](#organization)
   - [Deployment](#deployment)
   - [Built With](#built-with)
@@ -253,7 +250,7 @@ This will ensure that the map appears correctly when the story page loads. To ad
 
 ### Organization
 
-- `src`: Code for the vanilla version of the template
+- `src`: Code for the template
 - `example`: Example stories
     - `glacier`: Glaciers of Glacier National Park example
     - `bike-philly`: Philadelphia bicycle infrastructure example
