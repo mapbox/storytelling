@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/siggyf/cks8m9ph724l217qu8ketvno7',
+    style: 'mapbox://styles/siggyf/cksg8lxjj0llh17s3ocdfw6k3',
     accessToken: 'pk.eyJ1Ijoic2lnZ3lmIiwiYSI6Il8xOGdYdlEifQ.3-JZpqwUa3hydjAJFXIlMA',
     showMarkers: false,
     theme: 'dark',
@@ -9,11 +9,12 @@ var config = {
     footer: '',
     chapters: [
         {
-            id: 'phl',
+            id: 'plannen',
             alignment: 'right',
-            title: 'Philadelphia Bicycle Infrastructure',
+            classes: ['box'],
+            title: 'Plannen',
             image: '',
-            description: 'Getting around Philadelphia on two wheels is fast, fun, and cheap. As a typical East Coast large city, the urban core is dense, so there is a lot within reach of a 15 minute ride... even mountain bike trails. Paired with the public transit infrastructure, cycling can be more efficient and much less expensive than driving (and parking) a car.',
+            description: 'De Noordzee speelt een belangrijke rol in de energietransitie als potentiele locatie voor diverse plannen, zoals:',
             location: {
                 center: [4.0572, 52.12677],
                 zoom: 6.78,
@@ -22,58 +23,89 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'phl-city-limits',
-                    opacity: .45
+                    layer: 'turbines-en-ohvs',
+                    opacity: 0
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'phl-city-limits',
+                    layer: 'turbines-en-ohvs',
                     opacity: 0
                 }
             ]
         },
         {
-            id: 'bike-lanes',
+            id: 'turbines',
             alignment: 'right',
-            title: 'Bike Lanes',
+            classes: ['box'],
+            title: 'Wind op zee',
             image: '',
-            description: 'Philadelphia has XX miles of bike lanes, XX miles of which are protected. Drivers are getting more used to sharing the road, but ride defensively.',
+            description: 'Locatie voor windenergie en zonne-energie.',
             location: {
-                center: [-75.13901, 39.97085],
-                zoom: 11.62,
-                pitch: 55.50,
-                bearing: -7.20
+                center: [4.0572, 52.12677],
+                zoom: 7.78,
+                pitch: 0.00,
+                bearing: 0.00
             },
             onChapterEnter: [
                 {
-                    layer: 'phl-bike-network',
-                    opacity: 1
-                }
-            ],
-            onChapterExit: []
-        },
-        {
-            id: 'indego',
-            alignment: 'right',
-            title: 'Indego Bike Share',
-            image: '',
-            description: 'Indego has been operating in Philadelphia since 20XX. The system initally was focused on Center City, but has expanded service to neighboring areas to support equitable mobility options to the city\'s residents.',
-            location: {
-                center: [-75.16468, 39.94503],
-                zoom: 13.15,
-                pitch: 60.00,
-                bearing: -16.80
-            },
-            onChapterEnter: [
-                {
-                    layer: 'indego-stations',
+                    layer: 'turbines-en-ohvs',
                     opacity: 0.8
+                },
+                {
+                    layer: 'vergunde-windparken',
+                    opacity: 0.8
+                },
+                {
+                    layer: 'aangewezen-windenergie',
+                    opacity: 0.4
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'indego-stations',
+                    layer: 'turbines-en-ohvs',
+                    opacity: 0
+                },
+                {
+                    layer: 'vergunde-windparken',
+                    opacity: 0
+                },
+                {
+                    layer: 'aangewezen-windenergie',
+                    opacity: 0
+                }
+            ]
+        },
+        {
+            id: 'zand',
+            alignment: 'right',
+            title: 'Zand',
+            classes: ['box'],
+            image: '',
+            description: 'Locaties voor zandwinning',
+            location: {
+                center: [4.0572, 52.12677],
+                zoom: 6.78,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'zandwingebieden-vergund',
+                    opacity: 0.8
+                },
+                {
+                    layer: 'zandwingebieden-mer',
+                    opacity: 0.4
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'zandwingebieden-vergund',
+                    opacity: 0
+                },
+                {
+                    layer: 'zandwingebieden-mer',
                     opacity: 0
                 }
             ]
@@ -81,14 +113,15 @@ var config = {
         {
             id: 'belmont',
             alignment: 'right',
+            classes: ['box'],
             title: 'Belmont Plateau Trails',
             image: '',
             description: 'A short ride along the Schuylkill River Trail from the Art Museum, Belmont is a twisty, log-ridden rollercoaster of a trail network. It is easy to get turned around, the underbrush is at times impenetrable, and short steep sections come out of nowhere. In other words, it\'s really fun',
             location: {
-                center: [-75.20325, 39.99574],
-                zoom: 14.99,
-                pitch: 44.00,
-                bearing: -40.00
+                center: [4.0572, 52.12677],
+                zoom: 7.78,
+                pitch: 0.00,
+                bearing: 0.00
             },
             onChapterEnter: [
                 {
@@ -107,13 +140,14 @@ var config = {
             id: 'wiss',
             alignment: 'right',
             title: 'Wissahickon Park Trails',
+            classes: ['box'],
             image: '',
             description: 'This steep, rocky gorge can be surprisingly technical. Follow the orange and yellow trails to repeatedly climb and descend through the schist hillsides (careful of the cliffs), or stick to the gravel Forbidden Drive for a relaxing ride along the creek. You\'ll forget you\'re in a city.',
             location: {
-                center: [-75.21223, 40.05028],
-                zoom: 13.08,
-                pitch: 47.50,
-                bearing: 32.80
+                center: [4.0572, 52.12677],
+                zoom: 6.78,
+                pitch: 0.00,
+                bearing: 0.00
             },
             onChapterEnter: [
                 {
@@ -132,13 +166,14 @@ var config = {
             id: 'pennypack',
             alignment: 'right',
             title: 'Pennypack Park Trails',
+            classes: ['box'],
             image: '',
             description: 'Pennypack is a great introduction trail system. Not too steep and not too technical, the beautiful wooded park also provides a great escape from urban life. The south side trails are originally bridle trails, so be nice to equestrians and dismount when you approach them.',
             location: {
-                center: [-75.05685, 40.06839],
-                zoom: 13.73,
-                pitch: 43.50,
-                bearing: 96.80
+                center: [4.0572, 52.12677],
+                zoom: 7.78,
+                pitch: 0.00,
+                bearing: 0.00
             },
             onChapterEnter: [
                 {

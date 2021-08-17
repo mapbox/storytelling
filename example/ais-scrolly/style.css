@@ -1,0 +1,21 @@
+.box {
+  --b: 1px;   /* thickness of the border */
+  --c: cyan;   /* color of the border */
+  --w: 20px;  /* width of border */
+  --bg: rgba(0, 0, 0, 0.8);
+
+  border:var(--b) solid transparent; /* space for the border */
+  background:
+    linear-gradient(var(--c),var(--c)) top left,
+    linear-gradient(var(--c),var(--c)) top left,
+    linear-gradient(var(--c),var(--c)) bottom left,
+    linear-gradient(var(--c),var(--c)) bottom left,
+    linear-gradient(var(--c),var(--c)) top right,
+    linear-gradient(var(--c),var(--c)) top right,
+    linear-gradient(var(--c),var(--c)) bottom right,
+    linear-gradient(var(--c),var(--c)) bottom right;
+  background-size:var(--b) var(--w),var(--w) var(--b);
+  background-origin:border-box;
+  background-repeat:no-repeat;
+  background-color: var(--bg);
+}
