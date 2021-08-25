@@ -124,16 +124,8 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
-                {
-                    layer: 'belmont',
-                    opacity: 1
-                }
             ],
             onChapterExit: [
-                {
-                    layer: 'belmont',
-                    opacity: 0
-                }
             ]
         },
         {
@@ -150,16 +142,8 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
-                {
-                    layer: 'wissahickon',
-                    opacity: 1
-                }
             ],
             onChapterExit: [
-                {
-                    layer: 'wissahickon',
-                    opacity: 0
-                }
             ]
         },
         {
@@ -175,17 +159,20 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00
             },
-            onChapterEnter: [
-                {
-                    layer: 'pennypack',
-                    opacity: 1
+            marker: {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Baz',
+                    'iconSize': [40, 40]
+                },
+                geometry: {
+                    'type': 'Point',
+                    'coordinates': [4, 52]
                 }
+            },
+            onChapterEnter: [
             ],
             onChapterExit: [
-                {
-                    layer: 'pennypack',
-                    opacity: 0
-                }
             ]
         }
     ]

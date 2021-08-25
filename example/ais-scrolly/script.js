@@ -189,6 +189,22 @@ map.on("load", function() {
             if (config.showMarkers) {
                 marker.setLngLat(chapter.location.center);
             }
+            if (chapter.marker) {
+                var marker = new mapboxgl.Marker()
+                marker.setLngLat(chapter.location.center);
+                marker.addTo(map);
+                chapter.illustrationMarker = marker
+
+                var illustration = new mapboxgl.Marker()
+                illustration.setLngLat(chapter.marker.geometry.coordinates);
+                illustration.addTo(map);
+                chapter.illustrationImage = illustration
+
+                chapter.leaderLine = new LeaderLine(
+                    illustration.getElement(),
+                    marker.getElement()
+                )
+            }
             if (chapter.onChapterEnter.length > 0) {
                 chapter.onChapterEnter.forEach(setLayerOpacity);
             }
@@ -211,6 +227,15 @@ map.on("load", function() {
             response.element.classList.remove('active');
             if (chapter.onChapterExit.length > 0) {
                 chapter.onChapterExit.forEach(setLayerOpacity);
+            }
+            if (chapter.illustrationMarker) {
+                chapter.illustrationMarker.remove()
+            }
+            if (chapter.illustrationImage) {
+                chapter.illustrationImage.remove()
+            }
+            if (chapter.leaderLine) {
+                chapter.leaderLine.remove()
             }
         });
 });
