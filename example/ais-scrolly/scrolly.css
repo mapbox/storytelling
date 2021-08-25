@@ -13,30 +13,6 @@ a, a:hover, a:visited {
   position: fixed;
 }
 
-#header {
-  margin: auto;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  z-index: 5;
-  background-color: #193747;
-  text-align: center;
-}
-
-
-#header-circle  {
-  max-width: 80vw;
-  max-height: 80vh;
-}
-.overlay {
-  background: radial-gradient(transparent 300px, rgba(0,0,0,1) 500px);
-}
-
-#header h1, #header h2, #header p {
-  margin: 0;
-  padding: 2vh 2vw;
-  text-align: center;
-}
 
 
 #footer {

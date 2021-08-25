@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+body {
+  font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+}
+
 .box {
   --b: 1px;   /* thickness of the border */
   --c: cyan;   /* color of the border */
@@ -18,4 +27,57 @@
   background-origin:border-box;
   background-repeat:no-repeat;
   background-color: var(--bg);
+}
+
+.port {
+  stroke: cyan;
+  stroke-width: 0.5px;
+  fill: none;
+}
+#diorama > rect {
+  width: 100%;
+  height: 100%;
+}
+#diorama {
+  fill: #193747;
+  height: 90vh;
+  width: 100vw;
+}
+#header.dark {
+  background-color: initial;
+}
+#header h1 {
+  background-color: #193747;
+}
+#header h1, #header h2, #header p {
+  margin: 0;
+  padding: 2vh 2vw;
+  text-align: center;
+}
+
+
+#header {
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 5;
+  /* background-color: #193747; */
+  text-align: center;
+}
+
+
+#header-circle  {
+  max-width: 80vw;
+  max-height: 80vh;
+}
+.overlay {
+  background: radial-gradient(transparent 300px, white 300px, white 305px, rgba(0,0,0,1) 305px);
+  background-color: initial !important;
+}
+
+
+.step.active{
+  position: sticky;
+  top: 10px;
 }

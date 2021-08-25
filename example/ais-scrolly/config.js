@@ -28,10 +28,10 @@ var config = {
                 }
             ],
             onChapterExit: [
-                {
-                    layer: 'turbines-en-ohvs',
-                    opacity: 0
-                }
+                // {
+                //     layer: 'turbines-en-ohvs',
+                //     opacity: 0
+                // }
             ]
         },
         {

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset='utf-8' />
     <title>Mapbox Storytelling</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
@@ -10,18 +10,30 @@
     <script src="https://unpkg.com/scrollama"></script>
     <link href="scrolly.css" rel="stylesheet"/>
     <link href="style.css" rel="stylesheet"/>
-</head>
-<body>
+  </head>
+  <body>
 
-<div id="map"></div>
-<div id="story"></div>
-<div id="header">
-  <h1>Drukte op de Noordzee</h1>
-  <img alt="" src="images/circle.png" id="header-circle"/>
-</div>
+    <div id="map"></div>
+    <div id="story"></div>
+    <div id="header" class="circle-mask">
+      <h1>Drukte op de Noordzee</h1>
+      <svg viewBox="0 0 100 40" version="1.1" id="diorama" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <mask id="hole">
+            <rect width="100" height="100" fill="white" />
+            <!-- the hole defined a polygon -->
+            <circle cx="50%" cy="50%" r="15" fill="black" />
+          </mask>
+        </defs>
+        <circle cx="50%" cy="50%" r="15" class="port"/>
+        <rect mask="url(#hole)" />
+      </svg>
 
-<script src="./config.js"></script>
-<script src="./script.js"></script>
+      <!-- <img alt="" src="images/circle.png" id="header-circle"/> -->
+    </div>
 
-</body>
+    <script src="./config.js"></script>
+    <script src="./script.js"></script>
+
+  </body>
 </html>

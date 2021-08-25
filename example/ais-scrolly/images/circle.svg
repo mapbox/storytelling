@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" version="1.1" id="innerbox" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <mask id="hole">
+      <rect width="100%" height="100%" fill="white" />
+      <!-- the hole defined a polygon -->
+      <circle cx="100" cy="100" r="50" fill="black" />
+    </mask>
+  </defs>
+  <rect fill="#193747" width="100%" height="100%" mask="url(#hole)" />
+</svg>
