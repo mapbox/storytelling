@@ -17,7 +17,7 @@ var config = {
             description: 'De Noordzee speelt een belangrijke rol in de energietransitie als potentiele locatie voor diverse plannen, zoals:',
             location: {
                 center: [4.0572, 52.12677],
-                zoom: 6.78,
+                zoom: 10.78,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -111,17 +111,17 @@ var config = {
             ]
         },
         {
-            id: 'belmont',
+            id: 'egmond',
             alignment: 'right',
             classes: ['box'],
-            title: 'Belmont Plateau Trails',
+            title: 'Suppleties bij Egmond',
             image: '',
-            description: 'A short ride along the Schuylkill River Trail from the Art Museum, Belmont is a twisty, log-ridden rollercoaster of a trail network. It is easy to get turned around, the underbrush is at times impenetrable, and short steep sections come out of nowhere. In other words, it\'s really fun',
+            description: 'Bij Egmond wordt zand de kust gevoed met zand.',
             location: {
-                center: [4.0572, 52.12677],
-                zoom: 7.78,
+                center: [4.62411, 52.62249],
+                zoom: 10,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: -30.00
             },
             onChapterEnter: [
             ],

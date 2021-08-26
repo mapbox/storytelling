@@ -162,6 +162,7 @@ map.on("load", function() {
         // add the DEM source as a terrain layer with exaggerated height
         map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
 
+
         // add a sky layer that will show when the map is highly pitched
         map.addLayer({
             'id': 'sky',
@@ -173,6 +174,23 @@ map.on("load", function() {
             }
         });
     };
+
+    map.addSource('egmond', {
+        "type": "image",
+        "url": "images/maps/aismap_egmond_07_0030.png",
+        "coordinates": [
+            [4.2903, 52.7675],
+            [4.8089, 52.7675],
+            [4.8089, 52.5163],
+            [4.2903, 52.5163]
+        ]
+    })
+    map.addLayer({
+        'id': 'egmond',
+        'type': 'raster',
+        'source': 'egmond'
+    })
+
 
     // setup the instance, pass callback functions
     scroller
