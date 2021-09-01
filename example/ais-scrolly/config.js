@@ -14,7 +14,7 @@ var config = {
             classes: ['box'],
             title: 'Plannen',
             image: '',
-            description: 'De Noordzee speelt een belangrijke rol in de energietransitie als potentiele locatie voor diverse plannen, zoals:',
+            description: 'De <a href="https://nu.nl">Noordzee</a> speelt een belangrijke rol in de energietransitie als potentiele locatie voor diverse plannen, zoals:',
             location: {
                 center: [4.0572, 52.12677],
                 zoom: 10.78,
