@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/siggyf/cksg8lxjj0llh17s3ocdfw6k3',
+    style: 'mapbox://styles/siggyf/ckt2uvkxa0tof18p70ufxm6cm',
     accessToken: 'pk.eyJ1Ijoic2lnZ3lmIiwiYSI6Il8xOGdYdlEifQ.3-JZpqwUa3hydjAJFXIlMA',
     showMarkers: false,
     theme: 'dark',
@@ -21,19 +21,11 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00
             },
-            // this is an example of how to add a custom marker
-            marker: {
-                type: "Feature",
-                geometry: {
-                    type: "Point",
-                    coordinates: [4.38150, 52.42770]
-                },
-                properties: {
-                    iconSize: [200, 166],
-                    image: "images/icons/PNG/Windmolenpark@2x.png"
-                }
-            },
             onChapterEnter: [
+                {
+                    layer: 'wadden',
+                    opacity: 0
+                },
                 {
                     layer: 'heatmap',
                     opacity: 0
@@ -43,15 +35,40 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'heatmap',
+                    layer: 'studiegebieden',
+                    opacity: 0
+                },
+                {
+                    layer: 'vergunde-windparken',
+                    opacity: 0
+                },
+                {
+                    layer: 'defensie-belangengebieden',
+                    opacity: 0
+                },
+                {
+                    layer: 'natura2000-noordzee',
+                    opacity: 0
+                },
+                {
+                    layer: 'kabels-leidingen',
+                    opacity: 0
+                },
+                {
+                    layer: 'scheepvaart',
+                    opacity: 0
+                },
+                {
+                    layer: 'zandwingebieden-mer',
+                    opacity: 0
+                },
+                {
+                    layer: 'zandwingebieden-vergund',
                     opacity: 0
                 }
+
             ],
             onChapterExit: [
-                // {
-                //     layer: 'turbines-en-ohvs',
-                //     opacity: 0
-                // }
             ]
         },
         {
@@ -67,17 +84,30 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00
             },
+            // this is an example of how to add a custom marker
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [4.38150, 52.42770]
+                },
+                properties: {
+                    iconSize: [200, 166],
+                    image: "images/icons/PNG/Windmolenpark@2x.png"
+                }
+            },
             onChapterEnter: [
                 {
-                    layer: 'turbines-en-ohvs',
-                    opacity: 0.8
-                },
-                {
                     layer: 'vergunde-windparken',
+                    visible: true,
                     opacity: 0.8
                 },
                 {
-                    layer: 'aangewezen-windenergie',
+                    layer: 'studiegebieden',
+                    opacity: 0.4
+                },
+                {
+                    layer: 'turbines-en-ohvs',
                     opacity: 0.4
                 }
             ],
@@ -91,7 +121,7 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'aangewezen-windenergie',
+                    layer: 'studiegebieden',
                     opacity: 0
                 }
             ]
@@ -108,6 +138,17 @@ var config = {
                 zoom: 7,
                 pitch: 0.00,
                 bearing: 0.00
+            },
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [4.38150, 52.42770]
+                },
+                properties: {
+                    iconSize: [200, 166],
+                    image: "images/icons/PNG/Baggerboot@2x.png"
+                }
             },
             onChapterEnter: [
                 {
@@ -145,21 +186,13 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'zandwingebieden-vergund',
+                    layer: 'kabels-leidingen',
                     opacity: 0.8
-                },
-                {
-                    layer: 'zandwingebieden-mer',
-                    opacity: 0.4
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'zandwingebieden-vergund',
-                    opacity: 0
-                },
-                {
-                    layer: 'zandwingebieden-mer',
+                    layer: 'kabels-leidingen',
                     opacity: 0
                 }
             ]
@@ -179,21 +212,13 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'zandwingebieden-vergund',
+                    layer: 'scheepvaart',
                     opacity: 0.8
-                },
-                {
-                    layer: 'zandwingebieden-mer',
-                    opacity: 0.4
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'zandwingebieden-vergund',
-                    opacity: 0
-                },
-                {
-                    layer: 'zandwingebieden-mer',
+                    layer: 'scheepvaart',
                     opacity: 0
                 }
             ]
@@ -212,8 +237,84 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
+                {
+                    layer: 'turbines-en-ohvs',
+                    opacity: 1
+                },
+                {
+                    layer: 'studiegebieden',
+                    opacity: 1
+                },
+                {
+                    layer: 'vergunde-windparken',
+                    opacity: 1
+                },
+                {
+                    layer: 'defensie-belangengebieden',
+                    opacity: 1
+                },
+                {
+                    layer: 'natura2000-noordzee',
+                    opacity: 1
+                },
+                {
+                    layer: 'kabels-leidingen',
+                    opacity: 1
+                },
+                {
+                    layer: 'scheepvaart',
+                    opacity: 1
+                },
+                {
+                    layer: 'zandwingebieden-mer',
+                    opacity: 1
+                },
+                {
+                    layer: 'zandwingebieden-vergund',
+                    opacity: 1
+                },
+                {
+                    layer: 'heatmap',
+                    opacity: 0
+                }
             ],
             onChapterExit: [
+                {
+                    layer: 'turbines-en-ohvs',
+                    opacity: 0
+                },
+                {
+                    layer: 'studiegebieden',
+                    opacity: 0
+                },
+                {
+                    layer: 'vergunde-windparken',
+                    opacity: 0
+                },
+                {
+                    layer: 'defensie-belangengebieden',
+                    opacity: 0
+                },
+                {
+                    layer: 'natura2000-noordzee',
+                    opacity: 0
+                },
+                {
+                    layer: 'kabels-leidingen',
+                    opacity: 0
+                },
+                {
+                    layer: 'scheepvaart',
+                    opacity: 0
+                },
+                {
+                    layer: 'zandwingebieden-mer',
+                    opacity: 0
+                },
+                {
+                    layer: 'zandwingebieden-vergund',
+                    opacity: 0
+                }
             ]
         },
         {
@@ -230,6 +331,10 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
+                {
+                    layer: 'heatmap',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
             ]
@@ -437,8 +542,17 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
+                {
+                    layer: 'wadden',
+                    opacity: 0.2
+                }
+
             ],
             onChapterExit: [
+                {
+                    layer: 'wadden',
+                    opacity: 0.0
+                }
             ]
         },
         {

@@ -268,3 +268,8 @@ map.on("load", function() {
 
 // setup resize event
 window.addEventListener('resize', scroller.resize);
+
+function toTop() {
+    document.scrollingElement.scrollTop = 0
+}
+document.querySelector('#hamburger a').onclick = toTop

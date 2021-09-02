@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;400;700&display=swap');
 
 /* include diffrent font weights */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;400;700&display=swap');
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
   --center-size: 70vmin;
 }
 
+
+.lighter {
+  font-weight: 200;
+}
 /* box layout */
 
 .box {
@@ -61,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: initial;
 }
 #header h1, #footer h1 {
-  font-weight: lighter;
+  font-weight: 200;
   background-color: #193747;
 }
 #header h1, #header h2, #header p {
@@ -101,4 +105,21 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   position: relative;
   z-index: 5;
+}
+
+
+#hamburger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 1em;
+  width: 2em;
+  height: 2em;
+  font-size: 2em;
+  z-index: 10;
+  background-color: initial;
+}
+#hamburger a {
+  text-decoration: none;
+  color: white;
 }

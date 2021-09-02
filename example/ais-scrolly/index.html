@@ -18,14 +18,16 @@
     <link href="style.css" rel="stylesheet"/>
   </head>
   <body>
-
+    <div id="hamburger" class="dark"><a alt="back to top" title="back to top" href="#">&#8801;</a></div>
     <div id="map"></div>
     <div id="story"></div>
     <!-- this looks a bit complex. svg cannot use vmin height, so we
-    use some divs around it with flex layout to fix the layout -->
+         use some divs around it with flex layout to fix the layout -->
+
     <div id="header" class="diorama-grid">
       <div class="top">
         <h1>Drukte op de <b>Noordzee</b></h1>
+        <p class="lighter">Een gedetailleerde blik op het scheepvaartverkeer in Nederland</p>
       </div>
       <div class="middle">
         <div class="left">
@@ -47,6 +49,9 @@
         <div class="right"></div>
       </div>
       <div class="bottom">
+        <p class="lighter">Scroll voor het verhaal</p>
+        <!-- down arrow -->
+        <div>&#8595;</div>
       </div>
 
       <div id="footer" class="dark">

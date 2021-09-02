@@ -24,12 +24,19 @@
   /* show content in center */
   display: flex;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 .diorama-grid .bottom {
   /* grow */
   flex: 1 1 100%;
+
+  /* show content in center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
 }
 
 .diorama-grid > * {
