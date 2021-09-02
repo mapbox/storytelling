@@ -357,13 +357,13 @@ var config = {
             onChapterEnter: [
                 {
 
-                    layer: 'egmond',
+                    layer: 'baggeren',
                     opacity: 0.8
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'egmond',
+                    layer: 'baggeren',
                     opacity: 0.0
                 }
             ]

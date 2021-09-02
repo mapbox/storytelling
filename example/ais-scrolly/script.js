@@ -180,25 +180,7 @@ map.on("load", function() {
         });
     };
 
-
-    // map.addSource('baggeren', {
-    //     "type": "video",
-    //     "urls": ["movies/baggeren.webm"],
-    //     "coordinates": [
-    //         [4.2903, 52.7675],
-    //         [4.8089, 52.7675],
-    //         [4.8089, 52.5163],
-    //         [4.2903, 52.5163]
-    //     ]
-    // })
-    // map.addLayer({
-    //     'id': 'baggeren',
-    //     'type': 'raster',
-    //     'source': 'baggeren'
-    // })
-
-
-
+    // add all image and video sources here....
     map.addSource('baggeren', {
         "type": "video",
         "urls": ["movies/movie_07_v2.webm"],

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap'); */
 
+/* include diffrent font weights */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;700&display=swap');
 body {
   font-family: 'Roboto', sans-serif;
@@ -9,11 +9,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
 }
 
+
+:root {
+  --main-color: #193747;
+  --center-size: 70vmin;
+}
+
+/* box layout */
+
 .box {
   --b: 1px;   /* thickness of the border */
   --c: cyan;   /* color of the border */
   --w: 20px;  /* width of border */
-  --bg: rgba(0, 0, 0, 0.8);
+  --bg: var(--main-color);
 
   border:var(--b) solid transparent; /* space for the border */
   background:
