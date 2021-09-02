@@ -180,10 +180,10 @@ map.on("load", function() {
         });
     };
 
-    // add all image and video sources here....
+    // add all image and video sources here.... Begin
     map.addSource('baggeren', {
-        "type": "video",
-        "urls": ["movies/movie_07_v2.webm"],
+        "type": "video", // "image" for rendered high resolution
+        "urls": ["movies/movie_07_v2.webm"], // url: "images/image.png"
         "coordinates": [
             [4.2903, 52.7675],
             [4.8089, 52.7675],
@@ -191,11 +191,18 @@ map.on("load", function() {
             [4.2903, 52.5163]
         ]
     })
+    // This works the same for images
     map.addLayer({
         'id': 'baggeren',
         'type': 'raster',
-        'source': 'baggeren'
+        'source': 'baggeren',
+        'paint': {
+            'raster-opacity': 0
+        }
     })
+
+
+    // Add images before this line End
 
 
     // setup the instance, pass callback functions

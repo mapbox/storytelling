@@ -21,6 +21,7 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00
             },
+            // this is an example of how to add a custom marker
             marker: {
                 type: "Feature",
                 geometry: {
