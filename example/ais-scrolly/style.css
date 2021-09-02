@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
   /* reset background color */
   background-color: initial;
 }
-#header h1 {
+#header h1, #footer h1 {
   font-weight: lighter;
   background-color: #193747;
 }
@@ -76,4 +76,21 @@ h1, h2, h3, h4, h5, h6 {
   fill: #193747;
   height: 100%;
   width: 100%;
+}
+
+
+
+#footer {
+  width: 100%;
+  height: 100vh;
+  background-color: #193747;
+  /* min-height: 5vh; */
+  /* padding-top: 2vh; */
+  /* padding-bottom: 2vh; */
+  /* text-align: center; */
+  /* line-height: 25px; */
+  /* font-size: 13px; */
+  text-align: center;
+  position: relative;
+  z-index: 5;
 }

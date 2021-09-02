@@ -121,6 +121,11 @@ if (footer.innerText.length > 0) {
     story.appendChild(footer);
 }
 
+// if footer is in the document, move it to the end
+if (document.querySelector('#footer')) {
+    story.appendChild(document.querySelector('#footer'));
+}
+
 mapboxgl.accessToken = config.accessToken;
 
 const transformRequest = (url) => {
@@ -175,21 +180,24 @@ map.on("load", function() {
         });
     };
 
-    map.addSource('egmond', {
-        "type": "image",
-        "url": "images/maps/aismap_egmond_07_0030.png",
-        "coordinates": [
-            [4.2903, 52.7675],
-            [4.8089, 52.7675],
-            [4.8089, 52.5163],
-            [4.2903, 52.5163]
-        ]
-    })
-    map.addLayer({
-        'id': 'egmond',
-        'type': 'raster',
-        'source': 'egmond'
-    })
+
+    // map.addSource('baggeren', {
+    //     "type": "video",
+    //     "urls": ["movies/baggeren.webm"],
+    //     "coordinates": [
+    //         [4.2903, 52.7675],
+    //         [4.8089, 52.7675],
+    //         [4.8089, 52.5163],
+    //         [4.2903, 52.5163]
+    //     ]
+    // })
+    // map.addLayer({
+    //     'id': 'baggeren',
+    //     'type': 'raster',
+    //     'source': 'baggeren'
+    // })
+
+
 
     map.addSource('baggeren', {
         "type": "video",
@@ -224,20 +232,21 @@ map.on("load", function() {
                 marker.setLngLat(chapter.location.center);
             }
             if (chapter.marker) {
-                var marker = new mapboxgl.Marker()
-                marker.setLngLat(chapter.location.center);
+
+                const el = document.createElement('div');
+                const width = chapter.marker.properties.iconSize[0];
+                const height = chapter.marker.properties.iconSize[1];
+                el.className = 'marker';
+                el.style.backgroundImage = `url('${chapter.marker.properties.image}')`;
+                el.style.width = `${width}px`;
+                el.style.height = `${height}px`;
+                el.style.backgroundSize = '100%';
+
+                let marker = new mapboxgl.Marker(el)
+                marker.setLngLat(chapter.marker.geometry.coordinates);
                 marker.addTo(map);
-                chapter.illustrationMarker = marker
+                chapter.marker.properties.mapbox = marker
 
-                var illustration = new mapboxgl.Marker()
-                illustration.setLngLat(chapter.marker.geometry.coordinates);
-                illustration.addTo(map);
-                chapter.illustrationImage = illustration
-
-                chapter.leaderLine = new LeaderLine(
-                    illustration.getElement(),
-                    marker.getElement()
-                )
             }
             if (chapter.onChapterEnter.length > 0) {
                 chapter.onChapterEnter.forEach(setLayerOpacity);
@@ -262,14 +271,8 @@ map.on("load", function() {
             if (chapter.onChapterExit.length > 0) {
                 chapter.onChapterExit.forEach(setLayerOpacity);
             }
-            if (chapter.illustrationMarker) {
-                chapter.illustrationMarker.remove()
-            }
-            if (chapter.illustrationImage) {
-                chapter.illustrationImage.remove()
-            }
-            if (chapter.leaderLine) {
-                chapter.leaderLine.remove()
+            if (chapter.marker && chapter.marker.properties.mapbox) {
+                chapter.marker.properties.mapbox.remove()
             }
         });
 });

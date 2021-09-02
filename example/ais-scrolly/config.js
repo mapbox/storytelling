@@ -21,7 +21,22 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00
             },
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [4.38150, 52.42770]
+                },
+                properties: {
+                    iconSize: [200, 166],
+                    image: "images/icons/PNG/Windmolenpark@2x.png"
+                }
+            },
             onChapterEnter: [
+                {
+                    layer: 'heatmap',
+                    opacity: 0
+                },
                 {
                     layer: 'turbines-en-ohvs',
                     opacity: 0
@@ -341,6 +356,7 @@ var config = {
             },
             onChapterEnter: [
                 {
+
                     layer: 'egmond',
                     opacity: 0.8
                 }
