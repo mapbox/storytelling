@@ -294,8 +294,8 @@ var config = {
             image: '',
             description: '… en kun je door in te zoomen grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
             location: {
-                center: [4.38150, 52.42770],
-                zoom: 7.6,
+                center: [4.37805, 52.55132],
+                zoom: 10,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -312,8 +312,8 @@ var config = {
             image: '',
             description: 'Op de ankerplaatsen liggen schepen te wachten tot ze de haven in kunnen.',
             location: {
-                center: [4.38150, 52.42770],
-                zoom: 7.6,
+                center: [3.82969, 51.96148],
+                zoom: 9.3,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -330,10 +330,10 @@ var config = {
             image: '',
             description: 'Een baggerschip is bezig zand te winnen op zee en dit vervolgens bij de kust op te spuiten.',
             location: {
-                center: [4.62411, 52.62249],
-                zoom: 10,
-                pitch: 0.00,
-                bearing: -30.00
+                center: [4.56662, 52.68736],
+                zoom: 12.02,
+                pitch: 70.00,
+                bearing: -77.60
             },
             onChapterEnter: [
             ],
@@ -348,8 +348,8 @@ var config = {
             image: '',
             description: 'Bij de bouw en het onderhoud van windmolenparken op zee varen werkschepen heen en weer naar de kust.',
             location: {
-                center: [4.38150, 52.42770],
-                zoom: 7.0,
+                center: [4.40978, 52.54343],
+                zoom: 10.4,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -366,8 +366,8 @@ var config = {
             image: '',
             description: 'Zelfs het scheepvaartverkeer op het IJ en de grachten is te herkennen, zoals de veerboten die het IJ oversteken.',
             location: {
-                center: [4.38150, 52.42770],
-                zoom: 7.0,
+                center: [4.90201, 52.37914],
+                zoom: 11.46,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -384,10 +384,10 @@ var config = {
             image: '',
             description: 'De ferry tussen IJmuiden en Newcastle vaart steevast dezelfde route.',
             location: {
-                center: [4.38150, 52.42770],
-                zoom: 7.0,
-                pitch: 0.00,
-                bearing: 0.00
+                center: [4.49572, 52.48981],
+                zoom: 10.87,
+                pitch: 60.00,
+                bearing: -50.40
             },
             onChapterEnter: [
             ],
@@ -400,10 +400,10 @@ var config = {
             classes: ['box'],
             title: 'Geulen',
             image: '',
-            description: 'Op de Waddenzee is te zien hoe de schepen de geulen volgen. Ook hier zijn baggerwerkzaamheden te zien.',
+            description: 'Op de Waddenzee is te zien hoe de schepen de geulen volgen. Ook hier zijn baggerwerkzaamheden te zien tussen Terschelling en Ameland.',
             location: {
-                center: [4.38150, 52.42770],
-                zoom: 7.0,
+                center: [5.48715, 53.24528],
+                zoom: 9.13,
                 pitch: 0.00,
                 bearing: 0.00
             },
