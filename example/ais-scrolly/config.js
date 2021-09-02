@@ -25,6 +25,10 @@ var config = {
                 {
                     layer: 'turbines-en-ohvs',
                     opacity: 0
+                },
+                {
+                    layer: 'heatmap',
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -336,8 +340,16 @@ var config = {
                 bearing: -77.60
             },
             onChapterEnter: [
+                {
+                    layer: 'egmond',
+                    opacity: 0.8
+                }
             ],
             onChapterExit: [
+                {
+                    layer: 'egmond',
+                    opacity: 0.0
+                }
             ]
         },
         {
