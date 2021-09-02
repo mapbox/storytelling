@@ -563,14 +563,26 @@ var config = {
             image: '',
             description: 'Bij de sluizen is te zien dat schepen stilliggen in de kolken en bij de wachtplaatsen. Bovenin zijn de (kleinere) jachtensluizen en onderin zijn de sluizen voor de beroepsvaart te herkennen.',
             location: {
-                center: [4.16058, 51.65794],
-                zoom: 12.16,
+                center: [4.17058, 51.65794],
+                zoom: 14,
                 pitch: 0.00,
                 bearing: 0.00
             },
             onChapterEnter: [
+                {
+                    layer: 'sluis-intensiteit',
+                    opacity: 0.8
+                },
+                {
+                    layer: 'heatmap',
+                    opacity: 0.0
+                }
             ],
             onChapterExit: [
+                {
+                    layer: 'sluis-intensiteit',
+                    opacity: 0.0
+                }
             ]
         },
         {

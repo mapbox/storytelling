@@ -201,6 +201,25 @@ map.on("load", function() {
         }
     })
 
+    map.addSource('sluis-intensiteit', {
+        "type": "image",
+        "url": "images/maps/agg_krammer_intensity_epsg3857.png",
+        "coordinates": [
+            [4.107257385253906, 51.68500886266592],
+            [4.248619079589844, 51.68500886266592],
+            [4.248619079589844, 51.63069836469037],
+            [4.107257385253906, 51.63069836469037]
+        ]
+    })
+    // This works the same for images
+    map.addLayer({
+        'id': 'sluis-intensiteit',
+        'type': 'raster',
+        'source': 'sluis-intensiteit',
+        'paint': {
+            'raster-opacity': 0
+        }
+    })
 
     // Add images before this line End
 
