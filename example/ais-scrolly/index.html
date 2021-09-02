@@ -10,26 +10,45 @@
     <script src="https://unpkg.com/leader-line@1.0.5/leader-line.min.js"></script>
 
     <script src="https://unpkg.com/scrollama"></script>
+    <!-- mapbox styles -->
     <link href="scrolly.css" rel="stylesheet"/>
+    <!-- first page layout -->
+    <link href="diorama.css" rel="stylesheet"/>
+    <!-- custom layout -->
     <link href="style.css" rel="stylesheet"/>
   </head>
   <body>
 
     <div id="map"></div>
     <div id="story"></div>
-    <div id="header" class="circle-mask">
-      <h1>Drukte op de Noordzee</h1>
-      <svg viewBox="0 0 100 40" version="1.1" id="diorama" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <defs>
-          <mask id="hole">
-            <rect width="100" height="100" fill="white" />
-            <!-- the hole defined a polygon -->
-            <circle cx="50%" cy="50%" r="15" fill="black" />
-          </mask>
-        </defs>
-        <circle cx="50%" cy="50%" r="15" class="port"/>
-        <rect mask="url(#hole)" />
-      </svg>
+    <!-- this looks a bit complex. svg cannot use vmin height, so we
+    use some divs around it with flex layout to fix the layout -->
+    <div id="header" class="diorama-grid">
+      <div class="top">
+        <h1>Drukte op de <b>Noordzee</b></h1>
+      </div>
+      <div class="middle">
+        <div class="left">
+        </div>
+        <div class="center">
+          <svg viewBox="0 0 100 100" version="1.1" id="diorama" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <mask id="hole">
+                <rect width="100" height="100" fill="white" />
+                <!-- the hole defined a polygon -->
+                <circle cx="50" cy="50" r="50" fill="black" />
+              </mask>
+            </defs>
+            <circle cx="50" cy="50" r="50" class="port"/>
+            <rect mask="url(#hole)" />
+          </svg>
+
+        </div>
+        <div class="right"></div>
+      </div>
+      <div class="bottom">
+      </div>
+
 
       <!-- <img alt="" src="images/circle.png" id="header-circle"/> -->
     </div>
