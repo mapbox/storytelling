@@ -399,7 +399,7 @@ var config = {
             classes: ['box'],
             title: 'Betere inzichten',
             image: '',
-            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt…',
+            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
             location: {
                 center: [4.38150, 52.42770],
                 zoom: 7.6,
@@ -412,17 +412,28 @@ var config = {
             ]
         },
         {
-            id: '13-betere-inzichten-2',
+            id: '14a-anker-marker',
             alignment: 'right',
             classes: ['box'],
             title: 'Betere inzichten',
             image: '',
-            description: '… en kun je door in te zoomen grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
             location: {
-                center: [4.37805, 52.55132],
-                zoom: 10,
+                center: [3.85150, 52.08770],
+                zoom: 8.4,
                 pitch: 0.00,
                 bearing: 0.00
+            },
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [4.14969, 51.74148]
+                },
+                properties: {
+                    iconSize: [400, 332],
+                    image: "images/icons/PNG/Ankeren@2x.png"
+                }
             },
             onChapterEnter: [
             ],
@@ -448,32 +459,98 @@ var config = {
             ]
         },
         {
+            id: '15a-bagger-marker',
+            alignment: 'right',
+            classes: ['box'],
+            title: 'Betere inzichten',
+            image: '',
+            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            location: {
+                center: [4.10150, 52.38770],
+                zoom: 8.4,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [4.84662, 52.47736]
+                },
+                properties: {
+                    iconSize: [400, 332],
+                    image: "images/icons/PNG/Baggerboot@2x.png"
+                }
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
+            ]
+        },
+        {
             id: '15-suppleties',
             alignment: 'right',
             classes: ['box'],
             title: 'Suppleties',
             image: '',
-            description: 'Een baggerschip is bezig zand te winnen op zee en dit vervolgens bij de kust op te spuiten.',
+            description: 'Deze animatie toont hoe een baggerschip bezig is om zand te winnen op zee en dit vervolgens bij de kust op te spuiten.',
             location: {
-                center: [4.56662, 52.68736],
+                center: [4.56662, 52.65736],
                 zoom: 12.02,
                 pitch: 70.00,
                 bearing: -77.60
             },
             onChapterEnter: [
                 {
-
+                    layer: 'heatmap',
+                    opacity: 0
+                },
+                {
                     layer: 'baggeren',
                     opacity: 0.8
                 }
             ],
             onChapterExit: [
                 {
+                    layer: 'heatmap',
+                    opacity: 1
+                },
+                {
                     layer: 'baggeren',
                     opacity: 0.0
                 }
             ]
         },
+        {
+            id: '16a-windmolen-marker',
+            alignment: 'right',
+            classes: ['box'],
+            title: 'Betere inzichten',
+            image: '',
+            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            location: {
+                center: [4.10150, 52.38770],
+                zoom: 8.4,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [4.82978, 52.42343]
+                },
+                properties: {
+                    iconSize: [400, 332],
+                    image: "images/icons/PNG/Windmolenpark@2x.png"
+                }
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
+            ]
+        },
+
         {
             id: '16-windmolenparken',
             alignment: 'right',
@@ -482,10 +559,39 @@ var config = {
             image: '',
             description: 'Bij de bouw en het onderhoud van windmolenparken op zee varen werkschepen heen en weer naar de kust.',
             location: {
-                center: [4.40978, 52.54343],
-                zoom: 10.4,
+                center: [4.34978, 52.58343],
+                zoom: 11,
                 pitch: 0.00,
                 bearing: 0.00
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
+            ]
+        },
+        {
+            id: '17a-ams-marker',
+            alignment: 'right',
+            classes: ['box'],
+            title: 'Betere inzichten',
+            image: '',
+            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            location: {
+                center: [5.00150, 52.18770],
+                zoom: 8.4,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [5.25201, 52.18914]
+                },
+                properties: {
+                    iconSize: [400, 332],
+                    image: "images/icons/PNG/Amsterdam@2x.png"
+                }
             },
             onChapterEnter: [
             ],
@@ -500,10 +606,55 @@ var config = {
             image: '',
             description: 'Zelfs het scheepvaartverkeer op het IJ en de grachten is te herkennen, zoals de veerboten die het IJ oversteken.',
             location: {
-                center: [4.90201, 52.37914],
-                zoom: 11.46,
+                center: [4.88201, 52.38914],
+                zoom: 12.4,
                 pitch: 0.00,
                 bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'heatmap',
+                    opacity: 0
+                },
+                {
+                    layer: 'ams-intensiteit',
+                    opacity: 0.8
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'heatmap',
+                    opacity: 0.8
+                },
+                {
+                    layer: 'ams-intensiteit',
+                    opacity: 0.0
+                }
+            ]
+        },
+        {
+            id: '18a-veerboot-marker',
+            alignment: 'right',
+            classes: ['box'],
+            title: 'Betere inzichten',
+            image: '',
+            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            location: {
+                center: [4.10150, 52.38770],
+                zoom: 8.4,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [4.62978, 52.42343]
+                },
+                properties: {
+                    iconSize: [400, 332],
+                    image: "images/icons/PNG/Ferry@2x.png"
+                }
             },
             onChapterEnter: [
             ],
@@ -529,6 +680,35 @@ var config = {
             ]
         },
         {
+            id: '19a-geulen-marker',
+            alignment: 'right',
+            classes: ['box'],
+            title: 'Betere inzichten',
+            image: '',
+            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            location: {
+                center: [5.60150, 52.98770],
+                zoom: 8.4,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [6.00014, 53.24963]
+                },
+                properties: {
+                    iconSize: [400, 332],
+                    image: "images/icons/PNG/Geul Ameland@2x.png"
+                }
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
+            ]
+        },
+        {
             id: '19-geulen',
             alignment: 'right',
             classes: ['box'],
@@ -544,15 +724,43 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'wadden',
-                    opacity: 0.2
+                    opacity: 0.8
                 }
-
             ],
             onChapterExit: [
                 {
                     layer: 'wadden',
                     opacity: 0.0
                 }
+            ]
+        },
+        {
+            id: '20a-sluis-marker',
+            alignment: 'right',
+            classes: ['box'],
+            title: 'Betere inzichten',
+            image: '',
+            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            location: {
+                center: [3.85150, 51.78770],
+                zoom: 8.4,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [4.49969, 51.49425]
+                },
+                properties: {
+                    iconSize: [400, 332],
+                    image: "images/icons/PNG/Krammersluis@2x.png"
+                }
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
             ]
         },
         {
