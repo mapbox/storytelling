@@ -223,7 +223,7 @@ map.on("load", function() {
 
     map.addSource('ferry', {
         "type": "image",
-        "url": "images/maps/agg_ferry_epsg3857.png",
+        "url": "images/maps/agg_ferry-l_epsg3857.png",
         "coordinates": [
             [3.9990234375, 52.74294319885714],
             [5.020751953125, 52.74294319885714],
@@ -236,6 +236,26 @@ map.on("load", function() {
         'id': 'ferry',
         'type': 'raster',
         'source': 'ferry',
+        'paint': {
+            'raster-opacity': 0
+        }
+    })
+
+    map.addSource('loodsen', {
+        "type": "image",
+        "url": "images/maps/agg_loods-m_epsg3857.png",
+        "coordinates": [
+            [3.636474609375, 52.26647652523259],
+            [4.4879150390625, 52.26647652523259],
+            [4.4879150390625, 51.78653294239638],
+            [3.636474609375, 51.78653294239638]
+        ]
+    })
+    // This works the same for images
+    map.addLayer({
+        'id': 'loodsen',
+        'type': 'raster',
+        'source': 'loodsen',
         'paint': {
             'raster-opacity': 0
         }

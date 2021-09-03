@@ -392,9 +392,9 @@ var config = {
             id: '14a-anker-marker',
             alignment: 'right',
             classes: ['box'],
-            title: 'Betere inzichten',
+            title: '',
             image: '',
-            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            description: '',
             location: {
                 center: [3.85150, 52.08770],
                 zoom: 8.4,
@@ -439,9 +439,9 @@ var config = {
             id: '15a-bagger-marker',
             alignment: 'right',
             classes: ['box'],
-            title: 'Betere inzichten',
+            title: '',
             image: '',
-            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            description: '',
             location: {
                 center: [4.10150, 52.38770],
                 zoom: 8.4,
@@ -502,9 +502,9 @@ var config = {
             id: '16a-windmolen-marker',
             alignment: 'right',
             classes: ['box'],
-            title: 'Betere inzichten',
+            title: '',
             image: '',
-            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            description: '',
             location: {
                 center: [4.10150, 52.38770],
                 zoom: 8.4,
@@ -550,9 +550,9 @@ var config = {
             id: '17a-ams-marker',
             alignment: 'right',
             classes: ['box'],
-            title: 'Betere inzichten',
+            title: '',
             image: '',
-            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            description: '',
             location: {
                 center: [5.00150, 52.18770],
                 zoom: 8.4,
@@ -613,9 +613,9 @@ var config = {
             id: '18a-veerboot-marker',
             alignment: 'right',
             classes: ['box'],
-            title: 'Betere inzichten',
+            title: '',
             image: '',
-            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            description: '',
             location: {
                 center: [4.10150, 52.38770],
                 zoom: 8.4,
@@ -646,10 +646,10 @@ var config = {
             image: '',
             description: 'De ferry tussen IJmuiden en Newcastle vaart steevast dezelfde route.',
             location: {
-                center: [4.49572, 52.48981],
-                zoom: 10.87,
-                pitch: 60.00,
-                bearing: -50.40
+                center: [4.35792, 52.47214],
+                zoom: 10.88,
+                pitch: 58.5,
+                bearing: -50
             },
             onChapterEnter: [
                 {
@@ -668,6 +668,77 @@ var config = {
                 },
                 {
                     layer: 'ferry',
+                    opacity: 0
+                }
+            ]
+        },
+        {
+            id: '18a-loods-marker',
+            alignment: 'right',
+            classes: ['box'],
+            title: '',
+            image: '',
+            description: '',
+            location: {
+                center: [3.85150, 52.08770],
+                zoom: 8.4,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            marker: {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [4.24969, 51.84148]
+                },
+                properties: {
+                    iconSize: [400, 332],
+                    image: "images/icons/PNG/Loods@2x.png"
+                }
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
+            ]
+        },
+        {
+            id: '18-loods',
+            alignment: 'right',
+            classes: ['box'],
+            title: 'Loodsen Haven van Rotterdam',
+            image: '',
+            description: 'De loodsen wachten schepen op voor de haveningang.',
+            location: {
+                center: [4.03046, 51.99781],
+                zoom: 11.19,
+                pitch: 58.00,
+                bearing: -58.32
+            },
+            onChapterEnter: [
+                {
+                    layer: 'heatmap',
+                    opacity: 0
+                },
+                {
+                    layer: 'scheepvaart',
+                    opacity: 1
+                },
+                {
+                    layer: 'loodsen',
+                    opacity: 0.8
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'heatmap',
+                    opacity: 0.8
+                },
+                {
+                    layer: 'scheepvaart',
+                    opacity: 0
+                },
+                {
+                    layer: 'loodsen',
                     opacity: 0
                 }
             ]
