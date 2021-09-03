@@ -84,18 +84,6 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00
             },
-            // this is an example of how to add a custom marker
-            marker: {
-                type: "Feature",
-                geometry: {
-                    type: "Point",
-                    coordinates: [4.38150, 52.42770]
-                },
-                properties: {
-                    iconSize: [200, 166],
-                    image: "images/icons/PNG/Windmolenpark@2x.png"
-                }
-            },
             onChapterEnter: [
                 {
                     layer: 'vergunde-windparken',
@@ -138,17 +126,6 @@ var config = {
                 zoom: 7,
                 pitch: 0.00,
                 bearing: 0.00
-            },
-            marker: {
-                type: "Feature",
-                geometry: {
-                    type: "Point",
-                    coordinates: [4.38150, 52.42770]
-                },
-                properties: {
-                    iconSize: [200, 166],
-                    image: "images/icons/PNG/Baggerboot@2x.png"
-                }
             },
             onChapterEnter: [
                 {
@@ -213,7 +190,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'scheepvaart',
-                    opacity: 0.8
+                    opacity: 1
                 }
             ],
             onChapterExit: [
@@ -675,8 +652,24 @@ var config = {
                 bearing: -50.40
             },
             onChapterEnter: [
+                {
+                    layer: 'heatmap',
+                    opacity: 0
+                },
+                {
+                    layer: 'ferry',
+                    opacity: 0.8
+                }
             ],
             onChapterExit: [
+                {
+                    layer: 'heatmap',
+                    opacity: 0.8
+                },
+                {
+                    layer: 'ferry',
+                    opacity: 0
+                }
             ]
         },
         {

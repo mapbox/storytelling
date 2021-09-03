@@ -221,6 +221,26 @@ map.on("load", function() {
         }
     })
 
+    map.addSource('ferry', {
+        "type": "image",
+        "url": "images/maps/agg_ferry_epsg3857.png",
+        "coordinates": [
+            [3.9990234375, 52.74294319885714],
+            [5.020751953125, 52.74294319885714],
+            [5.020751953125, 52.214338608258196],
+            [3.9990234375, 52.214338608258196]
+        ]
+    })
+    // This works the same for images
+    map.addLayer({
+        'id': 'ferry',
+        'type': 'raster',
+        'source': 'ferry',
+        'paint': {
+            'raster-opacity': 0
+        }
+    })
+
     map.addSource('sluis-intensiteit', {
         "type": "image",
         "url": "images/maps/agg_krammer_intensity_epsg3857.png",
