@@ -281,6 +281,46 @@ map.on("load", function() {
         }
     })
 
+    map.addSource('sluis-snelheid', {
+        "type": "image",
+        "url": "images/maps/agg_krammer_speed.png",
+        "coordinates": [
+            [4.107257385253906, 51.68500886266592],
+            [4.248619079589844, 51.68500886266592],
+            [4.248619079589844, 51.63069836469037],
+            [4.107257385253906, 51.63069836469037]
+        ]
+    })
+    // This works the same for images
+    map.addLayer({
+        'id': 'sluis-snelheid',
+        'type': 'raster',
+        'source': 'sluis-snelheid',
+        'paint': {
+            'raster-opacity': 0
+        }
+    })
+
+    map.addSource('sluis-emissies', {
+        "type": "image",
+        "url": "images/maps/agg_krammer_wemissions.png",
+        "coordinates": [
+            [4.107257385253906, 51.68500886266592],
+            [4.248619079589844, 51.68500886266592],
+            [4.248619079589844, 51.63069836469037],
+            [4.107257385253906, 51.63069836469037]
+        ]
+    })
+    // This works the same for images
+    map.addLayer({
+        'id': 'sluis-emissies',
+        'type': 'raster',
+        'source': 'sluis-emissies',
+        'paint': {
+            'raster-opacity': 0
+        }
+    })
+
     // Add images before this line End
 
 

@@ -358,7 +358,7 @@ var config = {
             classes: ['box'],
             title: 'Nieuwe rekencapaciteit',
             image: '',
-            description: 'Onderzoekers van de TU Delft en Deltares maken nu gebruik van de <a href="https://planetarycomputer.microsoft.com/">Planetary Computer</a> van <a href="https://www.microsoft.com/">Microsoft</a>, die globale datasets en rekencapaciteit bevat om wereldwijde duurzaamheid te bevorderen. Daarmee kan de AIS dataset tot in detail – resolutie van enkele meters per pixel – op de kaart worden gevisualiseerd.',
+            description: 'Om de kaart te maken is nu gebruik gemaakt van de <a href="https://planetarycomputer.microsoft.com/">Planetary Computer</a> van <a href="https://www.microsoft.com/">Microsoft</a>, die globale datasets en rekencapaciteit bevat om wereldwijde duurzaamheid te bevorderen. Daarmee kan de AIS dataset tot in detail – resolutie van enkele meters per pixel – op de kaart worden gevisualiseerd.',
             location: {
                 center: [4.38150, 52.42770],
                 zoom: 7.6,
@@ -866,13 +866,21 @@ var config = {
             description: 'Door naar de scheepssnelheden te kijken is goed te zien hoe de schepen afremmen voor de sluis en als ze uit de sluis komen weer versnellen, en naar de rechterkant van de vaarweg bewegen.',
             location: {
                 center: [4.16058, 51.65794],
-                zoom: 12.16,
+                zoom: 13.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
             onChapterEnter: [
+                {
+                    layer: 'sluis-snelheid',
+                    opacity: 0.8
+                }
             ],
             onChapterExit: [
+                {
+                    layer: 'sluis-snelheid',
+                    opacity: 0.0
+                }
             ]
         },
         {
@@ -883,14 +891,22 @@ var config = {
             image: '',
             description: 'De dataset kan ook gebruikt worden als basis van een berekening om een inschatting te geven van de emissies van de scheepvaart, bijvoorbeeld CO2 uitstoot. ',
             location: {
-                center: [4.16058, 51.65794],
-                zoom: 12.16,
+                center: [4.17058, 51.65794],
+                zoom: 13.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
             onChapterEnter: [
+                {
+                    layer: 'sluis-emissies',
+                    opacity: 0.8
+                }
             ],
             onChapterExit: [
+                {
+                    layer: 'sluis-emissies',
+                    opacity: 0.0
+                }
             ]
         },
         {
