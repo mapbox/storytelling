@@ -392,7 +392,7 @@ var config = {
             id: '14a-anker-marker',
             alignment: 'right',
             classes: ['box'],
-            title: '',
+            title: 'Ankerplaatsen',
             image: '',
             description: '',
             location: {
@@ -439,7 +439,7 @@ var config = {
             id: '15a-bagger-marker',
             alignment: 'right',
             classes: ['box'],
-            title: '',
+            title: 'Suppleties',
             image: '',
             description: '',
             location: {
@@ -502,7 +502,7 @@ var config = {
             id: '16a-windmolen-marker',
             alignment: 'right',
             classes: ['box'],
-            title: '',
+            title: 'Windmolenparken',
             image: '',
             description: '',
             location: {
@@ -550,7 +550,7 @@ var config = {
             id: '17a-ams-marker',
             alignment: 'right',
             classes: ['box'],
-            title: '',
+            title: 'Amsterdam',
             image: '',
             description: '',
             location: {
@@ -613,7 +613,7 @@ var config = {
             id: '18a-veerboot-marker',
             alignment: 'right',
             classes: ['box'],
-            title: '',
+            title: 'Veerboot IJmuiden-Newcastle',
             image: '',
             description: '',
             location: {
@@ -676,7 +676,7 @@ var config = {
             id: '18a-loods-marker',
             alignment: 'right',
             classes: ['box'],
-            title: '',
+            title: 'Loodsen Haven van Rotterdam',
             image: '',
             description: '',
             location: {
@@ -747,9 +747,9 @@ var config = {
             id: '19a-geulen-marker',
             alignment: 'right',
             classes: ['box'],
-            title: 'Betere inzichten',
+            title: 'Geulen op de Waddenzee',
             image: '',
-            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            description: '',
             location: {
                 center: [5.60150, 52.98770],
                 zoom: 8.4,
@@ -776,7 +776,7 @@ var config = {
             id: '19-geulen',
             alignment: 'right',
             classes: ['box'],
-            title: 'Geulen',
+            title: 'Geulen op de Waddenzee',
             image: '',
             description: 'Op de Waddenzee is te zien hoe de schepen de geulen volgen. Ook hier zijn baggerwerkzaamheden te zien tussen Terschelling en Ameland.',
             location: {
@@ -802,9 +802,9 @@ var config = {
             id: '20a-sluis-marker',
             alignment: 'right',
             classes: ['box'],
-            title: 'Betere inzichten',
+            title: 'Krammersluizen',
             image: '',
-            description: 'Door deze nieuwe visualisatie is op grote schaal te zien welke ruimte al wordt gebruikt. Door in te zoomen kun je grote mate van detail zien, en daarmee een beeld krijgen van het soort activiteiten dat op zee plaatsvindt.',
+            description: '',
             location: {
                 center: [3.85150, 51.78770],
                 zoom: 8.4,
@@ -865,7 +865,7 @@ var config = {
             image: '',
             description: 'Door naar de scheepssnelheden te kijken is goed te zien hoe de schepen afremmen voor de sluis en als ze uit de sluis komen weer versnellen, en naar de rechterkant van de vaarweg bewegen.',
             location: {
-                center: [4.16058, 51.65794],
+                center: [4.17058, 51.65794],
                 zoom: 13.5,
                 pitch: 0.00,
                 bearing: 0.00
@@ -889,7 +889,7 @@ var config = {
             classes: ['box'],
             title: 'Krammersluizen',
             image: '',
-            description: 'De dataset kan ook gebruikt worden als basis van een berekening om een inschatting te geven van de emissies van de scheepvaart, bijvoorbeeld CO2 uitstoot. ',
+            description: 'De dataset kan ook gebruikt worden als basis van een berekening om een inschatting te geven van de emissies van de scheepvaart, bijvoorbeeld CO2 uitstoot zoals in deze kaart. ',
             location: {
                 center: [4.17058, 51.65794],
                 zoom: 13.5,
