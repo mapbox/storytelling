@@ -348,6 +348,14 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
+                {
+                    layer: 'heatmap',
+                    opacity: 0
+                },
+                {
+                    layer: 'nl-grof',
+                    opacity: 0.8
+                }
             ],
             onChapterExit: [
             ]
@@ -366,6 +374,14 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
+                {
+                    layer: 'nl-grof',
+                    opacity: 0
+                },
+                {
+                    layer: 'heatmap',
+                    opacity: 1
+                }
             ],
             onChapterExit: [
             ]
@@ -906,6 +922,10 @@ var config = {
                 {
                     layer: 'sluis-emissies',
                     opacity: 0.0
+                },
+                {
+                    layer: 'heatmap',
+                    opacity: 0.8
                 }
             ]
         },
@@ -918,7 +938,7 @@ var config = {
             description: 'De energietransitie vraagt om nieuwe oplossingen, maar ook ruimte om die te realiseren. De visualisatie biedt inzicht in het ruimtegebruik op zee. Daarnaast wordt deze kennis gebruikt in modellen, zodat er voorspellingen gedaan kunnen worden van wat er verandert als bepaalde plannen worden uitgevoerd.  Op deze manier kunnen we beter antwoord geven op de vraag of er genoeg ruimte is voor toekomstplannen op zee.',
             location: {
                 center: [4.38150, 52.42770],
-                zoom: 7.0,
+                zoom: 7.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
