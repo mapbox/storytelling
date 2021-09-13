@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 :root {
-  --main-color: #193747;
+  --main-color: #003844;
   --center-size: 70vmin;
 }
 
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 .box {
   --b: 1px;   /* thickness of the border */
   --c: cyan;   /* color of the border */
-  --w: 20px;  /* width of border */
+  --w: 10px;  /* width of border */
   --bg: var(--main-color);
 
   border:var(--b) solid transparent; /* space for the border */
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #header h1, #footer h1 {
   font-weight: 200;
-  background-color: #193747;
+  background-color: #003844;
 }
 #header h1, #header h2, #header p {
   margin: 0;
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
 }
 #diorama {
-  fill: #193747;
+  fill: #003844;
   height: 100%;
   width: 100%;
 }
@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 #footer {
   width: 100%;
   height: 100vh;
-  background-color: #193747;
+  background-color: #003844;
   /* min-height: 5vh; */
   /* padding-top: 2vh; */
   /* padding-bottom: 2vh; */
@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0;
   left: 0;
-  margin: 1em;
+  margin: 0.8em;
   width: 2em;
   height: 2em;
   font-size: 2em;

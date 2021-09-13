@@ -456,7 +456,7 @@ var config = {
                 },
                 properties: {
                     iconSize: [400, 332],
-                    image: "images/icons/PNG/Baggerboot@2x.png"
+                    image: "images/icons/PNG_new/Baggerboot@2x.png"
                 }
             },
             onChapterEnter: [
@@ -567,7 +567,7 @@ var config = {
                 },
                 properties: {
                     iconSize: [400, 332],
-                    image: "images/icons/PNG/Amsterdam@2x.png"
+                    image: "images/icons/PNG_new/Amsterdam@2x.png"
                 }
             },
             onChapterEnter: [
