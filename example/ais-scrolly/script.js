@@ -201,6 +201,26 @@ map.on("load", function() {
         }
     })
 
+    map.addSource('nl-grof', {
+        "type": "image",
+        "url": "images/maps/agg_nl_epsg3857.png",
+        "coordinates": [
+            [3.22998309135437, 53.55335998535156],
+            [7.373974800109863, 53.55335998535156],
+            [7.373974800109863, 50.730316162109375],
+            [3.22998309135437, 50.730316162109375]
+        ]
+    })
+    // This works the same for images
+    map.addLayer({
+        'id': 'nl-grof',
+        'type': 'raster',
+        'source': 'nl-grof',
+        'paint': {
+            'raster-opacity': 0
+        }
+    })
+
     map.addSource('ams-intensiteit', {
         "type": "image",
         "url": "images/maps/agg_ams_intensity_epsg3857.png",
