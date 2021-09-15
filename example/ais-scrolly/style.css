@@ -47,6 +47,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #00a6d6;
 }
 
+.box a {
+  color: #82d7c6;
+}
+
 .port {
   stroke: #82d7c6;
   stroke-width: 0.5px;
