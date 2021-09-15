@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .port {
-  stroke: cyan;
+  stroke: #82d7c6;
   stroke-width: 0.5px;
   fill: none;
 }
