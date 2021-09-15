@@ -115,6 +115,14 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 5;
 }
 
+#footer .middle {
+  height: 80px;
+}
+
+#footer .middle img {
+  height: 100%;
+  object-fit: contain;
+}
 
 #hamburger {
   position: fixed;
