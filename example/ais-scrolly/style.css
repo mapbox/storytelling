@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 #footer {
   width: 100%;
   height: 100vh;
-  background-color: #003844;
+  background-color: white;
   /* min-height: 5vh; */
   /* padding-top: 2vh; */
   /* padding-bottom: 2vh; */
@@ -114,6 +114,15 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 5;
 }
+
+#footer .top {
+  background-color: white;
+}
+
+#footer .top h1 {
+  background-color: white;
+}
+
 
 #footer .middle {
   height: 80px;
