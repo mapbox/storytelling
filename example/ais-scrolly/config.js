@@ -182,8 +182,8 @@ var config = {
             image: '',
             description: 'Hoofdvaarroutes van de zeevaart',
             location: {
-                center: [4.0572, 52.12677],
-                zoom: 8,
+                center: [4.5572, 52.72677],
+                zoom: 7.2,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -340,7 +340,7 @@ var config = {
             classes: ['box'],
             title: '400 miljoen datapunten',
             image: '',
-            description: 'Op de kaart worden 400 miljoen datapunten weergegeven, die over een periode van vier maanden zijn verzameld. Deze enorme hoeveelheid data kon al eerder worden weergegeven, maar de rekencapaciteit beperkte de resolutie waarmee dit kon worden gedaan. Hierdoor kwam een (1) pixel in de kaart overeen met een gebied van enkele honderden meters.',
+            description: 'Op de kaart worden 400 miljoen datapunten weergegeven, die over een periode van vier maanden zijn verzameld. Deze enorme hoeveelheid data kon al eerder worden weergegeven, maar de rekencapaciteit beperkte de resolutie waarmee dit kon worden gedaan, zoals op deze kaart te zien is.',
             location: {
                 center: [4.38150, 52.42770],
                 zoom: 7.6,
@@ -412,7 +412,7 @@ var config = {
             image: '',
             description: '',
             location: {
-                center: [3.85150, 52.08770],
+                center: [3.85150, 51.88770],
                 zoom: 8.4,
                 pitch: 0.00,
                 bearing: 0.00
@@ -425,7 +425,7 @@ var config = {
                 },
                 properties: {
                     iconSize: [400, 332],
-                    image: "images/icons/PNG/Ankeren@2x.png"
+                    image: "images/icons/PNG_v2/Ankeren@2x.png"
                 }
             },
             onChapterEnter: [
@@ -442,7 +442,7 @@ var config = {
             description: 'Op de ankerplaatsen liggen schepen te wachten tot ze de haven in kunnen.',
             location: {
                 center: [3.82969, 51.96148],
-                zoom: 9.3,
+                zoom: 9.6,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -459,7 +459,7 @@ var config = {
             image: '',
             description: '',
             location: {
-                center: [4.10150, 52.38770],
+                center: [4.55150, 52.38770],
                 zoom: 8.4,
                 pitch: 0.00,
                 bearing: 0.00
@@ -468,11 +468,11 @@ var config = {
                 type: "Feature",
                 geometry: {
                     type: "Point",
-                    coordinates: [4.84662, 52.47736]
+                    coordinates: [4.84662, 52.49736]
                 },
                 properties: {
                     iconSize: [400, 332],
-                    image: "images/icons/PNG_new/Baggerboot@2x.png"
+                    image: "images/icons/PNG_v2/Baggerboot@2x.png"
                 }
             },
             onChapterEnter: [
@@ -522,7 +522,7 @@ var config = {
             image: '',
             description: '',
             location: {
-                center: [4.10150, 52.38770],
+                center: [4.55150, 52.38770],
                 zoom: 8.4,
                 pitch: 0.00,
                 bearing: 0.00
@@ -531,11 +531,11 @@ var config = {
                 type: "Feature",
                 geometry: {
                     type: "Point",
-                    coordinates: [4.82978, 52.42343]
+                    coordinates: [4.79978, 52.42343]
                 },
                 properties: {
                     iconSize: [400, 332],
-                    image: "images/icons/PNG/Windmolenpark@2x.png"
+                    image: "images/icons/PNG_v2/Windmolenpark@2x.png"
                 }
             },
             onChapterEnter: [
@@ -583,7 +583,7 @@ var config = {
                 },
                 properties: {
                     iconSize: [400, 332],
-                    image: "images/icons/PNG_new/Amsterdam@2x.png"
+                    image: "images/icons/PNG_v2/Amsterdam@2x.png"
                 }
             },
             onChapterEnter: [
@@ -642,11 +642,11 @@ var config = {
                 type: "Feature",
                 geometry: {
                     type: "Point",
-                    coordinates: [4.62978, 52.42343]
+                    coordinates: [4.65978, 52.42343]
                 },
                 properties: {
                     iconSize: [400, 332],
-                    image: "images/icons/PNG/Ferry@2x.png"
+                    image: "images/icons/PNG_v2/Ferry@2x.png"
                 }
             },
             onChapterEnter: [
@@ -709,7 +709,7 @@ var config = {
                 },
                 properties: {
                     iconSize: [400, 332],
-                    image: "images/icons/PNG/Loods@2x.png"
+                    image: "images/icons/PNG_v2/Loods@2x.png"
                 }
             },
             onChapterEnter: [
@@ -767,8 +767,8 @@ var config = {
             image: '',
             description: '',
             location: {
-                center: [5.60150, 52.98770],
-                zoom: 8.4,
+                center: [6.20150, 52.28770],
+                zoom: 7.4,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -776,11 +776,11 @@ var config = {
                 type: "Feature",
                 geometry: {
                     type: "Point",
-                    coordinates: [6.00014, 53.24963]
+                    coordinates: [6.000, 53.0]
                 },
                 properties: {
                     iconSize: [400, 332],
-                    image: "images/icons/PNG/Geul Ameland@2x.png"
+                    image: "images/icons/PNG_v2/Geul Ameland@2x.png"
                 }
             },
             onChapterEnter: [
@@ -831,11 +831,11 @@ var config = {
                 type: "Feature",
                 geometry: {
                     type: "Point",
-                    coordinates: [4.49969, 51.49425]
+                    coordinates: [4.51969, 51.47425]
                 },
                 properties: {
                     iconSize: [400, 332],
-                    image: "images/icons/PNG/Krammersluis@2x.png"
+                    image: "images/icons/PNG_v2/Krammersluis@2x.png"
                 }
             },
             onChapterEnter: [
