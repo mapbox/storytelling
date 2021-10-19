@@ -95,6 +95,11 @@
             width: 100%;
         }
 
+        #mapDescription {
+            position: absolute;
+            z-index: -1;
+        }
+
         @media (max-width: 750px) {
             .centered, .lefty, .righty, .fully {
                 width: 90vw;
@@ -114,6 +119,7 @@
 
 <div id="map"></div>
 <div id="story"></div>
+<div id="mapDescription" aria-live="polite"></div>
 <script src="./config.js"></script>
 <script>
 var layerTypes = {
@@ -315,6 +321,10 @@ map.on("load", function() {
                     }
                 });
             });
+        }
+        if (chapter.mapDescription) {
+            mapDescription = document.querySelector("#mapDescription");
+            mapDescription.innerText = "Current Map View Description: " + chapter.mapDescription
         }
     })
     .onStepExit(response => {
