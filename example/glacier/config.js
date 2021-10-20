@@ -15,6 +15,7 @@ var config = {
             title: 'Glacier National Park Glaciers',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/2015-06-19_Glacier_National_Park_%28U.S.%29_8633.jpg/800px-2015-06-19_Glacier_National_Park_%28U.S.%29_8633.jpg',
             description: 'Glacier National Park is dominated by mountains which were carved into their present shapes by the huge glaciers of the last ice age. These glaciers have largely disappeared over the last 12,000 years. Evidence of widespread glacial action is found throughout the park in the form of U-shaped valleys, cirques, arêtes, and large outflow lakes radiating like fingers from the base of the highest peaks. Since the end of the ice ages, various warming and cooling trends have occurred. The last recent cooling trend was during the Little Ice Age, which took place approximately between 1550 and 1850. During the Little Ice Age, the glaciers in the park expanded and advanced, although to nowhere near as great an extent as they had during the Ice Age.',
+            mapDescription: 'Overview of Glacier National Park in Montana. The park is highlighted in green.',
             location: {
                 center: [-113.91666, 48.66451],
                 zoom: 8,
@@ -44,6 +45,7 @@ var config = {
             title: 'Harrison Glacier, 1998',
             image: '',
             description: 'Harrison Glacier is located in the US state of Montana in Glacier National Park. Situated on a southeast facing ridge immediately south of Mount Jackson, Harrison Glacier is the largest glacier in Glacier National Park. Compared to many of the vanishing glaciers in Glacier National Park, Harrison Glacier has a much higher altitude accumulation zone (approximately 9,000 feet (2,700 m)) which has allowed it to maintain some equilibrium in its glacier mass balance.',
+            mapDescription: 'Zoom into a 3D oblique view of Harrison Glacier area, located near the center of the park. Glaical extent from 1998 is shown in light blue',
             location: {
                 center: [-113.72917, 48.58938],
                 zoom: 12.92,
@@ -64,6 +66,7 @@ var config = {
             title: 'Harrison Glacier, 2015',
             image: '',
             description: 'Between 1998 and 2015, Harrison Glacier lost 169 acres of surface area (about 37%).',
+            mapDescription: '2015 extent overlain on top of 1998 extent, showing major decrease in coverage.',
             location: {
                 center: [-113.72917, 48.58938],
                 zoom: 12.92,
@@ -89,6 +92,7 @@ var config = {
             title: 'Blackfoot Glacier, 1998',
             image: '',
             description: 'Blackfoot Glacier is the second largest of the remaining 25 glaciers in Glacier National Park, Montana. Blackfoot Glacier is just to the north of Blackfoot Mountain and near Jackson Glacier. When first documented in 1850, the glacier also included the now separate Jackson Glacier and together, they covered 1,875 acres (7.59 km2). In 1850, there were an estimated 150 glaciers in the park. Glaciologists have stated that by the year 2030, all the glaciers in the park may disappear.',
+            mapDescription: 'Zoom to Blackfoot Glacier, now showing light blue area of the glacier in 1988',
             location: {
                 center: [-113.66573, 48.59181],
                 zoom: 12.92,
@@ -104,6 +108,7 @@ var config = {
             title: 'Blackfoot Glacier, 2015',
             image: '',
             description: 'Between 1998 and 2015, Blackfoot Glacier lost 31 acres of surface area (about 8%).',
+            mapDescription: 'Updated view to show 2015 glacial extent overlain',
             location: {
                 center: [-113.66573, 48.59181],
                 zoom: 12.92,

@@ -95,6 +95,12 @@
             width: 100%;
         }
 
+        #mapDescription {
+            position: fixed;
+            top: 0;
+            z-index: -1;
+        }
+
         @media (max-width: 750px) {
             .centered, .lefty, .righty, .fully {
                 width: 90vw;
@@ -114,6 +120,7 @@
 
 <div id="map"></div>
 <div id="story"></div>
+<div id="mapDescription" aria-live="polite"></div>
 <script src="./config.js"></script>
 <script>
 var layerTypes = {
@@ -239,7 +246,6 @@ mapboxgl.accessToken = config.accessToken;
 const transformRequest = (url) => {
     const hasQuery = url.indexOf("?") !== -1;
     const suffix = hasQuery ? "&pluginName=scrollytellingV2" : "?pluginName=scrollytellingV2";
-
     return {
       url: url + suffix
     }
@@ -298,7 +304,6 @@ map.on("load", function() {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.add('active');
         map[chapter.mapAnimation || 'flyTo'](chapter.location);
-
         if (config.showMarkers) {
             marker.setLngLat(chapter.location.center);
         }
@@ -317,6 +322,10 @@ map.on("load", function() {
                     }
                 });
             });
+        }
+        if (chapter.mapDescription) {
+            mapDescription = document.querySelector("#mapDescription");
+            mapDescription.innerText = "Current map view shows: " + chapter.mapDescription;
         }
     })
     .onStepExit(response => {
