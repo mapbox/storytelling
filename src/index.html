@@ -96,7 +96,8 @@
         }
 
         #mapDescription {
-            position: absolute;
+            position: fixed;
+            top: 0;
             z-index: -1;
         }
 
@@ -324,7 +325,7 @@ map.on("load", function() {
         }
         if (chapter.mapDescription) {
             mapDescription = document.querySelector("#mapDescription");
-            mapDescription.innerText = "Current Map View Description: " + chapter.mapDescription
+            mapDescription.innerText = "Current map view shows: " + chapter.mapDescription;
         }
     })
     .onStepExit(response => {
