@@ -234,14 +234,16 @@ Note: items in bold are **required**.
     - **`bearing`**: Degrees of rotation clockwise from North (`0`). Negative values represent counter-clockwise rotation.
 - `mapAnimation`: Defines the [animation type](https://docs.mapbox.com/mapbox-gl-js/api/#map#jumpto) for transitioning between locations. This property supports 'flyTo', 'easeTo', and 'jumpTo' animations. If not specified, defaults to `flyTo`.
     - flyTo and easeTo [options](https://docs.mapbox.com/mapbox-gl-js/api/map/#flyto-parameters) (`curve`, `maxDuration`, `minZoom`, `screenSpeed`, `speed`) can be included in the `location` array, for example:
-                ```location: {
+```
+            location: {
                 center: [-113.72917, 48.58938],
                 zoom: 12.92,
                 pitch: 39.50,
                 bearing: 36.00,
                 speed: 0.2,
                 curve: 1
-            },```
+            }
+```
 - `rotateAnimation`: Starts a slow rotation animation at the end of the map transition when set to `true`. The map will rotate 90 degrees over 24 seconds.
 - `callback`: Accepts the name of a JavaScript function and executes the function. Use this if you have custom code you want to run for a chapter, like turning a legend on or off, adding data from an API request, or displaying an interactive graph.
 - `onChapterEnter`: Layers to be displayed/hidden/muted when the section becomes active. _Array of objects_
