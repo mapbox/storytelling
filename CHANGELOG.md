@@ -1,3 +1,14 @@
+## 0.3 (February 2022)
+
+#### Improvements
+
+- Upgraded to GL JS v 2.7.0
+- Added a story option to change projection of map.
+- Added a story option to add a dynamic inset map.
+- Added a default map icon for the page.
+- Added examples of some famous stories made using this template.
+- Upgraded helper.html also to GL JS v 2.7.0
+
 ## 0.2 (December 2020)
 
 #### Breaking
