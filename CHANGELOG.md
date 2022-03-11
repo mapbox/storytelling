@@ -5,7 +5,6 @@
 - Upgraded to GL JS v 2.7.0
 - Added a story option to change projection of map.
 - Added a story option to add a dynamic inset map.
-- Enable `preload` for map transition.
 - Added a default map icon for the page.
 - Added examples of some famous stories made using this template.
 - Upgraded helper.html also to GL JS v 2.7.0
