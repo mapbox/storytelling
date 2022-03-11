@@ -335,9 +335,7 @@ map.on("load", function() {
     .onStepEnter(async response => {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
         response.element.classList.add('active');
-        map[chapter.mapAnimation || 'flyTo'](
-            {...chapter.location, preload: true}
-        );
+        map[chapter.mapAnimation || 'flyTo'](chapter.location);
         // Incase you do not want to have a dynamic inset map,
         // rather want to keep it a static view but still change the
         // bbox as main map move: comment out the below if section.
