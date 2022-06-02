@@ -36,6 +36,14 @@
             transition: opacity 0.5s ease-in-out;
             pointer-events: none;
         }
+        #mapInset .mapboxgl-ctrl-bottom-left{
+            display: none;
+        }
+        @media (max-width: 500px) {
+            #mapInset {
+                display: none;
+            }
+        }
         #header {
             margin: auto;
             width: 100%;
