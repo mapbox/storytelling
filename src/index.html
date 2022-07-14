@@ -121,12 +121,54 @@
             touch-action: unset;
         }
 
+        /* Preloader CSS */
+
+        #loader {
+        	top: 0;
+        	height: 100vh;
+        	width: 100vw;
+        	position: fixed;
+        	z-index: 0;
+        	background: #000;
+        	opacity: .9;
+        	transition: opacity 1s ease-out;
+        	pointer-events: none;
+        }
+
+        #loaderSpin {
+        	border: 5px solid #333;
+        	border-top: 5px solid #d3d3d3;
+        	border-radius: 50%;
+        	width: 40px;
+        	height: 40px;
+        	animation: loadSpin 2s linear infinite;
+        	transition: opacity 0.5s ease-out;
+        	position: relative;
+        	top: 41%;
+        	margin: auto;
+        }
+
+        @keyframes loadSpin {
+        	0% {
+        		transform: rotate(0deg);
+        	}
+
+        	100% {
+        		transform: rotate(360deg);
+        	}
+        }
+
         </style>
 </head>
 <body>
 
 <div id="map"></div>
 <div id="mapInset"></div>
+
+<div id="loader">
+    <div id="loaderSpin"></div>
+</div>
+
 <div id="story"></div>
 
 <script src="./config.js"></script>
@@ -334,7 +376,18 @@ map.on("load", function() {
     })
     .onStepEnter(async response => {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
+        var chapterid = chapter.id;
         response.element.classList.add('active');
+
+        // Code for preloader, app will not show an active map until underlying tilesets are fully loaded
+
+        if (chapter.id != null) {
+          document.getElementById('loader').style.opacity = 0;
+        }
+        else {
+          document.getElementById('loader').style.opacity = 0;
+        }
+
         map[chapter.mapAnimation || 'flyTo'](chapter.location);
         // Incase you do not want to have a dynamic inset map,
         // rather want to keep it a static view but still change the
@@ -457,6 +510,18 @@ function updateInsetLayer(bounds) {
     insetMap.getSource('boundsSource').setData(bounds);
 }
 
+function customizeChapters(chap) {
+    if (chap != null) {
+        map.on('render', removeLoader);
+    } else {
+        map.off('render', removeLoader);
+    }
+}
+
+function removeLoader() {
+    document.getElementById('loader').style.opacity = 0;
+    document.getElementById('loaderSpin').style.opacity = 0;
+}
 
 
 // setup resize event
