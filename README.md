@@ -215,6 +215,8 @@ Note: items in bold are **required**.
 
 `projection`: Set the Map object's [projection parameter](https://docs.mapbox.com/mapbox-gl-js/example/projections/) to create a map with a non-Mercator projection.. (Optional)
 
+`auto`: Enables automatic advancement through the chapters. (Optional)
+
 `title`: The title of the overall story. (Optional)
 
 `subtitle`: A subtitle for the story. (Optional)

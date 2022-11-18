@@ -341,9 +341,12 @@ map.on("load", function() {
         progress: true
     })
     .onStepEnter(async response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
+        var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
+        var chapter = config.chapters[current_chapter];
+        
         response.element.classList.add('active');
         map[chapter.mapAnimation || 'flyTo'](chapter.location);
+
         // Incase you do not want to have a dynamic inset map,
         // rather want to keep it a static view but still change the
         // bbox as main map move: comment out the below if section.
@@ -374,6 +377,12 @@ map.on("load", function() {
                 });
             });
         }
+        if (config.auto) {
+             var next_chapter = (current_chapter + 1) % config.chapters.length;
+             map.once('moveend', () => {
+                 document.querySelectorAll('[data-scrollama-index="' + next_chapter.toString() + '"]')[0].scrollIntoView();
+             });
+        }
     })
     .onStepExit(response => {
         var chapter = config.chapters.find(chap => chap.id === response.element.id);
@@ -382,6 +391,11 @@ map.on("load", function() {
             chapter.onChapterExit.forEach(setLayerOpacity);
         }
     });
+
+
+    if (config.auto) {
+        document.querySelectorAll('[data-scrollama-index="0"]')[0].scrollIntoView();
+    }
 });
 
 //Helper functions for insetmap
