@@ -1,0 +1,68 @@
+:root {
+  --main-color: #003844;
+  --center-size: 70vmin;
+}
+
+.diorama-grid {
+  /* flex layout */
+  display: flex;
+  /* below eachother */
+  flex-direction: column;
+  /* fill screen */
+  height: 100vh;
+}
+
+.top, .left, .right, .bottom {
+  /* colors all around */
+  background-color: var(--main-color);
+}
+
+.diorama-grid .top {
+  /* grow */
+  flex: 1 1 100%;
+
+  /* show content in center */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.diorama-grid .bottom {
+  /* grow */
+  flex: 1 1 100%;
+
+  /* show content in center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.diorama-grid > * {
+  /* center text for labels */
+  text-align: center;
+}
+
+.diorama-grid > .middle {
+  /* next to eachother */
+  display: flex;
+  flex-direction: row;
+}
+
+.diorama-grid .center {
+  /* fix the size */
+  height: var(--center-size);
+  width: var(--center-size);
+
+  /* really fix it */
+  min-height: var(--center-size);
+  min-width: var(--center-size);
+  max-height: var(--center-size);
+  max-width: var(--center-size);
+}
+
+.diorama-grid .left, .diorama-grid .right {
+  /* fill up the rest of the space */
+  flex: 1 1 100%;
+}

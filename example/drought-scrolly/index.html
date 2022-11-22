@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Mapbox Storytelling</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/leader-line@1.0.5/leader-line.min.js"></script>
+
+    <script src="https://unpkg.com/scrollama"></script>
+    <!-- mapbox styles -->
+    <link href="scrolly.css" rel="stylesheet"/>
+    <!-- first page layout -->
+    <link href="diorama.css" rel="stylesheet"/>
+    <!-- custom layout -->
+    <link href="style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="hamburger" class="dark"><a alt="back to top" title="back to top" href="#">&#8801;</a></div>
+    <div id="map"></div>
+    <div id="story"></div>
+    <!-- this looks a bit complex. svg cannot use vmin height, so we
+         use some divs around it with flex layout to fix the layout -->
+
+    <div id="header" class="diorama-grid">
+      <div class="top">
+        <h1>Droogte op de <b>Rivier</b></h1>
+        <p class="lighter">Het effect van de droogte van 20220 op het scheepvaartverkeer in Nederland.</p>
+      </div>
+      <div class="middle">
+        <div class="left">
+        </div>
+        <div class="center">
+          <svg viewBox="0 0 100 100" version="1.1" id="diorama" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <mask id="hole">
+                <rect width="100" height="100" fill="white" />
+                <!-- the hole defined a polygon -->
+                <circle cx="50" cy="50" r="50" fill="black" />
+              </mask>
+            </defs>
+            <circle cx="50" cy="50" r="50" class="port"/>
+            <rect mask="url(#hole)" />
+          </svg>
+
+        </div>
+        <div class="right"></div>
+      </div>
+      <div class="bottom">
+        <p class="lighter"><i>Scroll voor het verhaal</i></p>
+        <!-- down arrow -->
+        <div>&#8595;</div>
+      </div>
+
+      <div id="footer">
+        <div class="top">
+          <h1>Drukte op de <b>Noordzee</b></h1>
+          <p>Solange van der Werff | <a href="https://www.tudelft.nl/en/ceg/about-faculty/departments/hydraulic-engineering/sections/rivers-ports-waterways-and-dredging-engineering/ports-and-waterways">TU Delft - Ports and Waterways</a>
+          <p>Fedor Baart | <a href="https://deltares.nl">Deltares</a>, <a href="https://www.tudelft.nl/en/ceg/about-faculty/departments/hydraulic-engineering/sections/rivers-ports-waterways-and-dredging-engineering/ports-and-waterways">TU Delft - Ports and Waterways</a>
+          <p>Jessica van den Heuvel | <a href="https://deltares.nl">Deltares</a>, <a href="https://www.tudelft.nl/en/ceg/about-faculty/departments/hydraulic-engineering/sections/rivers-ports-waterways-and-dredging-engineering/ports-and-waterways">TU Delft - Ports and Waterways</a>
+          <p>Dirma Janse | <a href="https://dirmajanse.nl/">Studio Dirma Janse</a></p>
+        <div class="top">
+          <p>Dit project is een samenwerking tussen TU Delft, Deltares, Rijkswaterstaat, SmartPort, Microsoft en MARIN. </p>
+        </div>
+        </div>
+        <div class="middle">
+          <a href="https://www.tudelft.nl/"><img src="images/logos/TUDelft.png"> </a>
+        <div class="middle2">
+          <a href="https://www.deltares.nl/"><img src="images/logos/Deltares.png"></a>
+        <div class="middle">
+          <a href="https://www.rijkswaterstaat.nl/"><img src="images/logos/Label_RWS_NL.svg"></a>
+        <div class="middle">
+          <a href="https://www.microsoft.com/"><img src="images/logos/Microsoft.png"></a>
+        <div class="middle">
+          <a href="https://smartport.nl/"><img src="images/logos/Smartport.png"></a>
+        <div class="middle3">
+          <a href="https://www.marin.nl/"><img src="images/logos/MARIN_PMS.png"></a>
+        </div>
+        <div class="top">
+          <p>Voor meer informatie kunt u contact opnemen met Solange van der Werff, via <a href="mailto:S.E.vanderWerff@TUDelft.nl">email</a>. </p>
+        </div>
+
+      </div>
+      <!-- <img alt="" src="images/circle.png" id="header-circle"/> -->
+    </div>
+
+    <script src="./config.js"></script>
+    <script src="./script.js"></script>
+
+  </body>
+</html>
