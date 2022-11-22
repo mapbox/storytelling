@@ -50,32 +50,18 @@ var config = {
             title: 'Laagste afvoer',
             classes: ['box'],
             image: 'images/droogte.jpg',
-            description: 'Dit is een beeld uit 1929 (src: Regionaal Archief Nijmegen). Toen was de laagste afvoer ooit gemeten. Toen was er ook weinig water, maar niet omdat het verdampte, maar omdat het bevroor. ',
+            description: 'Dit is een beeld uit 1929 (src: Regionaal Archief Nijmegen). Toen was de laagste afvoer ooit gemeten. Toen was er ook weinig water, maar niet omdat het verdampte, maar omdat het bevroor.',
             location: {
-                center: [4.0572, 52.12677],
-                zoom: 7,
-                pitch: 0.00,
-                bearing: 0.00
+                center: [5.87332, 51.85232],
+                zoom: 14.7,
+                pitch: 40.00,
+                bearing: -109
             },
             onChapterEnter: [
-                {
-                    layer: 'zandwingebieden-vergund',
-                    opacity: 0.8
-                },
-                {
-                    layer: 'zandwingebieden-mer',
-                    opacity: 0.4
-                }
+
             ],
             onChapterExit: [
-                {
-                    layer: 'zandwingebieden-vergund',
-                    opacity: 0
-                },
-                {
-                    layer: 'zandwingebieden-mer',
-                    opacity: 0
-                }
+
             ]
         },
         {
