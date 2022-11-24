@@ -72,10 +72,10 @@ var config = {
             image: '',
             description: 'Minder lading per schip',
             location: {
-				center: [4.44989, 51.91850],
-				zoom: 11.05,
-				pitch: 63.50,
-				bearing: -57.60
+                center: [4.44989, 51.91850],
+                zoom: 11.05,
+                pitch: 63.50,
+                bearing: -57.60
             },
             onChapterEnter: [
                 {
