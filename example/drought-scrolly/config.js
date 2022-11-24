@@ -65,17 +65,17 @@ var config = {
             ]
         },
         {
-            id: '5-kabels',
+            id: '5-goederen',
             alignment: 'right',
-            title: 'Kabels en pijpleidingen',
+            title: 'Meer trips, minder lading',
             classes: ['box'],
             image: '',
-            description: 'Routes en locaties van kabels en pijpleidingen op de zeebodem',
+            description: 'Minder lading per schip',
             location: {
-                center: [4.0572, 52.12677],
-                zoom: 8,
-                pitch: 0.00,
-                bearing: 0.00
+				center: [4.44989, 51.91850],
+				zoom: 11.05,
+				pitch: 63.50,
+				bearing: -57.60
             },
             onChapterEnter: [
                 {
