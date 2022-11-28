@@ -9,6 +9,7 @@ var config = {
     inset: true,
     theme: 'dark',
     use3dTerrain: false, //set true for enabling 3D maps.
+    auto: false,
     title: 'The Title Text of this Story',
     subtitle: 'A descriptive and interesting subtitle to draw in the reader',
     byline: 'By a Digital Storyteller',
