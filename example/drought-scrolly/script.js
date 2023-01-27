@@ -200,6 +200,27 @@ map.on("load", function() {
         }
     })
 
+    map.addSource('twentekanaal', {
+        "type": "video", // "image" for rendered high resolution
+        "urls": ["movies/twentekanaal.webm"], // url: "images/image.png"
+        "coordinates": [
+            [5.81683, 52.39050],
+            [6.55894, 52.39050],
+            [6.55894, 51.98933],
+            [5.81683, 51.98933]
+        ]
+    })
+
+    map.addLayer({
+        'id': 'twentekanaal',
+        'type': 'raster',
+        'source': 'twentekanaal',
+        'paint': {
+            'raster-opacity': 0
+        }
+    })
+
+
     map.addSource('nl-grof', {
         "type": "image",
         "url": "images/maps/agg_nl_epsg3857.png",
