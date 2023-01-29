@@ -180,5 +180,23 @@ var config = {
             onChapterExit: [
             ]
         },
+        {
+            id: '8-zout',
+            alignment: 'right',
+            title: 'Zout bij IJmuiden',
+            classes: ['box'],
+            image: 'images/figures/salt.png',
+            description: 'De nieuwe sluis bij IJmuiden werd beperkt geschut. Hierdoor werd 180kg per seconde aan zout tegengehouden.',
+            location: {
+                center: [4.58820, 52.46752],
+                zoom: 12.88,
+                pitch: 66.50,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
+            ]
+        },
     ]
 };
