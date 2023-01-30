@@ -14,10 +14,10 @@ var config = {
             classes: ['box'],
             title: 'Lente',
             image: '',
-            description: 'Het jaar 2022 was droog. Maar waarom was het droog? De droogte begon al in de lente. Er lag weinig sneeuw in de alpen. ',
+            description: 'Het jaar 2022 was droog. Maar waarom was het droog? De droogte begon al in de lente. Er lag weinig sneeuw in de alpen. In het rode gebied lag tot 40cm minder sneeuw dan gemiddeld in de voorgaande 30 jaar.',
             location: {
                 center: [8, 48],
-                zoom: 7.6,
+                zoom: 5,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -31,8 +31,8 @@ var config = {
             alignment: 'right',
             classes: ['box'],
             title: 'Lobith',
-            image: 'images/figures/afvoer2.png',
-            description: 'Doordat er weinig water beschikbaar kwam daalde de afvoer bij Lobith. De afvoer daalde tot 679 m3/s',
+            image: 'images/figures/lobith.png',
+            description: 'Doordat er weinig water beschikbaar kwam daalde de afvoer bij Lobith. De afvoer daalde in 2022 tot 679 m3/s, de laagste stand in de 21e eeuw.',
             location: {
                 center: [6.087122, 51.8514114],
                 zoom: 11,
@@ -68,7 +68,7 @@ var config = {
             title: 'Laagste afvoer',
             classes: ['box'],
             image: 'images/droogte.jpg',
-            description: 'De laagste afvoer ooit gemeten was in 1929 (5.75m).  Dit is een beeld uit van de situatie toen (src: Regionaal Archief Nijmegen). Toen was er ook weinig water, maar niet omdat het verdampte, maar omdat het bevroor.',
+            description: 'De laagste afvoer ooit gemeten bij Lobith was in 1929 (575m3/s).  Dit is een beeld uit van de situatie toen (src: Regionaal Archief Nijmegen). Toen was er ook weinig water, maar niet omdat het verdampte, maar omdat het bevroor.',
             location: {
                 center: [5.87332, 51.85232],
                 zoom: 14.7,
