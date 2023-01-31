@@ -87,8 +87,8 @@ var config = {
             alignment: 'right',
             classes: ['box'],
             title: 'Goederen',
-            image: 'images/figures/ivs-trends.png',
-            description: 'Doordat er beperkte wasdiepte beschikbaar was op de route naar Duitsland, konden schepen minder vracht meenemen. Daardoor waren er ruim 2x meer trips per week nodig om dezelfde hoeveelheid lading te vervoeren.',
+            image: 'images/figures/ivs-trends2.png',
+            description: 'Doordat er beperkte waterdiepte beschikbaar was op de route naar Duitsland, konden schepen minder vracht meenemen. Daardoor waren er ruim 2x meer trips per week nodig om dezelfde hoeveelheid lading van Rotterdam naar Duitsland te vervoeren.',
             location: {
                 center: [5.32039, 51.57223],
                 zoom: 7.83,
