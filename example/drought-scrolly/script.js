@@ -341,6 +341,46 @@ map.on("load", function() {
         }
     })
 
+    map.addSource('nijmegen-2022-w18', {
+        "type": "image",
+        "url": "images/maps/Nijmegen_week18_2022_drought_sog.png",
+        "coordinates": [
+            [5.7996546, 51.8798329],
+            [5.8899333, 51.8798329],
+            [5.8899333, 51.8384214],
+            [5.7996546, 51.8384214]
+        ]
+    })
+    // This works the same for images
+    map.addLayer({
+        'id': 'nijmegen-2022-w18',
+        'type': 'raster',
+        'source': 'nijmegen-2022-w18',
+        'paint': {
+            'raster-opacity': 0.0
+        }
+    })
+
+    map.addSource('nijmegen-2022-w34', {
+        "type": "image",
+        "url": "images/maps/Nijmegen_week34_2022_drought_sog.png",
+        "coordinates": [
+            [5.7996546, 51.8798329],
+            [5.8899333, 51.8798329],
+            [5.8899333, 51.8384214],
+            [5.7996546, 51.8384214]
+        ]
+    })
+    // This works the same for images
+    map.addLayer({
+        'id': 'nijmegen-2022-w34',
+        'type': 'raster',
+        'source': 'nijmegen-2022-w34',
+        'paint': {
+            'raster-opacity': 0.8
+        }
+    })
+
     map.addSource('sluis-emissies', {
         "type": "image",
         "url": "images/maps/png_krammer_co2.png",
