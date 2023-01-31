@@ -377,7 +377,7 @@ map.on("load", function() {
         'type': 'raster',
         'source': 'nijmegen-2022-w34',
         'paint': {
-            'raster-opacity': 0.8
+            'raster-opacity': 0.0
         }
     })
 

@@ -145,21 +145,55 @@ var config = {
         },
 
         {
-            id: '6-ais',
+            id: '6a-ais',
             alignment: 'right',
             title: 'Krapte op de Rijn',
             classes: ['box'],
             image: '',
-            description: 'Doordat de waterstand daalde werd de rivier smaller. Tegelijk was er meer verkeer. Vooral bij de bocht bij Nijmegen was het krap. ',
+            description: 'Doordat de waterstand daalde werd de rivier smaller. Tegelijk was er meer verkeer. Vooral bij de bocht bij Nijmegen was het krap. Dit is de normale situatie.',
             location: {
-                center: [4.44989, 51.91850],
-                zoom: 11.05,
-                pitch: 63.50,
-                bearing: -57.60
+                center: [5.86498, 51.85151],
+                zoom: 15.39,
+                pitch: 72.37,
+                bearing: -69.59
             },
             onChapterEnter: [
+                {
+                    layer: 'nijmegen-2022-w18',
+                    opacity: 0.8
+                }
             ],
             onChapterExit: [
+                {
+                    layer: 'nijmegen-2022-w18',
+                    opacity: 0.0
+                }
+            ]
+        },
+        {
+            id: '6b-ais',
+            alignment: 'right',
+            title: 'Krapte op de Rijn',
+            classes: ['box'],
+            image: '',
+            description: 'Dit is de situatie tijdens de droogte. De vaarweg is smaller en de schepen varen langzamer door de bocht bij Nijmegen.',
+            location: {
+                center: [5.86498, 51.85151],
+                zoom: 15.39,
+                pitch: 72.37,
+                bearing: -69.59
+            },
+            onChapterEnter: [
+                {
+                    layer: 'nijmegen-2022-w34',
+                    opacity: 0.8
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'nijmegen-2022-w34',
+                    opacity: 0
+                }
             ]
         },
         {
