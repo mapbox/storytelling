@@ -12,9 +12,9 @@ var config = {
             id: '1-lente',
             alignment: 'right',
             classes: ['box'],
-            title: 'Lente',
+            title: 'Sneeuwtekort',
             image: '',
-            description: 'Het jaar 2022 was droog. Maar waarom was het droog? De droogte begon al in de lente. Er lag weinig sneeuw in de alpen. In het rode gebied lag tot 40cm minder sneeuw dan gemiddeld in de voorgaande 30 jaar.',
+            description: 'Het jaar 2022 was droog. Maar waarom was het droog? De droogte begon al in de lente. Er lag weinig sneeuw in de alpen. In het rode gebied lag in mei tot 40 cm minder sneeuw dan gemiddeld in de voorgaande 30 jaar. Aangezien de sneeuwsmelt component een aanzienlijk aandeel heeft in de totale afvoer van de Rijn, hadden we de droogte al vroegtijdig kunnen zien aankomen.',
             location: {
                 center: [8, 48],
                 zoom: 5,
@@ -30,9 +30,9 @@ var config = {
             id: '2-lobith',
             alignment: 'right',
             classes: ['box'],
-            title: 'Lobith',
+            title: 'Lagere afvoer dan in 2018',
             image: 'images/figures/lobith.png',
-            description: 'Doordat er weinig water beschikbaar kwam daalde de afvoer bij Lobith. De afvoer daalde in 2022 tot 679 m3/s, de laagste stand in de 21e eeuw.',
+            description: 'Doordat er weinig water beschikbaar kwam, daalde de afvoer bij Lobith. De afvoer daalde in 2022 tot 679 m3/s, de laagste stand in de 21e eeuw. In 2018, toen het vanaf medio juli ook uitzonderlijk droog was, was het afvoerniveau vergelijkbaar maar hield de laagwaterperiode aanzienlijk langer aan.',
             location: {
                 center: [6.087122, 51.8514114],
                 zoom: 11,
@@ -65,10 +65,10 @@ var config = {
         {
             id: '4-nijmegen',
             alignment: 'right',
-            title: 'Laagste afvoer',
+            title: 'Laagste afvoer ooit gemeten',
             classes: ['box'],
             image: 'images/droogte.jpg',
-            description: 'De laagste afvoer ooit gemeten bij Lobith was in 1929 (575m3/s).  Dit is een beeld uit van de situatie toen (src: Regionaal Archief Nijmegen). Toen was er ook weinig water, maar niet omdat het verdampte, maar omdat het bevroor.',
+            description: 'De laagste afvoer ooit gemeten bij Lobith was in 1929 (575 m3/s).  Dit is een beeld van de situatie toen (bron: Regionaal Archief Nijmegen). Toen was er ook weinig water, maar niet omdat het verdampte, maar omdat het bevroor.',
             location: {
                 center: [5.87332, 51.85232],
                 zoom: 14.7,
@@ -86,9 +86,9 @@ var config = {
             id: '5-ivs',
             alignment: 'right',
             classes: ['box'],
-            title: 'Goederen',
+            title: 'Meer reizen, minder lading',
             image: 'images/figures/ivs-trends2.png',
-            description: 'Doordat er beperkte waterdiepte beschikbaar was op de route naar Duitsland, konden schepen minder vracht meenemen. Daardoor waren er ruim 2x meer trips per week nodig om dezelfde hoeveelheid lading van Rotterdam naar Duitsland te vervoeren.',
+            description: 'Doordat er beperkte waterdiepte beschikbaar was op de route naar Duitsland, konden schepen  minder vracht meenemen. Er waren ruim 2x zoveel trips nodig om lading van Rotterdam naar Duitsland te vervoeren. Duwstellen waren tijdens het laagwater vrijwel geheel uit de vaart, ter compensatie werden meer reizen gemaakt door koppelverbanden en motorschepen.',
             location: {
                 center: [5.32039, 51.57223],
                 zoom: 7.83,
@@ -114,7 +114,7 @@ var config = {
             classes: ['box'],
             title: 'Twente wordt vermeden',
             image: 'images/figures/lochem.png',
-            description: 'De IJssel was maar via één richting bevaarbaar. Er dreigde een sluiting van het Twentekanaal. Daarom stokte de aanvoer van goederen naar Twente.',
+            description: 'Op de IJssel werd tijdelijk eenrichtingsverkeer ingesteld vanwege de zeer beperkte rivierbreedte. Er dreigde een sluiting van het Twentekanaal, omdat het enorme pompcapaciteit vergde om het peil in het kanaal te handhaven. Daardoor stokte de aanvoer van goederen naar Twente.',
             location: {
                 center: [6.19130, 52.16698],
                 zoom: 12.17,
@@ -150,7 +150,7 @@ var config = {
             title: 'Krapte op de Rijn',
             classes: ['box'],
             image: '',
-            description: 'Doordat de waterstand daalde werd de rivier smaller. Tegelijk was er meer verkeer. Vooral bij de bocht bij Nijmegen was het krap. Dit is de normale situatie.',
+            description: 'Doordat de waterstand daalde, werd de rivier niet alleen ondieper maar ook smaller. Tegelijk was er meer verkeer. Vooral bij de bocht bij Nijmegen was het krap. Dit is de normale situatie.',
             location: {
                 center: [5.86498, 51.85151],
                 zoom: 15.39,
@@ -176,7 +176,7 @@ var config = {
             title: 'Krapte op de Rijn',
             classes: ['box'],
             image: '',
-            description: 'Dit is de situatie tijdens de droogte. De vaarweg is smaller en de schepen varen langzamer door de bocht bij Nijmegen.',
+            description: 'Dit is de situatie tijdens het laagwater. Het deel van de rivier dat werd bevaren is smaller én de schepen varen ook langzamer door de bocht bij Nijmegen om de inzinking te beperken.',
             location: {
                 center: [5.86498, 51.85151],
                 zoom: 15.39,
@@ -202,7 +202,7 @@ var config = {
             title: 'Wachtrij bij Grave',
             classes: ['box'],
             image: '',
-            description: 'De sluis bij Weurt was gestremd. Schepen konden omvaren via de Maas. Daardoor was er grote drukte bij de sluis bij Grave.',
+            description: 'De sluis bij Weurt was in de zomer tijdelijk volledig gestremd door onvoldoende waterdiepte boven de sluisdrempel (oostkolk) en schade aan de deuren (westkolk). Schepen konden omvaren via de Maas, alleen moet dan de kleinere sluis Grave, met slechts 1 kolk, worden gepasseerd. Ook bij sluis Grave ontstonden problemen met de deuren en in de weg liggende stenen. Dit alles resulteerde bij Grave in lange wachtrijen en wachttijden van meerdere uren.',
             location: {
                 center: [5.73522, 51.76946],
                 zoom: 14.73,
@@ -217,10 +217,10 @@ var config = {
         {
             id: '8-zout',
             alignment: 'right',
-            title: 'Zout bij IJmuiden',
+            title: 'Beperkt schutten om zout buiten te houden',
             classes: ['box'],
             image: 'images/figures/salt.png',
-            description: 'De nieuwe sluis bij IJmuiden werd beperkt geschut. Hierdoor werd 180kg per seconde aan zout tegengehouden.',
+            description: 'Vanaf half juli tot half september was bij de Noordersluis bij IJmuiden de maatregel van kracht dat er alleen geschut werd tussen 06:00 en 18:00 uur. Om de zoutindringing te reduceren (vanwege drinkwater) werden er flink minder schuttingen met vollere kolk worden gedaan. De zoutindringing is door de maatregel flink gereduceerd: de zoutvracht door de Noordersluis verminderde met circa 140 kg per seconde.',
             location: {
                 center: [4.58820, 52.46752],
                 zoom: 12.88,
