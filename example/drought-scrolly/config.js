@@ -14,7 +14,7 @@ var config = {
             classes: ['box'],
             title: 'Droogte 2022',
             image: '',
-            description: '',
+            description: 'Het was droog en heet in Europa in de zomer van 2022. De scheepvaart had last van de zeer lage afvoer. Was dit te voorzien? Waar had de scheepvaart het meeste last van de lage afvoer? Er werden sluizen gesloten om zout tegen te houden, lukte dat ook? <br /></br /> In deze scrollymap illustreren we met enkele ‘stories’ hoe de situatie was afgelopen zomer en waar het zoal knelde voor de scheepvaart. Alle stories zijn gebaseerd op gemeten of bewerkte (open) data. De scrollymap heeft tot doel enerzijds om de gevolgen van laagwater voor de binnenvaart in beeld te brengen, anderzijds om te laten zien wat de waarde is van data en van het combineren van verschillende databronnen.',
             location: {
                 center: [8, 48],
                 zoom: 5,
