@@ -401,29 +401,29 @@ map.on("load", function() {
         }
     })
 
-    map.addSource('ivs', {
-        "type": "video", // "image" for rendered high resolution
-        "urls": ["movies/ivs.webm"], // url: "images/image.png"
-        "coordinates": [
-            // [3.98679867212126, 52.47341491974],
-            // [9.2593000000002, 52.47341491974],
-            // [9.2593000000002, 48.80085112523804],
-            // [3.98679867212126, 48.80085112523804]
-            [3.7269648, 52.4630810],
-            [9.5051231, 52.4630810],
-            [9.5051231, 48.8423911],
-            [3.7269648, 48.8423911]
-        ]
-    })
-    // This works the same for images
-    map.addLayer({
-        'id': 'ivs',
-        'type': 'raster',
-        'source': 'ivs',
-        'paint': {
-            'raster-opacity': 0
-        }
-    })
+    // map.addSource('ivs', {
+    //     "type": "video", // "image" for rendered high resolution
+    //     "urls": ["movies/ivs.webm"], // url: "images/image.png"
+    //     "coordinates": [
+    //         // [3.98679867212126, 52.47341491974],
+    //         // [9.2593000000002, 52.47341491974],
+    //         // [9.2593000000002, 48.80085112523804],
+    //         // [3.98679867212126, 48.80085112523804]
+    //         [3.7269648, 52.4630810],
+    //         [9.5051231, 52.4630810],
+    //         [9.5051231, 48.8423911],
+    //         [3.7269648, 48.8423911]
+    //     ]
+    // })
+    // // This works the same for images
+    // map.addLayer({
+    //     'id': 'ivs',
+    //     'type': 'raster',
+    //     'source': 'ivs',
+    //     'paint': {
+    //         'raster-opacity': 0
+    //     }
+    // })
 
     // Add images before this line End
 

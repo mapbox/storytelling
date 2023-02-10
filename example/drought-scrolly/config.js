@@ -9,12 +9,12 @@ var config = {
     footer: '',
     chapters: [
         {
-            id: '1-lente',
+            id: '0-linleiding',
             alignment: 'right',
             classes: ['box'],
-            title: 'Sneeuwtekort',
+            title: 'Droogte 2022',
             image: '',
-            description: 'Het jaar 2022 was droog. Maar waarom was het droog? De droogte begon al in de lente. Er lag weinig sneeuw in de alpen. In het rode gebied lag in mei tot 40 cm minder sneeuw dan gemiddeld in de voorgaande 30 jaar. Aangezien de sneeuwsmelt component een aanzienlijk aandeel heeft in de totale afvoer van de Rijn, hadden we de droogte al vroegtijdig kunnen zien aankomen.',
+            description: '',
             location: {
                 center: [8, 48],
                 zoom: 5,
@@ -22,8 +22,39 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
+                {
+                    layer: 'era5-snow',
+                    opacity: 0.0
+                }
             ],
             onChapterExit: [
+            ]
+        },
+        {
+            id: '1-lente',
+            alignment: 'right',
+            classes: ['box'],
+            title: 'Sneeuwtekort',
+            image: '',
+            description: 'Het jaar 2022 was droog. Maar waarom was het droog? De droogte begon al in de lente. Er lag weinig sneeuw in de Alpen. In het rode gebied lag in mei tot 40 cm minder sneeuw dan gemiddeld in de voorgaande 30 jaar. Aangezien de sneeuwsmelt component een aanzienlijk aandeel heeft in de totale afvoer van de Rijn, hadden we de droogte al vroegtijdig kunnen zien aankomen.',
+            location: {
+                center: [8, 48],
+                zoom: 5,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'era5-snow',
+                    opacity: 0.8
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'era5-snow',
+                    opacity: 0.0
+                }
+
             ]
         },
         {
@@ -32,7 +63,7 @@ var config = {
             classes: ['box'],
             title: 'Lagere afvoer dan in 2018',
             image: 'images/figures/lobith.png',
-            description: 'Doordat er weinig water beschikbaar kwam, daalde de afvoer bij Lobith. De afvoer daalde in 2022 tot 679 m3/s, de laagste stand in de 21e eeuw. In 2018, toen het vanaf medio juli ook uitzonderlijk droog was, was het afvoerniveau vergelijkbaar maar hield de laagwaterperiode aanzienlijk langer aan.',
+            description: 'Doordat er weinig water beschikbaar kwam, daalde de afvoer bij Lobith. De afvoer daalde in 2022 tot 679 m<sup>3</sup>/s, de laagste stand in de 21<sup>e</sup> eeuw. In 2018, toen het vanaf medio juli ook uitzonderlijk droog was, was het afvoerniveau vergelijkbaar maar hield de laagwaterperiode aanzienlijk langer aan.',
             location: {
                 center: [6.087122, 51.8514114],
                 zoom: 11,
@@ -49,8 +80,8 @@ var config = {
             alignment: 'right',
             classes: ['box'],
             title: 'Afvoermetingen',
-            image: 'https://maps.rijkswaterstaat.nl/ExterneDocumentenBasis/NAP/NAPfotos/000A/000A4058-1.JPG',
-            description: 'De afvoer wordt gemeten in het peilstation bij Lobith. In dit centrale referentiestation worden afvoer (m3/s) en waterstanden (m t.o.v. NAP) gemeten.',
+            image: 'images/lobith-station.jpeg',
+            description: 'De afvoer wordt gemeten in het peilstation bij Lobith. In dit centrale referentiestation worden afvoer (m<sup>3</sup>/s) en waterstanden (m t.o.v. NAP) gemeten.',
             location: {
                 center: [6.087122, 51.8514114],
                 zoom: 11,
@@ -68,7 +99,7 @@ var config = {
             title: 'Laagste afvoer ooit gemeten',
             classes: ['box'],
             image: 'images/droogte.jpg',
-            description: 'De laagste afvoer ooit gemeten bij Lobith was in 1929 (575 m3/s).  Dit is een beeld van de situatie toen (bron: Regionaal Archief Nijmegen). Toen was er ook weinig water, maar niet omdat het verdampte, maar omdat het bevroor.',
+            description: 'De laagste afvoer ooit gemeten bij Lobith was in 1929 (575 m<sup>3</sup>/s).  Dit is een beeld van de situatie toen (bron: Regionaal Archief Nijmegen). Toen was er ook weinig water, maar niet omdat het verdampte, maar omdat het bevroor.',
             location: {
                 center: [5.87332, 51.85232],
                 zoom: 14.7,
@@ -96,16 +127,8 @@ var config = {
                 bearing: 129.05
             },
             onChapterEnter: [
-                {
-                    layer: 'ivs',
-                    opacity: 0.8
-                }
             ],
             onChapterExit: [
-                {
-                    layer: 'ivs',
-                    opacity: 0.0
-                }
             ]
         },
         {
@@ -122,25 +145,8 @@ var config = {
                 bearing: 0.00
             },
             onChapterEnter: [
-                {
-                    layer: 'ivs',
-                    opacity: 0.8
-                },
-                {
-                    layer: 'twentekanaal',
-                    opacity: 0.8
-                }
-
             ],
             onChapterExit: [
-                {
-                    layer: 'ivs',
-                    opacity: 0.0
-                },
-                {
-                    layer: 'twentekanaal',
-                    opacity: 0.0
-                }
             ]
         },
 
