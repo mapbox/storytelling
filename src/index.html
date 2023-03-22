@@ -16,7 +16,7 @@
             font-family: sans-serif;
         }
         a, a:hover, a:visited {
-            color: #0071bc;
+            color: #fafafa;
         }
         #map {
             top:0;
@@ -67,7 +67,7 @@
             z-index: 5;
         }
         #features {
-            padding-top: 10vh;
+            padding-top: 50vh;
             padding-bottom: 10vh;
         }
         .hidden {
@@ -97,6 +97,7 @@
             color: #fafafa;
             background-color: #444;
         }
+
         .step {
             padding-bottom: 50vh;
             /* margin-bottom: 10vh; */
@@ -109,7 +110,7 @@
         .step div {
             padding:  25px 50px;
             line-height: 25px;
-            font-size: 13px;
+            font-size: 18px;
         }
 
         .step img {
@@ -122,6 +123,11 @@
                 margin: 0 auto;
             }
         }
+
+        .mapboxgl-popup {
+            max-width: 400px;
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
 
         /* Fix issue on mobile browser where scroll breaks  */
         .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
@@ -136,6 +142,7 @@
 <div id="map"></div>
 <div id="mapInset"></div>
 <div id="story"></div>
+<div class='map-overlay' id='legend'></div>
 
 <script src="./config.js"></script>
 <script>
@@ -244,19 +251,19 @@ config.chapters.forEach((record, idx) => {
 
 story.appendChild(features);
 
-var footer = document.createElement('div');
+// var footer = document.createElement('div');
 
-if (config.footer) {
-    var footerText = document.createElement('p');
-    footerText.innerHTML = config.footer;
-    footer.appendChild(footerText);
-}
+// if (config.footer) {
+//     var footerText = document.createElement('p');
+//     footerText.innerHTML = config.footer;
+//     footer.appendChild(footerText);
+// }
 
-if (footer.innerText.length > 0) {
-    footer.classList.add(config.theme);
-    footer.setAttribute('id', 'footer');
-    story.appendChild(footer);
-}
+// if (footer.innerText.length > 0) {
+//     footer.classList.add(config.theme);
+//     footer.setAttribute('id', 'footer');
+//     story.appendChild(footer);
+// }
 
 mapboxgl.accessToken = config.accessToken;
 
@@ -337,7 +344,7 @@ map.on("load", function() {
     scroller
     .setup({
         step: '.step',
-        offset: 0.5,
+        offset: 0.7,
         progress: true
     })
     .onStepEnter(async response => {
