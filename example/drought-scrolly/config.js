@@ -135,6 +135,24 @@ var config = {
             id: '5a-ivs',
             alignment: 'right',
             classes: ['box'],
+            title: 'Type schepen',
+            image: 'images/figures/ivs-trends_ship.png',
+            description: 'Tijdens droogte zien we dat duwstellen worden vervangen door koppelverbanden.',
+            location: {
+                center: [6.19130, 52.16698],
+                zoom: 7.17,
+                pitch: 45.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
+            ]
+        },
+        {
+            id: '5b-ivs',
+            alignment: 'right',
+            classes: ['box'],
             title: 'Twente wordt vermeden',
             image: 'images/figures/lochem.png',
             description: 'Op de IJssel werd tijdelijk eenrichtingsverkeer ingesteld vanwege de zeer beperkte rivierbreedte. Er dreigde een sluiting van het Twentekanaal, omdat het enorme pompcapaciteit vergde om het peil in het kanaal te handhaven. Daardoor stokte de aanvoer van goederen naar Twente.',
@@ -226,10 +244,28 @@ var config = {
             title: 'Beperkt schutten om zout buiten te houden',
             classes: ['box'],
             image: 'images/figures/salt.png',
-            description: 'Vanaf half juli tot half september was bij de Noordersluis bij IJmuiden de maatregel van kracht dat er alleen geschut werd tussen 06:00 en 18:00 uur. Om de zoutindringing te reduceren (vanwege drinkwater) werden er flink minder schuttingen met vollere kolk worden gedaan. De zoutindringing is door de maatregel flink gereduceerd: de zoutvracht door de Noordersluis verminderde met circa 140 kg per seconde.',
+            description: 'Vanaf half juli tot half september was bij de Noordersluis bij IJmuiden de maatregel van kracht dat er alleen geschut werd tussen 06:00 en 18:00 uur. Om de zoutindringing te reduceren (vanwege drinkwater) werd er flink minder geschut, met vollere kolk. De zoutindringing is door de maatregel flink gereduceerd: de zoutvracht door de Noordersluis verminderde met circa 140 kg per seconde.',
             location: {
                 center: [4.58820, 52.46752],
                 zoom: 12.88,
+                pitch: 66.50,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+            ],
+            onChapterExit: [
+            ]
+        },
+        {
+            id: '9-toekomst',
+            alignment: 'right',
+            title: 'Toekomstige droogte als gevolg van klimaatverandering',
+            classes: ['box'],
+            image: 'images/figures/ships.jpg',
+            description: 'In de toekomst zullen perioden met droogte zoals in 2022) vaker gaan optreden en langer duren als gevolg van klimaatverandering. Zoals deze scrolly laat zien heeft dit een grote impact op de binnenvaart. Het heeft uiteindelijk ook grote financiële gevolgen voor de industrie in Duitsland. Dit vraagt om maatregelen om het vervoer van goederen via het water in toekomst te kunnen blijven faciliteren.',
+            location: {
+                center: [4.58820, 52.46752],
+                zoom: 6,
                 pitch: 66.50,
                 bearing: 0.00
             },
