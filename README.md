@@ -1,4 +1,5 @@
 - [Interactive Storytelling](#interactive-storytelling)
+  - [Live Demo](#live demo)
   - [Prerequisites](#prerequisites)
   - [Getting Started](#getting-started)
     - [Steps](#steps)
@@ -27,15 +28,19 @@ Optionally, you can input a custom Mapbox Style with layers styled in Studio and
 
 The output is an HTML and JavaScript file. These outputs can be hosted on any web-accessible location, with no extra code or infrastructure required. Note that embedding the output as an iFrame in another page will not work as expected. The scroll-driven interface requires the full page.
 
+## Live Demo
+
+You can view a live demo of this storytelling framework at [https://labs.mapbox.com/storytelling/](https://labs.mapbox.com/storytelling/)
+
 ## Prerequisites
-This template is for data journalists and digital storytellers of any kind. No coding experience is required. If you are planning to include some custom map layers, you will need some familiarity with [Mapbox Studio](https://studio.mapbox.com).
+This template is for data journalists and digital storytellers of any kind. If you are planning to include some custom map layers, you will need some familiarity with [Mapbox Studio](https://studio.mapbox.com).
 
 To configure and publish a story, you will need:
 - A Mapbox [access token](https://docs.mapbox.com/help/glossary/access-token). Sign up for a free account at [mapbox.com](https://www.mapbox.com/signup/) to get one.
 
-- A text editor. Atom, Sublime Text, and Visual Studio Code are all fine choices.
+- A text editor. Visual Studio Code is a fine choice.
 
-- A place to publish your work. Any service that hosts static files that can be accessed with a browser will do.
+- A place to publish your work. Any service that hosts static files that can be accessed with a browser will do. [Github Pages](https://pages.github.com/) is a good free option.
 
 - A story. This is unquestionably the hardest part. The best stories for this template will have sections that benefit from a map.
 
@@ -49,10 +54,7 @@ The template does not rely on any particular CSS framework, fonts, or images. Th
 
 ## Getting Started
 
-- Download this repository as a ZIP file using the button above, and unzip it. If you are using `git`, clone this repository.
-
-
-In your local copy of this repository (the unzipped file you downloaded), navigate to the `src/` directory.
+Clone this repository. Navigate to the `src/` directory.
 
 Make a copy of `config.js.template` and name it `config.js`. Open the new `config.js` file in your text editor.
 
@@ -81,31 +83,33 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
     byline: 'By a Digital Storyteller',
     footer: 'Source: source citations, etc.',
     chapters: [
-        {
+    ...
+    ]
+{
 ```
 
 6. **Add as many `chapters` in your template as needed.** You'll need a `,` between each section, but no comma at the end. Here is what a `chapter` looks like:
 
 ```
 {
-            id: 'slug-style-id',
-            alignment: 'left',
-            hidden: false,
-            title: 'Display Title',
-            image: './path/to/image/source.png',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            location: {
-                center: [-122.418398, 37.759483],
-                zoom: 8.5,
-                pitch: 60,
-                bearing: 0
-            },
-            mapAnimation: 'flyTo',
-            rotateAnimation: false,
-            callback: '',
-            onChapterEnter: [],
-            onChapterExit: []
-        },
+    id: 'slug-style-id',
+    alignment: 'left',
+    hidden: false,
+    title: 'Display Title',
+    image: './path/to/image/source.png',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    location: {
+        center: [-122.418398, 37.759483],
+        zoom: 8.5,
+        pitch: 60,
+        bearing: 0
+    },
+    mapAnimation: 'flyTo',
+    rotateAnimation: false,
+    callback: '',
+    onChapterEnter: [],
+    onChapterExit: []
+},
 ```
 
 7. **Fill out your sections as needed.**  Give each section a unique name in the section `id` property. This will become the HTML `div` `id`, so avoid spaces in the name. The `title`, `description` properties are optional. The `description` supports HTML tags. If you have an image that goes with that section of the story, add the path to the image in the `image` property.
@@ -116,15 +120,11 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
 
 10. Open `index.html` in a browser, and scroll. Voila!
 
-#### Generate Map Position Using `Helper.html`
+#### Generate Map Position 
 
-Using the `helper.html` file, you can search for places, zoom, pan, tilt, and rotate the map to get the desired map position (_Hint_: To tilt and rotate the map, right-click and drag the map).
+Use the [Mapbox Location Helper](https://labs.mapbox.com/location-helper/) to search for locations and get the center, zoom, pitch, and bearing for use in your storytelling map.
 
-Notice the location parameters are updated in the upper left corner with everytime you move the map. You can copy the location definition from that page into the `config.js` `location` property section.
-
-There is also a hosted version of this file at [https://demos.mapbox.com/location-helper/](https://demos.mapbox.com/location-helper/)
-
-![location helper screen capture](assets/locationhelper.gif)
+![location helper screen capture](assets/location-helper.gif)
 
 #### Configuration File and Layer Settings
 
@@ -265,13 +265,6 @@ Add and style each custom layer in your Studio style. Before the final publish, 
 
 This will ensure that the map appears correctly when the story page loads. To adjust the opacity of the layers as the reader scrolls through the story, use the `onChapterEnter` or `onChapterExit` configuration options to set your desired opacity for the layer.
 
-### Organization
-
-- `src`: Code for the template
-- `example`: Example stories
-    - `glacier`: Glaciers of Glacier National Park example
-    - `bike-philly`: Philadelphia bicycle infrastructure example
-
 ## Deployment
 
 Host the `index.html` and `config.js` files in the same directory in a web-accessible location. If you don't know where to start, look into GitHub Pages or Netlify.
@@ -312,5 +305,6 @@ BSD 3-Clause License
 - [The Guiana Shield: The Amazon Conservation Team](https://www.amazonteam.org/maps/guiana-shield/)
 - [Watchlist 2021: International Rescue Committee](https://theirc.github.io/watchlist2021/)
 - [A River Drained: Kontinentalist](https://cdn-images.kontinentalist.com/static-html/food-security-mekong-river-hydropower-dam-climate-change/index.html)
+- [Climate Gentrification and its impact on New York City: Judy Huynh](https://www.climategentrification.info/)
 
 [mapbox.com/resources#solutions](https://www.mapbox.com/resources#solutions)
