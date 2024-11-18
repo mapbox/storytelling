@@ -1,9 +1,9 @@
 - [Interactive Storytelling](#interactive-storytelling)
-  - [Live Demo](#live demo)
+  - [Live Demo](#live-demo)
   - [Prerequisites](#prerequisites)
   - [Getting Started](#getting-started)
     - [Steps](#steps)
-    - [Generate Map Position Using `Helper.html`](#generate-map-position-using-helperhtml)
+    - [Generate Map Position](#generate-map-position)
     - [Configuration File and Layer Settings](#configuration-file-and-layer-settings)
     - [Configuration Options](#configuration-options)
     - [Mapbox Studio Style Configuration](#mapbox-studio-style-configuration)
@@ -14,15 +14,12 @@
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
 
-# Updated to Mapbox GL JS V2.0.0
-- Set `use3dTerrain: true` for 3D maps
-
 ![3D mountains in Colorado](assets/co14ersstory.gif)
 
 # Interactive Storytelling
 Some stories are best told with a map. Data journalists covering changing conditions in a population's demographics, the environment, an international conflict, or telling a simple travel story frequently provide geographic context in their graphics.
 
-This template is designed to accelerate building out a "scrollytelling" map story. The primary input is a story broken into sections (`chapters`), each hooked to a particular view of a map.
+This template is designed to accelerate building out a "storytelling" map story. The primary input is a story broken into sections (`chapters`), each hooked to a particular view of a map.
 
 Optionally, you can input a custom Mapbox Style with layers styled in Studio and toggle the layer's opacity.
 
@@ -52,28 +49,36 @@ The template does not rely on any particular CSS framework, fonts, or images. Th
 
 ![example story screen capture](assets/glacierdemo.gif)
 
-## Getting Started
+## Run the index.html file in a development server.
 
-Clone this repository. Navigate to the `src/` directory.
+Clone this repository, and open its directory in Visual Studio Code.
 
-Make a copy of `config.js.template` and name it `config.js`. Open the new `config.js` file in your text editor.
+### 1: Install the Live Server Extension
+To make it easier to preview changes in real-time, you can install the Live Server extension in Visual Studio Code.  (This will serve the `index.html` from a local webserver, preventing CORS errors and other issues that can arise from opening an HTML file without using a development server):
+1. Go to the **Extensions** tab in Visual Studio Code (the square icon on the sidebar).
+2. Search for **Live Server** and click **Install**.
+3. Once installed, you’ll be able to start a live server to preview the HTML file.
 
-#### Steps
+### 2: Run the HTML File in Your Browser
+1. With the `index.html` file open, right-click in the editor window and select **Open with Live Server**.
+2. Your default browser will open, displaying the storytelling map using the default configuration in `config.js`. Because you have not yet added your Mapbox Access Token, the map will not display. Follow the steps below to update `config.js`.
 
-1. **Select the map style** you want to use (the default is Mapbox Streets, but you can find more here https://docs.mapbox.com/api/maps/#styles, or use one of your custom Studio styles).
+#### Customize your configuration
 
-2. **Add a Mapbox access token.** A good practice is to [create a separate](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#creating-and-managing-access-tokens) token per map to be able to track traffic to your different maps.
+Open `config.js` and make the following edits to customize the map to tell your story.
+
+1. **Add a Mapbox access token.** Replace `YOUR_MAPBOX_ACCESS_TOKEN` with an access token from your account at [account.mapbox.com](htps://account.mapbox.com). A good practice is to [create a separate](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#creating-and-managing-access-tokens) token per map to be able to track traffic to your different maps. 
+
+2. **Select the map style** you want to use (the default is Mapbox Standard, but you can find more styles [in our Styles API documentation page](https://docs.mapbox.com/api/maps/styles/#classic-mapbox-styles), or create your own style in [Mapbox Studio](https://studio.mapbox.com)).
 
 3. **Choose whether or not to display a marker** at the center of each map location. If you are displaying markers, you can set the color using the `markerColor` property. The default color is light blue.
 
 4. **Choose a theme for the story text**. There are `light` and `dark` options.
 
-5. **Choose where your story should be aligned over the map**. Options are `center`, `left`, `right`, and `full`.
-
 ```
 {
     style: 'mapbox://styles/mapbox/streets-v11',
-    accessToken: 'YOUR_ACCESS_TOKEN',
+    accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN',
     showMarkers: true,
     markerColor: '#3FB1CE',
     theme: 'light',
@@ -119,6 +124,8 @@ Make a copy of `config.js.template` and name it `config.js`. Open the new `confi
 9. Repeat until you have the location entered for each of your sections.
 
 10. Open `index.html` in a browser, and scroll. Voila!
+
+11. There are more options available in `config.js`.  Refer to the documentation in this README and experiment with the different values as you craft your story. If you are familiar with HTML, CSS, and JavaScript, you can customize every aspect of the storytelling map, well beyond the options we've provided in this template.  Have fun, and please share your work!
 
 #### Generate Map Position 
 
@@ -194,70 +201,58 @@ var config = {
     ]
 }
 ```
-
 #### Configuration Options
 
-Note: items in bold are **required**.
+| Option                   | Type   | Description                                                                                                                                                                                                        |
+| ------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `style` (Required)       | String | This is the Mapbox style `url` to use for the app. It can be a standard style, or a custom style from your Mapbox account. Use a custom style if you want to include custom data or layers.                        |
+| `accessToken` (Required) | String | Your Mapbox access token.                                                                                                                                                                                          |
+| `showMarkers`            | String | Controls whether markers are shown at the centerpoint of each chapter. If `true`, the map will display a default blue, inverted-teardrop icon.                                                                     |
+| `markerColor`            | String | Accepts hexadecimal, RGB, and color names [compatible with CSS standards](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value). Overrides the default light blue marker color if `showMarkers` is `true`. |
+| `theme`                  | String | Two basic themes (light and dark) are available.                                                                                                                                                                   |
+| `use3dTerrain`           | String | Enables 3D terrain. (Optional)                                                                                                                                                                                     |
+| `inset`                  | String | Enables a globe minimap. (Optional)                                                                                                                                                                                |
+| `insetOptions`           | Object | [ `GlobeMiniMap` options](https://github.com/chriswhong/mapbox-gl-globe-minimap?tab=readme-ov-file#options)                                                                                                        |
+| `insetPosition`          | Srting | A string representing the position of the inset map on the map. Valid options are `top-left`, `top-right`, `bottom-left`, `bottom-right`.                                                                                                      |
+| `projection`             | String | Sets the Map object's [projection parameter](https://docs.mapbox.com/mapbox-gl-js/example/projections/) to create a map with a non-Mercator projection. (Optional)                                                 |
+| `auto`                   | String | Enables automatic advancement through the chapters. (Optional)                                                                                                                                                     |
+| `title`                  | String | The title of the overall story. (Optional)                                                                                                                                                                         |
+| `subtitle`               | String | A subtitle for the story. (Optional)                                                                                                                                                                               |
+| `byline`                 | String | Credit the author of the story. (Optional)                                                                                                                                                                         |
+| `footer`                 | String | Citations, credits, etc., displayed at the bottom of the story.                                                                                                                                                    |
+| `chapters` (Required)    | String | Contains all of the story content and map controls for each section of the story. _Array of objects_                                                                                                               |
 
-**`style`**: This is the Mapbox style `url` to use for the app. It can be a standard style, or a custom style from your Mapbox account. Use a custom style if you want to include custom data or layers.
+---
 
-**`accessToken`**: Your Mapbox access token.
+#### Chapters Options
 
-**`showMarkers`**: This controls whether markers are shown at the centerpoint of each chapter. If `true`, the map will display a default blue, inverted-teardrop icon.
+| Option                 | Type   | Description                                                                                                                                                                               |
+| ---------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id` (Required)        | String | A slug-style ID for the chapter. Used by the app's JavaScript and assigned as an HTML `id` for the `div` containing the story. Best practice: use kebab-case, e.g., `my-story-chapter-1`. |
+| `alignment` (Required) | String | Defines where the story text should appear over the map. Options: `center`, `left`, `right`, `full`. Defaults to `center` for browser windows less than 750 pixels wide.                  |
+| `hidden`               | String | Sets the visibility of the chapter to `hidden` when `true`. The chapter will still trigger a map and layer transition.                                                                    |
+| `title`                | String | Title of the section, displayed in an `h3` element.                                                                                                                                       |
+| `image`                | String | Path to an image to display in this section.                                                                                                                                              |
+| `description`          | String | Main story content for the section. Aligned with what the reader sees on the map. Supports HTML for images, links, etc.                                                                   |
+| `location` (Required)  | String | Details about the map display and camera view (e.g., center, zoom, pitch, bearing).                                                                                                       |
+| `mapAnimation`         | String | Defines the [animation type](https://docs.mapbox.com/mapbox-gl-js/api/#map#jumpto) for transitions. Options: `flyTo`, `easeTo`, `jumpTo`. Defaults to `flyTo`.                            |
+| `rotateAnimation`      | String | Starts a slow rotation animation at the end of the map transition when `true`. Rotates 90 degrees over 24 seconds.                                                                        |
+| `callback`             | String | Name of a JavaScript function to execute custom code for the chapter, e.g., turning a legend on/off, adding API data, or displaying an interactive graph.                                 |
+| `onChapterEnter`       | String | Layers to be displayed/hidden/muted when the section becomes active. _Array of objects_ (e.g., layer name, opacity, duration).                                                            |
+| `onChapterExit`        | String | Same as `onChapterEnter`, triggered when the section becomes inactive. _Array of objects_.                                                                                                |
 
-**`markerColor`**: Accepts hexadecimal, RGB, and color names [compatible with CSS standards](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value). If `showMarkers` is `true`, this property will override the default light blue marker color.
+---
 
-**`theme`**: Two basic themes (light and dark) are available.
+#### Location Details
 
-`use3dTerrain`: Enables 3D terrain. (Optional)
-
-`inset`: Enables inset map. (Optional)
-
-`projection`: Set the Map object's [projection parameter](https://docs.mapbox.com/mapbox-gl-js/example/projections/) to create a map with a non-Mercator projection.. (Optional)
-
-`auto`: Enables automatic advancement through the chapters. (Optional)
-
-`title`: The title of the overall story. (Optional)
-
-`subtitle`: A subtitle for the story. (Optional)
-
-`byline`: Credit the author of the story. (Optional)
-
-`footer`: Citations, credits, etc. that will be displayed at the bottom of the story.
-
-**`chapters`**: This contains all of the story content and map controls for each section of the story. _Array of objects_
-
-- **`id`**: A slug-style ID for the chapter. This is read by the JavaScript driving the app and is assigned as an HTML `id` for the `div` element containing the rest of the story. A best-practice format would be to use kebab case, like `my-story-chapter-1`.
-- **`alignment`**: This defines where the story text should appear over the map. Options are `center`, `left`, `right`, and `full`. When the browser window is less than 750 pixels wide, the story will be `center` aligned.
-- `hidden`: Sets the visibility of the chapter to `hidden` when `true`. The chapter will still trigger a map and layer transition.
-- `title`: The title of the section, displayed in an `h3` element.
-- `image`: The path to an image to display in this section.
-- `description`: The main story content for the section. This should be aligned with what the reader is seeing on the map. In the vanilla version, this field will render as HTML. Images, links, and other items can be included as HTML.
-- **`location`**: Details about the map display and camera view.
-    - **`center`**: Center coordinates of the map, as `longitude, latitude`
-    - **`zoom`**: Zoom level of the map.
-    - **`pitch`**: Angle of the map view. `0` is straight down, and `60` is highly tilted.
-    - **`bearing`**: Degrees of rotation clockwise from North (`0`). Negative values represent counter-clockwise rotation.
-- `mapAnimation`: Defines the [animation type](https://docs.mapbox.com/mapbox-gl-js/api/#map#jumpto) for transitioning between locations. This property supports 'flyTo', 'easeTo', and 'jumpTo' animations. If not specified, defaults to `flyTo`.
-    - flyTo and easeTo [options](https://docs.mapbox.com/mapbox-gl-js/api/map/#flyto-parameters) (`curve`, `maxDuration`, `minZoom`, `screenSpeed`, `speed`) can be included in the `location` array, for example:
-```
-            location: {
-                center: [-113.72917, 48.58938],
-                zoom: 12.92,
-                pitch: 39.50,
-                bearing: 36.00,
-                speed: 0.2,
-                curve: 1
-            }
-```
-- `rotateAnimation`: Starts a slow rotation animation at the end of the map transition when set to `true`. The map will rotate 90 degrees over 24 seconds.
-- `callback`: Accepts the name of a JavaScript function and executes the function. Use this if you have custom code you want to run for a chapter, like turning a legend on or off, adding data from an API request, or displaying an interactive graph.
-- `onChapterEnter`: Layers to be displayed/hidden/muted when the section becomes active. _Array of objects_
-    - `layer`: Layer name as assigned in Mapbox Studio.
-    - `opacity`: The opacity to display the layer. `0` is fully transparent, `1` is fully opaque.
-    - `duration`: The length of the opacity transition, numeric, in milliseconds. Default is 300. This is an optional parameter and can be omitted.
-- `onChapterExit`: Same as `onChapterEnter` except it is triggered when the section becomes inactive. _Array of objects_
-
+| Option              | Type   | Description                                                                                           |
+| ------------------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| `center` (Required) | String | Center coordinates of the map, as `longitude, latitude`.                                              |
+| `zoom` (Required)   | String | Zoom level of the map.                                                                                |
+| `pitch`             | String | Angle of the map view. `0` is straight down, and `60` is highly tilted.                               |
+| `bearing`           | String | Degrees of rotation clockwise from North (`0`). Negative values represent counter-clockwise rotation. |
+| `speed`             | String | Speed of the flyTo animation.                                                                         |
+| `curve`             | String | Curve factor for the flyTo animation.                                                                 |
 
 #### Layer Configuration in your Mapbox Studio Style
 
