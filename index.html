@@ -179,6 +179,14 @@
             });
         }
 
+        function debounce(func, delay) {
+            let timer;
+            return function (...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
+
         var story = document.getElementById('story');
         var features = document.createElement('div');
         features.setAttribute('id', 'features');
@@ -291,6 +299,48 @@
         // instantiate the scrollama
         var scroller = scrollama();
 
+        var debouncedStepEnter = debounce(async function (response) {
+            var current_chapter = config.chapters.findIndex(chap => chap.id === response.element.id);
+            var chapter = config.chapters[current_chapter];
+
+            response.element.classList.add('active');
+            map[chapter.mapAnimation || 'flyTo'](chapter.location);
+
+            if (config.showMarkers) {
+                marker.setLngLat(chapter.location.center);
+            }
+            if (chapter.onChapterEnter.length > 0) {
+                chapter.onChapterEnter.forEach(setLayerOpacity);
+            }
+            if (chapter.callback) {
+                window[chapter.callback]();
+            }
+            if (chapter.rotateAnimation) {
+                map.once('moveend', () => {
+                    const rotateNumber = map.getBearing();
+                    map.rotateTo(rotateNumber + 180, {
+                        duration: 30000,
+                        easing: t => t
+                    });
+                });
+            }
+            if (config.auto) {
+                var next_chapter = current_chapter + 1;
+                if (next_chapter < config.chapters.length) {
+                    map.once('moveend', () => {
+                        document.querySelectorAll('[data-scrollama-index="' + next_chapter.toString() + '"]')[0].scrollIntoView();
+                    });
+                }
+            }
+        }, 100);
+
+        var debouncedStepExit = debounce(function (response) {
+            var chapter = config.chapters.find(chap => chap.id === response.element.id);
+            response.element.classList.remove('active');
+            if (chapter.onChapterExit.length > 0) {
+                chapter.onChapterExit.forEach(setLayerOpacity);
+            }
+        }, 100);
 
         map.on("load", function () {
             if (config.use3dTerrain) {
